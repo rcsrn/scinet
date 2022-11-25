@@ -1,0 +1,6 @@
+SECRET_KEY=django-insecure--4$o&_+-=$&h7gmlymjg=0nmey^2_$66!yeq-frnvz4dh3(*ft
+DB_NAME=scinet
+DB_USER=postgres
+DB_PASSWORD=
+DB_HOST=localhost
+DB_PORT=5432
