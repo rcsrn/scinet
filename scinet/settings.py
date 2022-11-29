@@ -35,7 +35,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django-seed',
     'scinet_app',
     'django.contrib.admin',
     'django.contrib.auth',
