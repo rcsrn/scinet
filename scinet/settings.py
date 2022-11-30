@@ -59,7 +59,7 @@ ROOT_URLCONF = 'scinet.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['scinet_app/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
