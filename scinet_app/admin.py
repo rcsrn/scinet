@@ -5,6 +5,7 @@ from .models import Journal
 from .models import Publication
 from .models import Writes
 from .models import Belongs
+from .models import Quotes
 
 admin.site.register(Institution)
 admin.site.register(Generaluser)
@@ -12,3 +13,4 @@ admin.site.register(Journal)
 admin.site.register(Publication)
 admin.site.register(Writes)
 admin.site.register(Belongs)
+admin.site.register(Quotes)
