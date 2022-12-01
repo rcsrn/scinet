@@ -8,7 +8,6 @@ class Belongs(models.Model):
         managed = True
         db_table = 'belongs'
 
-
 class Generaluser(models.Model):
     general_user_id = models.IntegerField(primary_key=True)
     username = models.CharField(max_length=255)
@@ -52,6 +51,13 @@ class Publication(models.Model):
         managed = True
         db_table = 'publication'
 
+
+class Quotes(models.Model):
+    publication_id = models.ForeignKey(Publication, on_delete=models.CASCADE)
+    publication_id = models.ForeignKey(Publication, on_delete=models.CASCADE)
+    class Meta:
+        managed = True
+        db_table = 'quotes'
 
 class Writes(models.Model):
     general_user = models.ForeignKey(Generaluser, on_delete=models.CASCADE)
