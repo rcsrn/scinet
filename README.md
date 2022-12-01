@@ -4,6 +4,7 @@
 ```
 python -m venv env
 source env/bin/activate
+pip install django-environ
 pip install -r requirements.txt
 ```
 ## Salir del entorno virtual
