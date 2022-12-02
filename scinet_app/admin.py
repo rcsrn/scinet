@@ -96,9 +96,9 @@ class WritesAdmin(ImportExportModelAdmin):
     resource_class = WritesResource
 
 admin.site.register(Institution,InstitutionAdmin)
-admin.site.register(Generaluser)
-admin.site.register(Journal)
-admin.site.register(Publication)
-admin.site.register(Writes)
-admin.site.register(Belongs)
-admin.site.register(Quotes)
+admin.site.register(Generaluser,GenerlaluserAdmin)
+admin.site.register(Journal,JournalAdmin)
+admin.site.register(Publication,PublicationAdmin)
+admin.site.register(Writes,WritesAdmin)
+admin.site.register(Belongs,BelongsAdmin)
+admin.site.register(Quotes,QuotesAdmin)
