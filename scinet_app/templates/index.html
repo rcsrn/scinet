@@ -13,9 +13,9 @@
 
    <body>
       <div class="general">
-         <p class="logo">
+         <h1 class="logo">
             SCINET
-         </p>
+         </h1>
       </div>
 
       <div class="search-bar">
@@ -27,6 +27,16 @@
             knowledge as a human right
          </p>
 
+      </div>
+
+      <h2>Most cited:</h2>
+      <div class="articles">
+         {%for publication in most_cited%}
+            <div class="article">
+               <h3>{{publication.0.title}}</h3>
+               <p>In {{publication.0.journal.name}}. Cited {{publication.1}} times</p>
+            </div>
+         {%endfor%}
       </div>
    </body>
 
