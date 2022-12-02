@@ -2,6 +2,10 @@ body {
     background-color: rgb(41, 45, 59);
 }
 
+.general {
+
+}
+
 .logo {
     font-family: 'Fredoka One', cursive;
     font-size: 100px;
@@ -13,14 +17,10 @@ body {
     text-shadow: 10px 1px 10px rgb(10, 10, 10);
 }
 
-.search-bar { 
+.search-bar {
     text-align: center;
-    font-weight: bold;
-    height: 80px;
-}
-
-.search {
-    text-align: center;
+    display: block;
+    margin: 0 auto;
     font-size: 15px;
     padding: 0px, 1003px, 1513px;
     width: 500px;
@@ -29,8 +29,9 @@ body {
     border: 1px solid rgb(92, 86, 23);
 }
 
-.phrase {
+.knowledge-phrase {
     text-align: center;
-    font-size: 20px;
+    font-size: 25px;
     color: rgb(170, 170, 170);
+    margin-top: 15px;
 }
