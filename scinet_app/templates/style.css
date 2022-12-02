@@ -2,8 +2,17 @@ body {
     background-color: rgb(13, 17, 23);
 }
 
-.general {
+.top-section {
+    text-align: right;
+}
 
+.log-in-button {
+    font-weight: bold;
+    width: 68px;
+    height: 32px;
+    border: none;
+    border-radius: 25px;
+    background-color:rgb(170, 153, 130);
 }
 
 .logo {
@@ -12,7 +21,7 @@ body {
     font-weight: normal;
     text-align: center;
     color:rgb(192, 144, 77);
-    margin-top: 150px;
+    margin-top: 50px;
     margin-bottom: 10px;
     text-shadow: 10px 1px 10px rgb(10, 10, 10);
 }
