@@ -1,8 +1,8 @@
 from django.db import models
 
 class Belongs(models.Model):
-    institution = models.ForeignKey('Institution', on_delete=models.CASCADE)
-    general_user = models.ForeignKey('Generaluser', on_delete=models.CASCADE)
+    institution_id = models.ForeignKey('Institution', on_delete=models.CASCADE)
+    general_user_id = models.ForeignKey('Generaluser', on_delete=models.CASCADE)
 
     class Meta:
         managed = True
@@ -43,7 +43,7 @@ class Journal(models.Model):
 
 class Publication(models.Model):
     publication_id = models.IntegerField(primary_key=True)
-    journal = models.ForeignKey(Journal, on_delete=models.CASCADE)
+    journal_id = models.ForeignKey(Journal, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     publication_date = models.DateField()
 
@@ -55,13 +55,15 @@ class Publication(models.Model):
 class Quotes(models.Model):
     publication_id = models.ForeignKey(Publication, on_delete=models.CASCADE)
     publication_id = models.ForeignKey(Publication, on_delete=models.CASCADE)
+    
     class Meta:
         managed = True
         db_table = 'quotes'
 
 class Writes(models.Model):
-    general_user = models.ForeignKey(Generaluser, on_delete=models.CASCADE)
-    publication = models.ForeignKey(Publication, on_delete=models.CASCADE)
+    general_user_id = models.ForeignKey(Generaluser, on_delete=models.CASCADE)
+    publication_id = models.ForeignKey(Publication, on_delete=models.CASCADE)
+    
     class Meta:
         managed = True
         db_table = 'writes'
