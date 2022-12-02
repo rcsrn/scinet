@@ -6,6 +6,19 @@ body {
     text-align: right;
 }
 
+.register-button {
+    font-size: 20px;
+    font-weight: bold;
+    width: 92px;
+    height: 52px;
+    border: none;
+    border-radius: 25px;
+    background-color:rgb(170, 153, 130);
+    cursor: pointer;
+    margin-right: 25px;
+    margin-top: 15px;
+}
+
 .log-in-button {
     font-size: 20px;
     font-weight: bold;
@@ -31,7 +44,7 @@ body {
 }
 
 .search-bar {
-    text-align: center;
+    text-align: left;
     display: block;
     margin: 0 auto;
     font-size: 15px;
@@ -42,7 +55,7 @@ body {
     border: 1px solid rgb(0, 0, 0);
     float: left;
     position: relative;
-    left: 35%;
+    left: 31%;
 }
 
 .submit-button {
@@ -51,7 +64,7 @@ body {
     padding: 0px, 1003px, 1513px;
     cursor: pointer;
     position: relative;
-    left: 35%;
+    left: 31%;
 }
 
 .knowledge-phrase {

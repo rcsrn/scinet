@@ -12,8 +12,5 @@ def index(request):
 			cited_publications[quote.publication_id] += 1
 
 	sorted_publications = sorted(cited_publications.items(), key=operator.itemgetter(1), reverse=True)
-	publications = []
-	for publication in sorted_publications:
-		publications.append(publication[0])
 
 	return render(request, 'index.html', {'most_cited': sorted_publications})
