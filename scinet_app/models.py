@@ -55,7 +55,7 @@ class Publication(models.Model):
 class Quotes(models.Model):
     publication_id = models.ForeignKey(Publication, on_delete=models.CASCADE)
     publication_id = models.ForeignKey(Publication, on_delete=models.CASCADE)
-    
+
     class Meta:
         managed = True
         db_table = 'quotes'
