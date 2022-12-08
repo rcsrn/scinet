@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from .models import Institution
-from .models import Generaluser
+from .models import GeneralUser
 from .models import Journal
 from .models import Publication
 from .models import Writes
@@ -14,11 +14,10 @@ class InstitutionAdmin(ImportExportModelAdmin):
     resource_class = InstitutionResource
     list_display = ['institution_id', 'name']
 
-        
 class GenerlaluserAdmin(ImportExportModelAdmin):
     resource_class = GeneraluserResource
     list_display = ["general_user_id", "username", "first_name", "last_name",
-                    "email", "age", "is_alive", "is_author"]
+                    "email", "password", "age", "is_alive", "is_author"]
         
 class BelongsAdmin(ImportExportModelAdmin):
     resource_class = BelongsResource
@@ -35,21 +34,13 @@ class PublicationAdmin(ImportExportModelAdmin):
 class QuotesAdmin(ImportExportModelAdmin):
     resource_class = QuotesResource
     list_display = ["publication_id", "publication_id"]
-    
-class WritesResource(resources.ModelResource):
-    class Meta: 
-        model = Writes
-        skip_unchanged = True
-        report_skipped = True
-        import_id_fields = ('id')
-        exclude = ('id')
-        fields = ('id', 'general_user_id', 'publication_id')
         
 class WritesAdmin(ImportExportModelAdmin):
     resource_class = WritesResource
+    list_display = ["general_user_id", "publication_id"]
 
 admin.site.register(Institution,InstitutionAdmin)
-admin.site.register(Generaluser,GenerlaluserAdmin)
+admin.site.register(GeneralUser,GenerlaluserAdmin)
 admin.site.register(Journal,JournalAdmin)
 admin.site.register(Publication,PublicationAdmin)
 admin.site.register(Writes,WritesAdmin)

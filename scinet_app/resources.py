@@ -39,4 +39,11 @@ class BelongsResource(resources.ModelResource):
 class QuotesResource(resources.ModelResource):
     class Meta: 
         model = Quotes
+        import_id_fields = ('publication_id', )
         exclude = ('id')
+        
+class WritesResource(resources.ModelResource):
+    class Meta: 
+        model = Writes
+        exclude = ('id')
+        
