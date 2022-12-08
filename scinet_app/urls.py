@@ -4,4 +4,5 @@ from scinet_app import views
 
 urlpatterns = [
     path('main/', views.index),
+    path('main/register', views.register)
 ]
