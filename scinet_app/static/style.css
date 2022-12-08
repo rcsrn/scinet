@@ -1,5 +1,49 @@
 body {
-    background-color: rgb(13, 17, 23);;
+    background-color: rgb(13, 17, 23);
+}
+
+.register {
+    width: 300px;
+    margin: auto;
+}
+
+.title {
+    font-size: xx-large;
+    font-weight: bold;
+    color: rgb(192, 144, 77);
+}
+
+.form-container {
+    text-align: left;
+    color: rgb(120, 103, 81);
+    padding: 20px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.submit-button, 
+.cancel-button {
+    margin-top: 10px;
+    background-color: rgb(192, 144, 77);
+    border: 0px;
+    width: 70px;
+    height: 30px;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.submit-button{
+    float: right;
+}
+
+.submit-button:hover,
+.cancel-button:hover {
+    background-color: rgb(99, 90, 77);
+}
+
+.input-form {
+    margin-bottom: 10px;
+    width: 249px;
 }
 
 .top-container {
@@ -70,7 +114,6 @@ body {
     top: 1px;
     height: 15px;
 }
-
 
 .third-section-container {
     height: 25vh;

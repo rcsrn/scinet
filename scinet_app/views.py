@@ -11,9 +11,13 @@ def index(request):
 		else:
 			cited_publications[quote.publication_id] += 1
 
-	sorted_publications = sorted(cited_publications.items(), key=operator.itemgetter(1), reverse=True)
+	sorted_publications = sorted(cited_publications.items(), 
+                              key=operator.itemgetter(1), reverse=True)
 
 	return render(request, 'index.html', {'most_cited': sorted_publications})
+
+def register(request):
+    return render(request, 'register.html')
 
 def publication(request, publication_id):
 	publication = Publication.objects.get(publication_id=publication_id)
