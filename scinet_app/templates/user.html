@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>{{ user.username }}</title>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">   
+      </head>
+
+<body>
+    <div>
+        <h1 class="text-container">{{user.username}}</h1>
+        <h2 class="text-container">Publications:</h2>
+        <div class="text-container">
+            {%for publication in publications%}
+                <a href="{% url 'publication' publication.publication_id %}"> <p>{{publication.title}}</p> </a>
+            {%endfor%}
+    </div>
+</body>
+
+</html>

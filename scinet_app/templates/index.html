@@ -31,12 +31,24 @@
                 <circle cx="8" cy="8" r="7"/></g></svg>
                 </button>
                 <i class="fa fa-search"></i>
+                
+                <h2 class="text-container">Most cited:</h2>
+                <div class="text-container">
+                {%for publication in most_cited%}
+                <div class="text-container">
+                <a href="{% url 'publication' publication.0.publication_id %}"> <h3>{{publication.0.title}}</h3> </a>
+                <p>In {{publication.0.journal_id.name}}. Cited {{publication.1}} times</p>
+        </div>
+     {%endfor%}
+  </div>
         </div>
         <div class="third-section-container"></div>
     </div>
 
     <div class="bottom-container">
     </div>
+
+  </div>
 </body>
 
 </html>

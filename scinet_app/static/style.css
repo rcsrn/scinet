@@ -75,3 +75,7 @@ body {
 .third-section-container {
     height: 25vh;
 }
+
+.text-container {
+    color: rgb(255, 255, 255);    
+}
