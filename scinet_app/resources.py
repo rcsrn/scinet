@@ -47,5 +47,4 @@ class WritesResource(resources.ModelResource):
     class Meta: 
         model = Writes
         exclude = ('id')
-        import_id_fields = ('general_user_id',)
-        
+        import_id_fields = ('general_user_id', )
