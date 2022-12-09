@@ -37,13 +37,19 @@ def user(request, user_id):
 		publications.append(Publication.objects.get(publication_id=id))
 
 	return render(request, 'user.html', {'user': user, 'publications': publications})
+def login(request):
+    return render(request, 'login.html')
 
-def institution_info(request, institution_id):
-	institution = Institution.objects.get(institution_id = institution_id)
-	id_authors = Belongs.objects.filter(institution_id=institution_id).values_list('general_user_id', flat=True)
-	authors = Belongs.objects.filter()
-	publications = []
 
+def institution_info(request, insti_id):
+	institution = Institution.objects.get(institution_id=insti_id)
+	id_authors = Belongs.objects.filter(institution_id=insti_id).values_list('general_user_id', flat=True)
+	
+	authors = []
+	for i in id_authors:
+		authors.append(GeneralUser.objects.get(general_user_id=i))
+	
+	id_publications = []
 	for id in id_authors:
 		id_publications.extend(Writes.objects.filter(general_user_id=id).values_list('publication_id', flat=True))
 	
@@ -54,6 +60,3 @@ def institution_info(request, institution_id):
 	
 	context = {'institution' : institution, 'publications' : publications, 'authors' : authors}
 	return render(request , 'institution.html', context)
-
-def login(request):
-    return render(request, 'login.html')
