@@ -7,4 +7,7 @@ urlpatterns = [
     path('main/register', views.register),
     path('publication/<int:publication_id>/', views.publication, name='publication'),
     path('user/<int:user_id>/', views.user, name='user'),
+    path('main/', views.index),
+    path('main/register', views.register),
+    path('main/login', views.login)
 ]
