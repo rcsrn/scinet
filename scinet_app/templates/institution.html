@@ -23,8 +23,8 @@
         
         <div class="text-container">
             <div class="text-container">
-                {%for pub in publications%}
-            <a href="{% url 'publication' publication.0.publication_id %}"> 
+            {%for pub in publications%}
+            <a href="{% url 'publication' publication.publication_id %}"> 
                 <h3>{{pub.title}}</h3> 
             </a>
             {%endfor%}
