@@ -7,7 +7,19 @@
     font-size: 50px;
     color:white;
     padding-left: 30px;
-}
+    }
+    ul {
+  list-style-position: outside;
+    }
+    li {
+    list-style: none;
+    background: transparent no-repeat left center;
+    color: aliceblue;
+    padding-left: 20px; /* or whatever the width of your image is, plus a gap */
+    }
+    a:link{
+        color: aliceblue;
+    }
 </style>
 <html>
     <head>
@@ -24,7 +36,22 @@
         <div style="display: flex; justify-content: space-around">
             <div>
                 <h2 class="text-container", style="margin-left: 60px;">Authors</h2>
-                
+                <ul >
+                    {% for author in authors %}
+                    <li>
+                        <h1>
+                            <a class="nav-item nav-link text-light" href="../../main/author/{{author.general_user_id}}" style="color: lightgray;">
+                            {{author.institution_id}}
+                            </a>
+                        </h1>
+                          
+                    </li>  
+                    {%endfor%}
+                </ul>
+
+                {% for author in authors %}
+                <h3>{{author.first_name}}</h3> 
+                {% endfor %}
             </div>
 
             <div>
