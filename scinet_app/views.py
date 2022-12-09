@@ -42,6 +42,7 @@ def user(request, user_id):
 def institution_info(request, institution_id):
 	institution = Institution.objects.get(institution_id = institution_id)
 	id_authors = Belongs.objects.filter(institution_id=institution_id).values_list('general_user_id', flat=True)
+	authors = Belongs.objects.filter()
 	publications = []
 	for id in id_authors:
 		publications.extend(Writes.objects.filter(general_user_id=id).values_list('publication_id', flat=True))

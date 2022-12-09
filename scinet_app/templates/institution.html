@@ -11,23 +11,39 @@
 </style>
 <html>
     <head>
-        <h1>{{institution.name}}</h1>
+        <h1>Institution: {{institution.name}}</h1>
         <link rel="stylesheet" href="{% static 'style.css' %}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">   
       </head>
 
+      <hr class="solid">
     <body>
-        <h2 class="text-container", style="margin-left: 60px;">Publications</h2>
+
+        <div style="display: flex; justify-content: space-around">
+            <div>
+                <h2 class="text-container", style="margin-left: 60px;">Authors</h2>
+                
+            </div>
+
+            <div>
+                <h2 class="text-container", style="margin-left: 60px;">Publications</h2>
+                {%if publications.len == 0%}
+                <p>No publications</p>
+                {%endif%}
+                {%for publication in publications%}
+                <h3>{{publication.title}}</h3> 
+                <!-- <a href="{% url 'publication' publication.publication_id %}"> 
+                    
+                </a> -->
+                {%endfor%}
+            </div>
+        </div>
         
         <div class="text-container">
             <div class="text-container">
-            {%for pub in publications%}
-            <a href="{% url 'publication' publication.publication_id %}"> 
-                <h3>{{pub.title}}</h3> 
-            </a>
-            {%endfor%}
+            
         </div>
         
     </body>
