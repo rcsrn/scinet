@@ -35,7 +35,7 @@
 
         <div style="display: flex; justify-content: space-around">
             <div>
-                <h2 class="text-container", style="margin-left: 60px;">Authors</h2>
+                <h2 class="text-container", style="margin-left: 60px;">Authors</h2>s
                 <ul >
                     {% for author in authors %}
                     <li>
@@ -70,11 +70,7 @@
         
         <div class="text-container">
             <div class="text-container">
-            {%for pub in publications%}
-            <a href="{% url 'publication' publication.publication_id %}"> 
-                <h3>{{pub.title}}</h3> 
-            </a>
-            {%endfor%}
+            
         </div>
         
     </body>
