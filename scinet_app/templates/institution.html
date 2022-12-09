@@ -8,6 +8,10 @@
     color:white;
     padding-left: 30px;
     }
+    h3{
+        color: antiquewhite;
+        font: Serif;
+    }
     ul {
   list-style-position: outside;
     }
@@ -39,11 +43,11 @@
                 <ul >
                     {% for author in authors %}
                     <li>
-                        <h1>
-                            <a class="nav-item nav-link text-light" href="../../main/author/{{author.general_user_id}}" style="color: lightgray;">
-                            {{author.institution_id}}
+                      
+                            <a class="nav-item nav-link text-light" href="../../main/author/{{author.general_user_id}}">
+                                <h3>{{author.institution_id}}</h3>
                             </a>
-                        </h1>
+                       
                           
                     </li>  
                     {%endfor%}
