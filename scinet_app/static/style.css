@@ -13,6 +13,13 @@ body {
     color: rgb(192, 144, 77);
 }
 
+.h1{
+    text-align: left;
+    font-size: 50px;
+    color:rgb(192, 144, 77) ;
+    padding-left: 30px;
+}
+
 .form-container {
     text-align: left;
     color: rgb(120, 103, 81);
