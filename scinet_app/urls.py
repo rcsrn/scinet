@@ -8,4 +8,5 @@ urlpatterns = [
     path('publication/<int:publication_id>/', views.publication, name='publication'),
     path('user/<int:user_id>/', views.user, name='user'),
     path('institution/<int:insti_id>', views.institution_info, name ='institution'),
+    path('main/login', views.login)
 ]

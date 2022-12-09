@@ -54,3 +54,6 @@ def institution_info(request, institution_id):
 	
 	context = {'institution' : institution, 'publications' : publications, 'authors' : authors}
 	return render(request , 'institution.html', context)
+
+def login(request):
+    return render(request, 'login.html')
