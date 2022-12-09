@@ -2,7 +2,7 @@ from django.db import models
 
 class Belongs(models.Model):
     institution_id = models.ForeignKey('Institution', on_delete=models.CASCADE)
-    general_user_id = models.ForeignKey('Generaluser', on_delete=models.CASCADE)
+    general_user_id = models.ForeignKey('GeneralUser', on_delete=models.CASCADE)
 
     class Meta:
         managed = True

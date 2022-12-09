@@ -1,4 +1,5 @@
 from django.contrib import admin
+from import_export.admin import ImportExportModelAdmin
 
 from .models import Institution
 from .models import GeneralUser
@@ -8,7 +9,6 @@ from .models import Writes
 from .models import Belongs
 from .models import Quotes
 from .resources import *
-from import_export.admin import ImportExportModelAdmin
         
 class InstitutionAdmin(ImportExportModelAdmin):
     resource_class = InstitutionResource

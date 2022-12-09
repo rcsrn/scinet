@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>{{ publication.title }}</title>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">   
+      </head>
+
+<body>
+    <div class="left-bar-container">
+        <h2 class="left-bar-title">Authors:</h2>
+        {%for author in authors%}
+                <a href="{% url 'user' author.general_user_id %}"> <p class="link-container">{{author.last_name}} {{author.first_name}}</p> </a>
+            {%endfor%}
+    </div>
+
+    <div class="main-container">
+        <h1 style="color: rgb(192, 144, 77); font-size: 50px">{{publication.title}}</h1>
+        <h1 class="info-container"> Journal: {{publication.journal_id.name}}</h1>
+        <h1 class="info-container"> Publication date: {{publication.publication_date}}</h1>
+    </div>
+</body>
+
+<div class="bottom-container">
+    <a href="{% url 'index' %}"> <button class="register-button">Home</button> </a>
+    <button class="register-button" onclick="history.go(-1)">Return</button>
+</div>
+
+</html>

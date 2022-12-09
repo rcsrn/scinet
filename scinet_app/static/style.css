@@ -2,82 +2,169 @@ body {
     background-color: rgb(13, 17, 23);
 }
 
-.top-section {
+.register {
+    width: 300px;
+    margin: auto;
+}
+
+.title {
+    font-size: xx-large;
+    font-weight: bold;
+    color: rgb(192, 144, 77);
+}
+
+.form-container {
+    text-align: left;
+    color: rgb(120, 103, 81);
+    padding: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 1px;
+}
+
+.submit-button, 
+.cancel-button {
+    margin-top: 10px;
+    background-color: rgb(192, 144, 77);
+    border: 0px;
+    width: 70px;
+    height: 30px;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.submit-button{
+    float: right;
+}
+
+.submit-button:hover,
+.cancel-button:hover {
+    background-color: rgb(99, 90, 77);
+}
+
+.input-form {
+    margin-bottom: 10px;
+    width: 249px;
+}
+
+.top-container {
+    height: 10vh;
     text-align: right;
 }
 
-.register-button {
-    font-size: 20px;
-    font-weight: bold;
-    width: 92px;
-    height: 52px;
-    border: none;
-    border-radius: 25px;
-    background-color:rgb(170, 153, 130);
+.register-button, 
+.login-button {
+    background-color: rgb(120, 103, 81);
     cursor: pointer;
-    margin-right: 25px;
+    border-radius: 100px;
+    border: none;
+    width: 75px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 22px;
     margin-top: 15px;
 }
 
-.log-in-button {
-    font-size: 20px;
-    font-weight: bold;
-    width: 88px;
-    height: 52px;
-    border: none;
-    border-radius: 25px;
-    background-color:rgb(170, 153, 130);
-    cursor: pointer;
-    margin-right: 25px;
-    margin-top: 15px;
+.register-button:hover, 
+.login-button:hover {
+    background-color: rgb(99, 90, 77);
+}
+
+.second-section-container {
+    text-align: center;
+    height: 50vh;
 }
 
 .logo {
-    font-family: 'Fredoka One', cursive;
-    font-size: 100px;
-    font-weight: normal;
-    text-align: center;
-    color:rgb(192, 144, 77);
-    margin-top: 50px;
+    margin-top: 0px;
     margin-bottom: 10px;
-    text-shadow: 10px 1px 10px rgb(10, 10, 10);
+    font-size: 90px;
+    font-family: 'Fredoka One', cursive;
+    color:rgb(192, 144, 77);
 }
 
 .search-bar {
-    text-align: left;
-    display: block;
-    margin: 0 auto;
-    font-size: 15px;
-    padding: 0px, 1003px, 1513px;
-    width: 500px;
+    text-indent: 10px;
+    font-size: 18px;
+    width: 528px;
     height: 25px;
-    background-color: rgb(235, 235, 235);
-    border: 1px solid rgb(0, 0, 0);
-    float: left;
-    position: relative;
-    left: 31%;
+    border: none;
+    border-radius: 10px;
+    padding: 0px 35px 0px 0px;
 }
 
-.submit-button {
-    width: 40px;
-    height: 29px;
-    padding: 0px, 1003px, 1513px;
+.search-button {
+    vertical-align: center;
+    width: 25px;
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    right: 40px;
     cursor: pointer;
+    background-color: rgb(255, 255, 255);
+}
+
+.search-button:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+.search-icon {
     position: relative;
-    left: 31%;
+    top: 1px;
+    height: 15px;
 }
 
-.knowledge-phrase {
+.third-section-container {
+    height: 25vh;
+}
+
+.text-container {
+    color: rgb(255, 255, 255);    
+}
+
+.main-container {
     text-align: center;
+    margin-top: 70px;
+    color: rgb(255, 255, 255);
+}
+
+.link-container {
+    margin-top: 10px;
     font-size: 25px;
-    color: rgb(170, 170, 170);
-    margin-top: 15px;
+    color: rgb(192, 144, 77);
 }
 
-.most-cited {
-    color: azure;
+.left-bar-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
 }
 
-.articles {
-    color: azure;
+.left-bar-container {
+    position: absolute;
+    left: 15%;
+    top: 300px;
+    text-align: center;
+    width: 200px;
+    border-right: 1px solid rgb(255, 255, 255);
+    border-left: 1px solid rgb(255, 255, 255);
+    border-top: 1px solid rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.info-container {
+    margin-top: 70px;
+    color: rgb(255, 255, 255);
+}
+
+.bottom-container {
+    height: 10vh;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    bottom: 1%;
+    left: 5%;
 }

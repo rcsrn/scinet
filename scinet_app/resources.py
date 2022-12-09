@@ -1,5 +1,5 @@
 from .models import Institution
-from .models import Generaluser
+from .models import GeneralUser
 from .models import Journal
 from .models import Publication
 from .models import Writes
@@ -27,7 +27,7 @@ class PublicationResource(resources.ModelResource):
         
 class GeneraluserResource(resources.ModelResource):
     class Meta: 
-        model = Generaluser
+        model = GeneralUser
         import_id_fields = ('general_user_id')
         exclude = ('id')
         

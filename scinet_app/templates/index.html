@@ -1,46 +1,53 @@
 {% load static %}
 <!DOCTYPE html>
+
 <html>
-   <head>
-       <title>Scinet</title>
-       <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{% static 'style.css' %}">
-   </head>
+  <head>
+    <title>Scinet</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">   
+  </head>
+  
+<body>
+    <div class="top-container">
+            <button class="register-button" onclick="location.href = 'register'">Register</button>
+            <button class="login-button" onclick="location.href = 'login'">Log-in</button>
+    </div>
 
+    <div class="middle-container">
+        <div class="first-section-container">
+        </div>
+        <div class="second-section-container">
+          <p class="logo">SCINET</p>
+          <input class="search-bar" type="text" placeholder="Search">
+            <button class="search-button" type="submit">
+              <svg class="search-icon" aria-labelledby="title desc" role="img" 
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7">
+              <title id="title">Search Icon</title>
+              <desc id="desc">A magnifying glass icon.</desc>
+              <g class="search-path" fill="none" stroke="black" stroke-width="2">
+                <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/>
+                <circle cx="8" cy="8" r="7"/></g></svg>
+                </button>
+                <i class="fa fa-search"></i>
+                
+                <h2 class="text-container">Most cited:</h2>
+                <div class="text-container">
+                {%for publication in most_cited%}
+                <div class="text-container">
+                <a href="{% url 'publication' publication.0.publication_id %}"> <h3>{{publication.0.title}}</h3> </a>
+                <p>In {{publication.0.journal_id.name}}. Cited {{publication.1}} times</p>
+        </div>
+     {%endfor%}
+  </div>
+        </div>
+        <div class="third-section-container"></div>
+    </div>
+    <div class="bottom-container">
+    </div>
 
-   <body>
-      <div class="top-section">
-         <button class="register-button">
-            Register
-         </button>
-         <button class="log-in-button">
-            Log-in
-         </button>
-      </div>
-
-      <div class="general">
-         <h1 class="logo">
-            SCINET
-         </h1>
-         <input class="search-bar" type="text" placeholder="Search">
-         <button class="submit-button" type="submit"></button>
-         <p class="knowledge-phrase">
-            knowledge as a human right
-         </p>
-      </div>
-
-
-      <h2 class="most-cited">Most cited:</h2>
-      <div class="articles">
-         {%for publication in most_cited%}
-            <div class="article">
-               <h3>{{publication.0.title}}</h3>
-               <p>In {{publication.0.journal.name}}. Cited {{publication.1}} times</p>
-            </div>
-         {%endfor%}
-      </div>
-   </body>
-
+  </div>
+</body>
 </html>
