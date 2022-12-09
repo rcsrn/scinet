@@ -40,6 +40,9 @@ def user(request, user_id):
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2097ac6 (Added authors list, must fix href problem)
 def institution_info(request, insti_id):
 	institution = Institution.objects.get(institution_id=insti_id)
 	id_authors = Belongs.objects.filter(institution_id=insti_id).values_list('general_user_id', flat=True)
