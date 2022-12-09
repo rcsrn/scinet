@@ -122,3 +122,48 @@ body {
 .text-container {
     color: rgb(255, 255, 255);    
 }
+
+.main-container {
+    text-align: center;
+    margin-top: 70px;
+    color: rgb(255, 255, 255);
+}
+
+.link-container {
+    margin-top: 10px;
+    font-size: 25px;
+    color: rgb(192, 144, 77);
+}
+
+.left-bar-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.left-bar-container {
+    position: absolute;
+    left: 15%;
+    top: 300px;
+    text-align: center;
+    width: 200px;
+    border-right: 1px solid rgb(255, 255, 255);
+    border-left: 1px solid rgb(255, 255, 255);
+    border-top: 1px solid rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.info-container {
+    margin-top: 70px;
+    color: rgb(255, 255, 255);
+}
+
+.bottom-container {
+    height: 10vh;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    bottom: 1%;
+    left: 5%;
+}
