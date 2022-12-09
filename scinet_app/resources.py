@@ -28,13 +28,14 @@ class PublicationResource(resources.ModelResource):
 class GeneraluserResource(resources.ModelResource):
     class Meta: 
         model = GeneralUser
-        import_id_fields = ('general_user_id')
         exclude = ('id')
+        import_id_fields = ('general_user_id',)
         
 class BelongsResource(resources.ModelResource):
     class Meta: 
         model = Belongs
         exclude = ('id')
+        import_id_fields = ('institution_id', )
         
 class QuotesResource(resources.ModelResource):
     class Meta: 
@@ -46,4 +47,5 @@ class WritesResource(resources.ModelResource):
     class Meta: 
         model = Writes
         exclude = ('id')
+        import_id_fields = ('general_user_id',)
         
