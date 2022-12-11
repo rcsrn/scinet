@@ -1,6 +1,7 @@
 .top-container {
     height: 72px;
     border-bottom: 0.2px solid rgb(190, 190, 190);
+    position: sticky;
 }
 
 .logo-container {
@@ -84,3 +85,4 @@
     color: rgb(0, 30, 29);
     margin-top: 100px;
 }
+
