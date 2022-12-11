@@ -15,7 +15,7 @@
     font-weight: 500;
     font-size: 26px;
     margin-bottom: 0px;
-    margin-left: 130px;
+    margin-left: 170px;
     position: relative;
     bottom: 12px;
 }
@@ -23,7 +23,7 @@
 .login-button-container {
     float:right;
     display: inline-block;
-    margin-right: 70px;
+    margin-right: 160px;
     position: relative;
     top: 13px;
 }
@@ -70,6 +70,7 @@
 .main-image {
     width: 400px;
     margin-left: 120px;
+    margin-top: 60px;
 }
 
 .search-container {
@@ -112,4 +113,26 @@
     
 }
 
+.search-button {
+    height: 37px;
+    width: 29px;
+    position: relative;
+    right: 40px;
+    top:2px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
 
+.search-icon-container {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.search-icon {
+    vertical-align: center;
+    height: 19px;
+    position: relative;
+    top:2px;
+    right: 5px;
+}
