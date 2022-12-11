@@ -4,12 +4,30 @@
 <html>
   <head>
     <title>Scinet</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
   </head>
   
   <body>
-    <div class="top-container"></div>
-    <div class="middle-container"></div>
+    <div class="top-container">
+      <div class="logo-container">
+	<p class="logo">SCINET</p>
+      </div>
+       <div class="register-button-container">
+	 <button class="register-button">Register</button>
+       </div>
+       <div class="register-button-container">
+	 <button class="login-button">Log in</button>
+      </div>
+     
+    </div>
+    <div class="middle-container">
+      <div class="main-image-container">
+	<img class="main-image" src="{% static 'images/main.svg' %}">
+      </div>
+      <div class="search-container">
+	<p class="search-phrase">Search Publications</p>
+      </div>
+    </div>
     <div class="bottom-container"></div>
   </body>
 </html>

@@ -68,3 +68,19 @@
     height: 380px;
     margin-left: 50px;
 }
+
+.search-container {
+    text-align: center;
+    vertical-align: top;
+    width: 65%;
+    display: inline-block;
+}
+
+.search-phrase {
+    display: inline-block;
+    font-size: 40px;
+    font-family: Montserrat, "sans-serif";
+    font-weight: 700;
+    color: rgb(0, 30, 29);
+    margin-top: 100px;
+}
