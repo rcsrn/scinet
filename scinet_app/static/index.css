@@ -98,15 +98,18 @@
 }
 
 .search-bar-container {
-
+    display: inline-block;
+    margin-left: 230px;
+    border: 1px solid rgb(17, 17, 17);
+    padding: 10px 45px 10px 20px;
 }
 
 .search-bar {
-    font-size: 100%;
-    width: 429px;
-    height: 22px;
-    padding: 10px 0px 10px 0px;
-    margin-left: 230px;
+    font-size: 20px;
+    width: 400px;
+    height: 20px;
+    border: none;
+    
 }
 
 
