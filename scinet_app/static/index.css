@@ -1,11 +1,12 @@
 .top-container {
     height: 72px;
+    border-bottom: 0.2px solid rgb(190, 190, 190);
 }
 
 .logo-container {
     margin-left:85px;
     display: inline-block;
-    margin-right: 1000px;
+    margin-right: 1020px;
 }
 
 .logo {
@@ -29,6 +30,9 @@
     vertical-align: center;
     cursor: pointer;
     border: none;
+    margin-right: 23px;
+    position: relative;
+    bottom: 12px;
 }
 
 .login-button {
@@ -39,10 +43,12 @@
     vertical-align: center;
     cursor: pointer;
     border: none;
+    position: relative;
+    bottom: 12px;
 }
 
 .login-button:hover,
 .register-button:hover {
-    
+    text-decoration: underline;
 }
 
