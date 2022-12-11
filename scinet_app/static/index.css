@@ -1,7 +1,8 @@
 .top-container {
     height: 72px;
+    text-align: right;
     border-bottom: 0.2px solid rgb(190, 190, 190);
-    position: sticky;
+ 
 }
 
 .logo-container {
@@ -49,6 +50,7 @@
     border: none;
     position: relative;
     bottom: 12px;
+    margin-right: 60px;
 }
 
 .login-button:hover,
