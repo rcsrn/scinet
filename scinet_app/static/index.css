@@ -1,0 +1,16 @@
+.top-container {
+    height: 720px;
+}
+
+.logo-container {
+    margin-left:85px;
+}
+
+
+.logo {
+    color: rgb(64, 186, 155);
+    font-family: Montserrat, "sans-serif";
+    font-weight: 500;
+    font-size: 26px;
+    margin-bottom: 0px;
+}
