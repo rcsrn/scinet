@@ -37,6 +37,7 @@ def user(request, user_id):
 		publications.append(Publication.objects.get(publication_id=id))
 
 	return render(request, 'user.html', {'user': user, 'publications': publications})
+
 def login(request):
     return render(request, 'login.html')
 
