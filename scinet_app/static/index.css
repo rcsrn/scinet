@@ -13,9 +13,12 @@
     vertical-align: center;
     color: rgb(64, 186, 155);
     font-family: Montserrat, "sans-serif";
+    margin-left: 70px;
     font-weight: 500;
     font-size: 26px;
     margin-bottom: 0px;
+    position: relative;
+    bottom: 12px;
 }
 
 .register-button-container {
@@ -52,3 +55,16 @@
     text-decoration: underline;
 }
 
+.middle-container {
+    height: 400px;
+}
+
+.main-image-container {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.main-image {
+    height: 380px;
+    margin-left: 50px;
+}
