@@ -97,4 +97,11 @@
     top: 50%;
 }
 
+.search-bar {
+    font-size: 100%;
+    width: 429px;
+    height: 22px;
+    padding: 10px 0px 10px 0px;
+}
+
 
