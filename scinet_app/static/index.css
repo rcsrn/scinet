@@ -1,17 +1,13 @@
-.top-container {
-    height: 72px;
-    text-align: right;
-    border-bottom: 0.2px solid rgb(190, 190, 190);
- 
+.top {
+    border-bottom: 1px solid rgb(190, 190, 190);
 }
 
 .logo-container {
-    margin-left:85px;
     display: inline-block;
-    margin-right: 1020px;
 }
 
 .logo {
+    display: inline-block;
     vertical-align: center;
     color: rgb(64, 186, 155);
     font-family: Montserrat, "sans-serif";
@@ -19,25 +15,17 @@
     font-weight: 500;
     font-size: 26px;
     margin-bottom: 0px;
+    margin-left: 130px;
     position: relative;
     bottom: 12px;
 }
 
-.register-button-container {
+.login-button-container {
+    float:right;
     display: inline-block;
-}
-
-.register-button {
-    background-color: white;
-    font-weight: bold;
-    font-size: 16px;
-    color: rgb(109, 105, 104);
-    vertical-align: center;
-    cursor: pointer;
-    border: none;
-    margin-right: 23px;
+    margin-right: 70px;
     position: relative;
-    bottom: 12px;
+    top: 13px;
 }
 
 .login-button {
@@ -45,12 +33,26 @@
     font-weight: bold;
     font-size: 16px;
     color: rgb(64, 186, 155);
-    vertical-align: center;
     cursor: pointer;
     border: none;
+}
+
+.register-button-container {
+    float: right;
+    display: inline-block;
     position: relative;
-    bottom: 12px;
-    margin-right: 60px;
+    top: 13px;
+}
+
+.register-button {
+    margin-right: 15px;
+    color: rgb(109, 105, 104);
+    background-color: white;
+    font-weight: bold;
+    font-size: 16px;
+    color: rgb(109, 105, 104);
+    cursor: pointer;
+    border: none;
 }
 
 .login-button:hover,
@@ -58,33 +60,41 @@
     text-decoration: underline;
 }
 
-.middle-container {
-    height: 400px;
-}
 
 .main-image-container {
     display: inline-block;
-    margin-top: 15px;
+    width: 500px;
+    height:419px;
 }
 
 .main-image {
-    height: 380px;
-    margin-left: 50px;
+    width: 400px;
+    margin-left: 110px;
 }
 
 .search-container {
-    text-align: center;
-    vertical-align: top;
-    width: 65%;
     display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 504px);
+    height: 419px;
 }
+
+.search-phrase-container {
+    height: 50%;
+}
+
 
 .search-phrase {
     display: inline-block;
     font-size: 40px;
-    font-family: Montserrat, "sans-serif";
-    font-weight: 700;
     color: rgb(0, 30, 29);
-    margin-top: 100px;
+    font-weight:bold;
+    font-family: Montserrat;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 250px;
+    position: relative;
+    top: 50%;
 }
+
 
