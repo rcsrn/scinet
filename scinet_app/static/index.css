@@ -116,6 +116,7 @@ body {
     font-weight:bold;
     font-family: Montserrat;
     position: relative;
+    margin-bottom: 15px;
 }
 
 .search-bar-container {
@@ -123,6 +124,7 @@ body {
     padding: 20px 90px 15px 20px;
     border-radius: 5px;
     position: absolute;
+    left: 5px;
 }
 
 .search-bar {
@@ -164,5 +166,12 @@ body {
     color: rgb(0, 30, 29);
     position: absolute;
     left: 180px;
+
+}
+
+.p2 {
+    font-size: 30px;
+    font-family: Montserrat;
+    margin-top: 0px;
 
 }
