@@ -1,3 +1,7 @@
+body {
+    padding-bottom: 600px;
+}
+
 .top {
     border-bottom: 1px solid rgb(190, 190, 190);
 }
@@ -136,4 +140,17 @@
     position: relative;
     top:2px;
     right: 5px;
+}
+
+.connect-phrase-container {
+    display: inline-block;
+    width:45vw;
+    margin-left: 100px;
+}
+
+.connect-phrase {
+    font-size: 53px;
+    font-weight: bold;
+    font-family: Montserrat;
+    color: rgb(0, 30, 29);
 }
