@@ -4,13 +4,14 @@ body {
 }
 
 .top {
-    border-bottom: 1px solid rgb(190, 190, 190);
+    border-bottom: 1px solid rgb(209, 209, 209);
     position: fixed;
     top: 0px;
     right: 0px;
     left: 0px;
     height: 70px;
     background-color: white;
+    z-index: 100;
 }
 
 .logo-container {
@@ -32,11 +33,10 @@ body {
 }
 
 .login-button-container {
-    float:right;
     display: inline-block;
-    margin-right: 160px;
-    position: relative;
-    top: 13px;
+    position: absolute;
+    top: 22px;
+    right: 180px;
 }
 
 .login-button {
@@ -49,10 +49,10 @@ body {
 }
 
 .register-button-container {
-    float: right;
     display: inline-block;
-    position: relative;
-    top: 13px;
+    position: absolute;
+    top: 22px;
+    right: 250px;
 }
 
 .register-button {
