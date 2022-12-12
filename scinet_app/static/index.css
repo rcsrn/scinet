@@ -79,7 +79,7 @@ body {
 
 .first-section {
     display: grid;
-    grid-template-columns: 50% 1fr;
+    grid-template-columns: 50% 50%;
 }
 
 .main-image-container {
@@ -94,15 +94,12 @@ body {
     right: 168px;   
 }
 
-.outer-search-pharase-container,
-.outer-search-bar-container {
-    position: relative;
-}
 
 .search-container {
     display: grid;
-    grid-template-rows: 300px 300px;
+    grid-template-rows: 250px 300px;
     position: relative;
+    height: 500px;
 }
 
 .search-phrase-container {
@@ -116,6 +113,7 @@ body {
     font-weight:bold;
     font-family: Montserrat;
     position: relative;
+    left: 10px;
     margin-bottom: 15px;
 }
 
@@ -125,6 +123,7 @@ body {
     border-radius: 5px;
     position: absolute;
     left: 5px;
+    
 }
 
 .search-bar {
@@ -153,24 +152,34 @@ body {
 }
 
 .connect-phrase-container {
-    display: inline-block;
-    width:45vw;
-    margin-left: 100px;
+    position: relative;
+    margin-left: 80px;
+    width: 50%;
 }
 
 .connect-phrase {
-    width: 800px;
     font-size: 50px;
     font-weight: bold;
+    width: 500px;
     font-family: Montserrat;
     color: rgb(0, 30, 29);
-    position: absolute;
-    left: 140px;
     margin-top: 0px;
+    display: inline-block;
+    margin-left: 0px;
+    position: absolute;
+    left: 60px;
 }
 
 .p2 {
     font-size: 28px;
     font-family: Montserrat;
     margin-top: 0px;
+    position: relative;
+    left: 10px;
+}
+
+.second-section {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    position: relative;
 }
