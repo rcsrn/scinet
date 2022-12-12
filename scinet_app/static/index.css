@@ -42,7 +42,7 @@ body {
 .login-button {
     background-color: white;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 20px;
     color: rgb(64, 186, 155);
     cursor: pointer;
     border: none;
@@ -60,7 +60,7 @@ body {
     color: rgb(109, 105, 104);
     background-color: white;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 20px;
     color: rgb(109, 105, 104);
     cursor: pointer;
     border: none;
