@@ -1,15 +1,14 @@
 body {
-    padding-bottom: 600px;
+    height: 1300px;
 }
-
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
 
 .top {
     border-bottom: 1px solid rgb(190, 190, 190);
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    background-color: white;
 }
 
 .logo-container {
