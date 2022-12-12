@@ -72,83 +72,82 @@ body {
 }
 
 
+.middle {
+    display: grid;
+    grid-row-gap: 80px;
+}
+
+.first-section {
+    display: grid;
+    grid-template-columns: 50% 1fr;
+}
+
 .main-image-container {
-    display: inline-block;
-    width: 500px;
-    height:419px;
+    position: relative;
+    height: 600px;
 }
 
 .main-image {
-    width: 450px;
-    margin-left: 120px;
-    margin-top: 60px;
+    width: 580px;
+    position: absolute;
+    top: 10px;
+    right: 168px;   
+}
+
+.outer-search-pharase-container,
+.outer-search-bar-container {
+    position: relative;
 }
 
 .search-container {
-    display: inline-block;
-    vertical-align: top;
-    width: calc(100% - 504px);
-    height: 419px;
+    display: grid;
+    grid-template-rows: 300px 300px;
+    position: relative;
 }
 
 .search-phrase-container {
-    height: 50%;
+    position: absolute;
+    bottom:50%;
 }
 
-
 .search-phrase {
-    display: inline-block;
-    font-size: 40px;
+    font-size: 60px;
     color: rgb(0, 30, 29);
     font-weight:bold;
     font-family: Montserrat;
-    margin-bottom: 0px;
-    margin-top: 0px;
     position: relative;
-    left: 350px;
-    top: 50%;
 }
 
 .search-bar-container {
-    display: inline-block;
-    margin-left: 230px;
     border: 1px solid rgb(168, 166, 166);
-    padding: 20px 90px 20px 20px;
+    padding: 20px 90px 15px 20px;
     border-radius: 5px;
-    position: relative;
-    left: 118px;
+    position: absolute;
 }
 
 .search-bar {
-    font-size: 20px;
-    width: 420px;
+    margin-top: 5px;
+    font-size: 25px;
+    width: 450px;
     height: 20px;
     border: none;
     outline: none;
 }
 
+
 .search-button {
     height: 37px;
     width: 29px;
-    position: relative;
-    left: 70px;
-    top:15px;
     background-color: white;
     border: none;
     cursor: pointer;
 }
 
-.search-icon-container {
-    display: inline-block;
-    vertical-align: top;
-}
-
 .search-icon {
-    vertical-align: center;
-    height: 19px;
-    position: relative;
-    top:2px;
-    right: 5px;
+    height: 25px;
+    position: absolute;
+    bottom: 28px;
+    right: 35px;
 }
 
 .connect-phrase-container {
@@ -158,8 +157,12 @@ body {
 }
 
 .connect-phrase {
-    font-size: 53px;
+    width: 800px;
+    font-size: 60px;
     font-weight: bold;
     font-family: Montserrat;
     color: rgb(0, 30, 29);
+    position: absolute;
+    left: 180px;
+
 }
