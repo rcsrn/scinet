@@ -8,7 +8,7 @@
   </head>
 
   <body>
-    <div class="top">
+    <div class="top" id="top-id">
       <div class="logo-container">
 	<p class="logo">SCINET</p>
       </div>
@@ -51,6 +51,22 @@
       </div>
 
     </div>
+
+    <script>
+      window.onscroll = function() {myFunction()};
+      
+      var top = document.getElementById("top-id");
+      var sticky = header.offsetTop;
+      
+      function myFunction() {
+        if (window.pageYOffset > sticky) {
+          header.classList.add("sticky");
+        } else {
+          header.classList.remove("sticky");
+        }
+      }
+      </script>
+
   </body>
   
 </html>

@@ -2,6 +2,12 @@ body {
     padding-bottom: 600px;
 }
 
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
 .top {
     border-bottom: 1px solid rgb(190, 190, 190);
 }
