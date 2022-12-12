@@ -25,10 +25,10 @@ body {
     font-family: Montserrat, "sans-serif";
     margin-left: 70px;
     font-weight: 500;
-    font-size: 26px;
+    font-size: 36px;
     margin-bottom: 0px;
     margin-left: 170px;
-    position: relative;
+    position: absolute  ;
     bottom: 12px;
 }
 
