@@ -164,11 +164,9 @@ body {
 .connect-phrase {
     font-size: 50px;
     font-weight: bold;
-    width: 500px;
     font-family: Montserrat;
     color: rgb(0, 30, 29);
     margin-top: 0px;
-    display: inline-block;
     margin-left: 0px;
     position: absolute;
     left: 150px;
