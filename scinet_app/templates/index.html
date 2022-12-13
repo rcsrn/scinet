@@ -13,10 +13,10 @@
 	<p class="logo">SCINET</p>
       </div>
       <div class="login-button-container">
-	<button class="login-button">Log in</button>
+	<button class="login-button" onclick="location.href='login'">Log in</button>
       </div>
       <div class="register-button-container">
-	<button class="register-button">Register</button>
+	<button class="register-button" onclick="location.href='register'">Register</button>
       </div>
     </div>
     
@@ -54,19 +54,15 @@
           <div class="connect-phrase-container">
             <p class="connect-phrase">Discover scientific knowledge</p>
           </div>
-	  <div class="visit-grid">
-	    <p class="visit-phrase">VISIT TOPIC PAGES</p>
-	    <div class="visit-subgrid">
-	      <button class ="visit-button">Math</button>
-	      <button class ="visit-button">Computer Science</button>
-	      <button class ="visit-button">Engineering</button>
-	      <button class ="visit-button">Biology</button>
-	      <button class ="visit-button">Physics</button>
-	      <button class ="visit-button">Medicine</button>
-	      <button class ="visit-button">Chemistry</button>
-	      <button class ="visit-button">Social Science</button>
-	      <button class ="visit-button">Other</button>
-	    </div>
+	  <div class="text-container">
+	    <p class="visit-phrase">Most cited:</p>
+	      {% for publication in most_cited %}
+        <div class="text-container">
+          <a href="{% url 'publication' publication.0.publication_id %}"> <h3>{{publication.0.title}}</h3> </a>
+          <p>Journal: {{publication.0.journal_id.name}}.</p> 
+          <p>Cited: {{publication.1}} times</p>
+        </div>
+        {% endfor %}
 	  </div>
 
 	  
