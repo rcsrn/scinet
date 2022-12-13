@@ -151,6 +151,11 @@ body {
     right: 35px;
 }
 
+.outer-search-bar-container {
+    height: 250px;
+}
+
+
 .connect-phrase-container {
     position: relative;
     margin-left: 80px;
