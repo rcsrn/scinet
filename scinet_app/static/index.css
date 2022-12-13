@@ -217,6 +217,7 @@ body {
     width: 80%;
     height: 30%;
     border-radius: 30px;
+    cursor: pointer;
 }
 
 .visit-button:hover {
