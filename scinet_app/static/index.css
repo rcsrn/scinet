@@ -185,3 +185,13 @@ body {
     grid-template-columns: 50% 50%;
     position: relative;
 }
+
+.visit-grid {
+    display: grid;
+    grid-auto-rows: 15% 1fr;
+}
+
+.visit-subgrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
