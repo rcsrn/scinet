@@ -189,9 +189,23 @@ body {
 .visit-grid {
     display: grid;
     grid-auto-rows: 15% 1fr;
+    margin-right: 190px;
+    margin-bottom: 20px;
 }
 
 .visit-subgrid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+.visit-button {
+    border: 3px solid rgb(64, 186, 155);
+    background-color: rgb(234, 234, 234);
+    width: 75%;
+    height: 30%;
+    border-radius: 30px;
+}
+
+.visit-button:hover {
+    background-color: rgb(221, 221, 221);
 }
