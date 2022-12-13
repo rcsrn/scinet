@@ -12,7 +12,12 @@
 
 <body>
     <div>
-        <h1 class="text-container">{{user.username}}</h1>
+        <h1 class="text-container">{{user.first_name}} {{user.last_name}}</h1>
+        <h1 class="text-container">Institutions:</h1>
+        <div class="text-container">
+            {%for institution in institutions%}
+                <a href="{% url 'institution' institution.institution_id %}"> <p>{{institution.name}}</p> </a>
+            {%endfor%}
         <h2 class="text-container">Publications:</h2>
         <div class="text-container">
             {%for publication in publications%}

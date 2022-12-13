@@ -35,8 +35,12 @@ def user(request, user_id):
 	publications = []
 	for id in id_publications:
 		publications.append(Publication.objects.get(publication_id=id))
-
-	return render(request, 'user.html', {'user': user, 'publications': publications})
+  
+	id_institutions = Belongs.objects.filter(general_user_id=user_id).values_list('institution_id', flat=True)
+	institutions = []
+	for id in id_institutions:
+		institutions.append(Institution.objects.get(institution_id=id))
+	return render(request, 'user.html', {'user': user, 'publications': publications, 'institutions': institutions})
 
 def login(request):
     return render(request, 'login.html')
