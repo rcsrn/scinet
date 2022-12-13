@@ -1,5 +1,5 @@
 body {
-    height: 1300px;
+    height: 1000px;
     padding-top: 70px;
 }
 
@@ -198,14 +198,28 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+.visit-phrase {
+    color: rgb(123, 123, 123);
+    font-size: 15px;
+    font-family: Montserrat, "sans-serif";
+    font-weight: bold;
+
+}
+
 .visit-button {
+    color: rgb(64, 186, 155);
+    font-size: 100%;
+    font-family: Montserrat;
+    font-weight: 500;
     border: 3px solid rgb(64, 186, 155);
-    background-color: rgb(234, 234, 234);
+    background-color: white;
     width: 75%;
     height: 30%;
     border-radius: 30px;
 }
 
 .visit-button:hover {
-    background-color: rgb(221, 221, 221);
+    background-color: rgb(234, 234, 234);
 }
+
+
