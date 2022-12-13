@@ -189,8 +189,9 @@ body {
 .visit-grid {
     display: grid;
     grid-auto-rows: 15% 1fr;
-    margin-right: 190px;
+    margin-right: 150px;
     margin-bottom: 20px;
+    
 }
 
 .visit-subgrid {
@@ -213,7 +214,7 @@ body {
     font-weight: 500;
     border: 3px solid rgb(64, 186, 155);
     background-color: white;
-    width: 75%;
+    width: 80%;
     height: 30%;
     border-radius: 30px;
 }
