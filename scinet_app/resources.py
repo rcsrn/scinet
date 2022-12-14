@@ -2,9 +2,7 @@ from .models import Institution
 from .models import GeneralUser
 from .models import Journal
 from .models import Publication
-from .models import Writes
-from .models import Belongs
-from .models import Quotes
+from .models import Topic
 from import_export import resources
 
 class InstitutionResource(resources.ModelResource):
@@ -31,20 +29,8 @@ class GeneraluserResource(resources.ModelResource):
         exclude = ('id')
         import_id_fields = ('general_user_id',)
         
-class BelongsResource(resources.ModelResource):
-    class Meta: 
-        model = Belongs
+class TopicResource(resources.ModelResource):
+    class Meta:
+        model = Topic
         exclude = ('id')
-        import_id_fields = ('institution_id', )
-        
-class QuotesResource(resources.ModelResource):
-    class Meta: 
-        model = Quotes
-        import_id_fields = ('publication_id', )
-        exclude = ('id')
-        
-class WritesResource(resources.ModelResource):
-    class Meta: 
-        model = Writes
-        exclude = ('id')
-        import_id_fields = ('general_user_id', )
+        import_id_fiels = ('topic_id')

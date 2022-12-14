@@ -5,23 +5,17 @@ from .models import Institution
 from .models import GeneralUser
 from .models import Journal
 from .models import Publication
-from .models import Writes
-from .models import Belongs
-from .models import Quotes
+from .models import Topic
 from .resources import *
         
 class InstitutionAdmin(ImportExportModelAdmin):
     resource_class = InstitutionResource
-    list_display = ['institution_id', 'name']
+    list_display = ['institution_id', 'name', 'creation_date', 'country']
 
 class GenerlaluserAdmin(ImportExportModelAdmin):
     resource_class = GeneraluserResource
     list_display = ["general_user_id", "username", "first_name", "last_name",
-                    "email", "password", "age", "is_alive", "is_author"]
-        
-class BelongsAdmin(ImportExportModelAdmin):
-    resource_class = BelongsResource
-    list_display = ["institution_id", "general_user_id"]
+                    "email", "password", "age"]
         
 class JournalAdmin(ImportExportModelAdmin):
     resource_class = JournalResource
@@ -29,20 +23,15 @@ class JournalAdmin(ImportExportModelAdmin):
         
 class PublicationAdmin(ImportExportModelAdmin):
     resource_class = PublicationResource
-    list_display = ["publication_id", "journal_id", "title", "publication_date"]
-        
-class QuotesAdmin(ImportExportModelAdmin):
-    resource_class = QuotesResource
-    list_display = ["publication_id", "publication_id"]
-        
-class WritesAdmin(ImportExportModelAdmin):
-    resource_class = WritesResource
-    list_display = ["general_user_id", "publication_id"]
+    list_display = ["publication_id", "journal_id", "title", "publication_date", 
+                    'content', 'doi']
 
+class TopicAdmin(ImportExportModelAdmin):
+    resource_class = TopicResource
+    list_display = ["topic_id", "name"]
+    
 admin.site.register(Institution,InstitutionAdmin)
 admin.site.register(GeneralUser,GenerlaluserAdmin)
 admin.site.register(Journal,JournalAdmin)
 admin.site.register(Publication,PublicationAdmin)
-admin.site.register(Writes,WritesAdmin)
-admin.site.register(Belongs,BelongsAdmin)
-admin.site.register(Quotes,QuotesAdmin)
+admin.site.register(Topic, TopicAdmin)

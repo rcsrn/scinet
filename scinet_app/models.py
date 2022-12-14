@@ -1,38 +1,5 @@
 from django.db import models
 
-class Belongs(models.Model):
-    institution_id = models.ForeignKey('Institution', on_delete=models.CASCADE)
-    general_user_id = models.ForeignKey('GeneralUser', on_delete=models.CASCADE)
-
-    class Meta:
-        managed = True
-        db_table = 'belongs'
-
-class GeneralUser(models.Model):
-    general_user_id = models.IntegerField(primary_key=True)
-    username = models.CharField(max_length=255)
-    first_name = models.CharField(max_length=255)
-    last_name = models.CharField(max_length=255)
-    email = models.CharField(max_length=255)
-    password = models.CharField(max_length=255)
-    age = models.IntegerField()
-    is_alive = models.BooleanField()
-    is_author = models.BooleanField()
-
-    class Meta:
-        managed = True
-        db_table = 'generaluser'
-
-
-class Institution(models.Model):
-    institution_id = models.IntegerField(primary_key=True)
-    name = models.CharField(max_length=255)
-
-    class Meta:
-        managed = True
-        db_table = 'institution'
-
-
 class Journal(models.Model):
     journal_id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=255)
@@ -40,31 +7,50 @@ class Journal(models.Model):
     class Meta:
         managed = True
         db_table = 'journal'
-
+        
+class Topic(models.Model):
+    topic_id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=255)
+    
+    class Meta:
+        managed = True
+        db_table = 'topic'
 
 class Publication(models.Model):
     publication_id = models.IntegerField(primary_key=True)
     journal_id = models.ForeignKey(Journal, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     publication_date = models.DateField()
+    content = models.TextField(blank=True)
+    doi = models.CharField(max_length=255)
+    topic = models.ManyToManyField(Topic, blank=True)
 
     class Meta:
         managed = True
         db_table = 'publication'
+        
 
-
-class Quotes(models.Model):
-    publication_id = models.ForeignKey(Publication, on_delete=models.CASCADE)
-    publication_id = models.ForeignKey(Publication, on_delete=models.CASCADE)
+class Institution(models.Model):
+    institution_id = models.IntegerField(primary_key=True)
+    creation_date = models.DateField()
+    country = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
 
     class Meta:
         managed = True
-        db_table = 'quotes'
+        db_table = 'institution'
 
-class Writes(models.Model):
-    general_user_id = models.ForeignKey(GeneralUser, on_delete=models.CASCADE)
-    publication_id = models.ForeignKey(Publication, on_delete=models.CASCADE)
-    
+class GeneralUser(models.Model):
+    general_user_id = models.IntegerField(primary_key=True)
+    username = models.CharField(max_length=20)
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    email = models.EmailField()
+    password = models.CharField(max_length=20)
+    age = models.IntegerField()
+    publications = models.ManyToManyField(Publication, blank=True)
+    institutions = models.ManyToManyField(Institution, blank=True)
+
     class Meta:
         managed = True
-        db_table = 'writes'
+        db_table = 'generaluser'
