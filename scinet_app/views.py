@@ -19,8 +19,8 @@ def index(request):
 
 # 	return render(request, 'index.html', {'most_cited': sorted_publications})
 
-# def register(request):
-#     return render(request, 'register.html')
+def register(request):
+    return render(request, 'register.html')
 
 # def publication(request, publication_id):
 # 	publication = Publication.objects.get(publication_id=publication_id)
@@ -45,8 +45,8 @@ def index(request):
 # 		institutions.append(Institution.objects.get(institution_id=id))
 # 	return render(request, 'user.html', {'user': user, 'publications': publications, 'institutions': institutions})
 
-# def login(request):
-#     return render(request, 'login.html')
+def login(request):
+    return render(request, 'login.html')
 
 
 # def institution_info(request, insti_id):

@@ -55,7 +55,7 @@
             <p class="connect-phrase">Discover scientific knowledge</p>
           </div>
 	  <div class="text-container">
-	    <p class="visit-phrase">Most cited:</p>
+	    <p class="visit-phrase">Featured:</p>
 	      {% for publication in most_cited %}
         <div class="text-container">
           <a href="{% url 'publication' publication.0.publication_id %}"> <h3>{{publication.0.title}}</h3> </a>
