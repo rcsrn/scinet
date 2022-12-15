@@ -88,7 +88,9 @@ body {
 }
 
 .main-image {
-    width: 100%;  
+    width: 500px;
+    margin-left: 100px;
+    margin-top: 10px;
 }
 
 
@@ -120,7 +122,7 @@ body {
 }
 
 .search-bar {
-    width: 90%;
+    width: 93%;
     margin-top: 5px;
     font-size: 20px;
     border: none;
@@ -138,7 +140,7 @@ body {
 
 .search-icon {
     height: 20px;
-    margin-right: 25px;
+    margin-right: 5px;
 }
 
 .outer-search-bar-container {
