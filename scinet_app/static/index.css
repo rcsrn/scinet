@@ -21,7 +21,7 @@ body {
 .logo {
     display: inline-block;
     vertical-align: center;
-    color: rgb(64, 186, 155);
+    color: rgb(84, 186, 219);
     font-family: Montserrat, "sans-serif";
     margin-left: 70px;
     font-weight: 500;
@@ -43,7 +43,7 @@ body {
     background-color: white;
     font-weight: bold;
     font-size: 15px;
-    color: rgb(64, 186, 155);
+    color: rgb(84, 186, 219);
     cursor: pointer;
     border: none;
 }
@@ -84,15 +84,11 @@ body {
 
 .main-image-container {
     grid-column: 1/3;
-    position: relative;
-    height: 500px;
+    height: 100%;
 }
 
 .main-image {
-    width: 430px;
-    position: absolute;
-    top: 10px;
-    right: 168px;   
+    width: 100%;  
 }
 
 
@@ -120,11 +116,13 @@ body {
     left: 5px;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+
+
     margin-right: 150px;
 }
 
 .search-bar {
+    width: 90%;
     margin-top: 5px;
     font-size: 25px;
     border: none;
@@ -142,8 +140,7 @@ body {
 
 .search-icon {
     height: 25px;
-    bottom: 23px;
-    right: 35px;
+    margin-right: 25px;
 }
 
 .outer-search-bar-container {
@@ -201,11 +198,11 @@ body {
 }
 
 .visit-button {
-    color: rgb(64, 186, 155);
+    color: rgb(84, 186, 219);
     font-size: 100%;
     font-family: Montserrat;
     font-weight: 500;
-    border: 3px solid rgb(64, 186, 155);
+    border: 3px solid rgb(84, 186, 219);
     background-color: white;
     width: 80%;
     height: 30%;
