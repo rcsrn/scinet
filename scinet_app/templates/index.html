@@ -54,15 +54,13 @@
           <div class="connect-phrase-container">
             <p class="connect-phrase">Discover scientific knowledge</p>
           </div>
-	  <div class="text-container">
-	    <p class="visit-phrase">Featured:</p>
-	      {% for publication in most_cited %}
-        <div class="text-container">
-          <a href="{% url 'publication' publication.0.publication_id %}"> <h3>{{publication.0.title}}</h3> </a>
-          <p>Journal: {{publication.0.journal_id.name}}.</p> 
-          <p>Cited: {{publication.1}} times</p>
-        </div>
+	  <div class="visit-container">
+	    <p class="visit-phrase">Topics:</p>
+    <div class="topic-button-container">
+	      {% for topic in topics %}
+          <button class="topic-button" onclick="location.href='login'">{{topic.name}}</button>
         {% endfor %}
+    </div>
 	  </div>
 
 	  

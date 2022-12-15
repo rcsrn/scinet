@@ -1,26 +1,21 @@
 from django.shortcuts import render
-from .models import Publication, GeneralUser, Institution
+from .models import Publication, GeneralUser, Institution, Topic
 import operator
 
-def index(request):
-    return render(request, 'index.html')
-
 # def index(request):
-# 	quotes = Quotes.objects.all()
-# 	cited_publications = {}
-# 	for quote in quotes:
-# 		if quote.publication_id not in cited_publications.keys():
-# 			cited_publications[quote.publication_id] = 1
-# 		else:
-# 			cited_publications[quote.publication_id] += 1
+#     return render(request, 'index.html')
 
-# 	sorted_publications = sorted(cited_publications.items(), 
-#                               key=operator.itemgetter(1), reverse=True)
-
-# 	return render(request, 'index.html', {'most_cited': sorted_publications})
+def index(request):
+    topics = Topic.objects.all()
+    return render(request, 'index.html', {'topics': topics.values()})
 
 def register(request):
     return render(request, 'register.html')
+
+def topic(request, topic_id):
+    topic = Topic.objects.get(topic_id=topic_id)
+    publications = Publication.objects.filter(topic=topic_id)
+    return render(request, 'topic.html', {'topic': topic, 'publications': publications})
 
 # def publication(request, publication_id):
 # 	publication = Publication.objects.get(publication_id=publication_id)
