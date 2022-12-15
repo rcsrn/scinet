@@ -1,7 +1,7 @@
 from django.db import models
 
 class Journal(models.Model):
-    journal_id = models.IntegerField(primary_key=True)
+    journal_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
 
     class Meta:
@@ -9,7 +9,7 @@ class Journal(models.Model):
         db_table = 'journal'
         
 class Topic(models.Model):
-    topic_id = models.IntegerField(primary_key=True)
+    topic_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     
     class Meta:
@@ -17,7 +17,7 @@ class Topic(models.Model):
         db_table = 'topic'
 
 class Publication(models.Model):
-    publication_id = models.IntegerField(primary_key=True)
+    publication_id = models.AutoField(primary_key=True)
     journal_id = models.ForeignKey(Journal, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     publication_date = models.DateField()
@@ -41,7 +41,7 @@ class Citations(models.Model):
 
 
 class Institution(models.Model):
-    institution_id = models.IntegerField(primary_key=True)
+    institution_id = models.AutoField(primary_key=True)
     creation_date = models.DateField()
     country = models.CharField(max_length=255)
     name = models.CharField(max_length=255)
@@ -51,7 +51,7 @@ class Institution(models.Model):
         db_table = 'institution'
 
 class GeneralUser(models.Model):
-    general_user_id = models.IntegerField(primary_key=True)
+    general_user_id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=20)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
