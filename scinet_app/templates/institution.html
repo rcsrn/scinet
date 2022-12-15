@@ -1,41 +1,27 @@
 
 {% load static %}
 <!DOCTYPE html>
-<style>
-    h1{
-    text-align: left;
-    font-size: 50px;
-    color:white;
-    padding-left: 30px;
-    }
-    h3{
-        color: antiquewhite;
-        font: Serif;
-    }
-    ul {
-  list-style-position: outside;
-    }
-    li {
-    list-style: none;
-    background: transparent no-repeat left center;
-    color: aliceblue;
-    padding-left: 20px; /* or whatever the width of your image is, plus a gap */
-    }
-    a:link{
-        color: aliceblue;
-    }
-</style>
+
 <html>
     <head>
         <h1>Institution: {{institution.name}}</h1>
-        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link rel="stylesheet" href="{% static 'institution_journal.css' %}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">   
+        <link href="https://fonts.googleapis.com/css?family=League Spartan" rel="stylesheet">
       </head>
 
       <hr class="solid">
     <body>
+
+        <div class="top" id="top-id">
+            <div class="logo-container">
+                <img src="../static/images/scinetLogo.png" alt="scinetLogo">
+            </div>
+          </div>
+
+
 
         <div style="display: flex; justify-content: space-around">
             <div>
