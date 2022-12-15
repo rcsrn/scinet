@@ -6,6 +6,7 @@ from .models import GeneralUser
 from .models import Journal
 from .models import Publication
 from .models import Topic
+from .models import Citations
 from .resources import *
         
 class InstitutionAdmin(ImportExportModelAdmin):
@@ -26,12 +27,26 @@ class PublicationAdmin(ImportExportModelAdmin):
     list_display = ["publication_id", "journal_id", "title", "publication_date", 
                     'content', 'doi']
 
+class CitationsAdmin(ImportExportModelAdmin):
+    resource_class = CitationsResource
+    list_display = ["citer", "citee"]
+    def save_model(self, request, obj, form, change):
+        try:
+            obj,save()
+        except IntegrityError as e:
+            print('found integrity error')
+    
+
+
 class TopicAdmin(ImportExportModelAdmin):
     resource_class = TopicResource
     list_display = ["topic_id", "name"]
+
+
     
 admin.site.register(Institution,InstitutionAdmin)
 admin.site.register(GeneralUser,GenerlaluserAdmin)
 admin.site.register(Journal,JournalAdmin)
 admin.site.register(Publication,PublicationAdmin)
+admin.site.register(Citations, CitationsAdmin)
 admin.site.register(Topic, TopicAdmin)

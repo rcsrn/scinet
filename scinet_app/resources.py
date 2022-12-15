@@ -3,6 +3,7 @@ from .models import GeneralUser
 from .models import Journal
 from .models import Publication
 from .models import Topic
+from .models import Citations
 from import_export import resources
 
 class InstitutionResource(resources.ModelResource):
@@ -17,6 +18,13 @@ class JournalResource(resources.ModelResource):
         import_id_fields = ('journal_id',)
         exclude = ('id')
     
+class CitationsResource(resources.ModelResource):
+    class Meta:
+        model = Citations
+        import_id_fields = ('citer', 'citee')
+        exclude = ('id')
+
+
 class PublicationResource(resources.ModelResource):
     class Meta: 
         model = Publication
