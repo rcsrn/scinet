@@ -63,7 +63,7 @@ body {
     font-size: 15px;
     color: rgb(109, 105, 104);
     cursor: pointer;
-    border: none;
+    border: transparent;
 }
 
 .login-button:hover,
@@ -100,8 +100,8 @@ body {
 }
 
 .search-phrase {
-    font-size: 50px;
-    color: rgb(0, 30, 29);
+    font-size: 55px;
+    color: rgb(0, 30, 52);
     font-weight:bold;
     font-family: League Spartan;
     left: 10px;
@@ -111,20 +111,18 @@ body {
 
 .search-bar-container {
     border: 1px solid rgb(168, 166, 166);
-    padding: 15px 5px;
+    padding: 10px 5px 10px;
     border-radius: 5px;
     left: 5px;
     display: flex;
     flex-flow: row nowrap;
-
-
     margin-right: 150px;
 }
 
 .search-bar {
     width: 90%;
     margin-top: 5px;
-    font-size: 25px;
+    font-size: 20px;
     border: none;
     outline: none;
 }
@@ -139,7 +137,7 @@ body {
 }
 
 .search-icon {
-    height: 25px;
+    height: 20px;
     margin-right: 25px;
 }
 
@@ -157,7 +155,7 @@ body {
     font-size: 50px;
     font-weight: bold;
     font-family: League Spartan;
-    color: rgb(0, 30, 29);
+    color: rgb(0, 24, 41);
     margin-top: 0px;
     margin-left: 0px;
     position: absolute;
@@ -165,8 +163,8 @@ body {
 }
 
 .p2 {
-    font-size: 28px;
-    font-family: League Spartan;
+    font-size: 20px;
+    font-family: sans-serif;
     margin-top: 0px;
 }
 
