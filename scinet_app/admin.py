@@ -30,6 +30,13 @@ class PublicationAdmin(ImportExportModelAdmin):
 class CitationsAdmin(ImportExportModelAdmin):
     resource_class = CitationsResource
     list_display = ["citer", "citee"]
+    def save_model(self, request, obj, form, change):
+        try:
+            obj,save()
+        except IntegrityError as e:
+            print('found integrity error')
+    
+
 
 class TopicAdmin(ImportExportModelAdmin):
     resource_class = TopicResource
