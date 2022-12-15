@@ -58,7 +58,7 @@
 	    <p class="visit-phrase">Topics:</p>
     <div class="topic-button-container">
 	      {% for topic in topics %}
-          <button class="topic-button" onclick="location.href='login'">{{topic.name}}</button>
+        <button class="topic-button" onclick="location.href='topic/{{topic.topic_id}}'">{{topic.name}}</button>
         {% endfor %}
     </div>
 	  </div>
