@@ -63,8 +63,8 @@
 	  </div>
 
     <div class="visit-container">
-        {%for author in authors%}
-          <a href="{% url 'user' author.general_user_id %}"> <p>{{author.last_name}} {{author.first_name}}</p> </a>
+        {%for publication in publications%}
+          <a href="{% url 'publication' publication.publication_id %}"> <p>{{publication.title}} in {{publication.journal_id}}</p> </a>
         {%endfor%}
     </div>
 

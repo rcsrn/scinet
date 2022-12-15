@@ -1,13 +1,23 @@
 from django.shortcuts import render
-from .models import Publication, GeneralUser, Institution, Topic
+from .models import Publication, GeneralUser, Institution, Topic, Citations
 import operator
-
-# def index(request):
-#     return render(request, 'index.html')
 
 def index(request):
     topics = Topic.objects.all()
-    return render(request, 'index.html', {'topics': topics.values()})
+    citations = Citations.objects.all()
+    cited_publications = {}
+    for citation in citations:
+        if citation.cited not in cited_publications.keys():
+            cited_publications[citation.cited] = 1
+        else:
+            cited_publications[citation.cited] += 1
+
+    sorted_publications = sorted(cited_publications.items(), key=operator.itemgetter(1), reverse=True)
+    publications = []
+    for publication in sorted_publications:
+        publications.append(publication[0])
+
+    return render(request, 'index.html', {'topics': topics.values(), 'publications': publications[:20]})
 
 def register(request):
     return render(request, 'register.html')
@@ -17,14 +27,14 @@ def topic(request, topic_id):
     publications = Publication.objects.filter(topic=topic_id)
     return render(request, 'topic.html', {'topic': topic, 'publications': publications})
 
-# def publication(request, publication_id):
-# 	publication = Publication.objects.get(publication_id=publication_id)
-# 	id_authors = Writes.objects.filter(publication_id=publication_id).values_list('general_user_id', flat=True)
-# 	authors = []
-# 	for id in id_authors:
-# 		authors.append(GeneralUser.objects.get(general_user_id=id))
+def publication(request, publication_id):
+	publication = Publication.objects.get(publication_id=publication_id)
+	# id_authors = Writes.objects.filter(publication_id=publication_id).values_list('general_user_id', flat=True)
+	# authors = []
+	# for id in id_authors:
+		# authors.append(GeneralUser.objects.get(general_user_id=id))
 
-# 	return render(request, 'publication.html', {'publication': publication, 'authors': authors})
+	return render(request, 'publication.html', {'publication': publication})
 
 
 # def user(request, user_id):

@@ -1,3 +1,4 @@
+from sqlite3 import IntegrityError
 from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
 
@@ -29,10 +30,10 @@ class PublicationAdmin(ImportExportModelAdmin):
 
 class CitationsAdmin(ImportExportModelAdmin):
     resource_class = CitationsResource
-    list_display = ["citer", "citee"]
+    list_display = ["citer", "cited"]
     def save_model(self, request, obj, form, change):
         try:
-            obj,save()
+            obj.save()
         except IntegrityError as e:
             print('found integrity error')
     
