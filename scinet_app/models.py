@@ -25,8 +25,6 @@ class Publication(models.Model):
     doi = models.CharField(max_length=255)
     topic = models.ManyToManyField(Topic, blank=True)
 
-    # citers = models.ManyToManyField('self', through='CitationsProxy', through_fields=('citee', 'citer'), related_name='+')
-    # citees = models.ManyToManyField('self', through='Citationsproxy', through_fields=('citer', 'citee'), related_name='+')
 
     class Meta:
         managed = True
@@ -40,9 +38,7 @@ class Citations(models.Model):
     class Meta:
         unique_together = ('citer', 'citee')
 
-# class CitationsProxy(Citations):
-#     class Meta:
-#         proxy = True
+
 
 class Institution(models.Model):
     institution_id = models.IntegerField(primary_key=True)
