@@ -2,77 +2,82 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <title>Scinet</title>
-    <link rel="stylesheet" href="{% static 'index.css' %}">
-  </head>
 
-  <body>
-    <div class="top" id="top-id">
-      <div class="logo-container">
-	<p class="logo">SCINET</p>
-      </div>
-      <div class="login-button-container">
-	<button class="login-button" onclick="location.href='login'">Log in</button>
-      </div>
-      <div class="register-button-container">
-	<button class="register-button" onclick="location.href='register'">Register</button>
-      </div>
+<head>
+  <title>Scinet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+
+<body>
+  <div class="top" id="top-id">
+    <div class="logo-container">
+      <p class="logo">SCINET</p>
     </div>
-    
-    <div class="middle">
-        <div class="first-section">
-          <div class="main-image-container">
-            <img class="main-image" src="{% static 'images/main.svg' %}">
-          </div>
+    <div class="login-button-container">
+      <button class="login-button" onclick="location.href='login'">Log in</button>
+    </div>
+    <div class="register-button-container">
+      <button class="register-button" onclick="location.href='register'">Register</button>
+    </div>
+  </div>
 
-          <div class="search-container">
-            <div class="outer-search-phrase-container">
-              <div class="search-phrase-container">
-                  <p class="search-phrase">Search Publications</p>
-                  <p class="p2">Connect with your scientific community!</p>
-              </div>
-            </div>
-              <div class="outer-search-bar-container">
-              <div class="search-bar-container">
-                    <input type="text" class="search-bar" placeholder="Search">
-                    <button class="search-button">
-                        <svg class="search-icon" aria-labelledby="title desc" role="img" 
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7">
-                        <title id="title">Search Icon</title>
-                        <desc id="desc">A magnifying glass icon.</desc>
-                        <g class="search-path" fill="none" stroke="gray" stroke-width="2">
-                          <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/>
-                          <circle cx="8" cy="8" r="7"/></g></svg>
-                    </button>
-              </div>
-            </div>
-          </div>
+  <div class="middle">
+    <div class="first-section">
+      <div class="main-image-container">
+        <img class="main-image" src="{% static 'images/main.svg' %}">
+      </div>
 
+      <div class="search-container">
+        <div class="outer-search-phrase-container">
+          <div class="search-phrase-container">
+            <p class="search-phrase">Search Publications</p>
+            <p class="p2">Connect with your scientific community!</p>
+          </div>
         </div>
-        <div class="second-section">
-          <div class="connect-phrase-container">
-            <p class="connect-phrase">Discover scientific knowledge</p>
+        <div class="outer-search-bar-container">
+          <div class="search-bar-container">
+            <input type="text" class="search-bar" placeholder="Search">
+            <button class="search-button">
+              <svg class="search-icon" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 19.9 19.7">
+                <title id="title">Search Icon</title>
+                <desc id="desc">A magnifying glass icon.</desc>
+                <g class="search-path" fill="none" stroke="gray" stroke-width="2">
+                  <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4" />
+                  <circle cx="8" cy="8" r="7" />
+                </g>
+              </svg>
+            </button>
           </div>
-	  <div class="text-container">
-	    <p class="visit-phrase">Featured:</p>
-	      {% for publication in most_cited %}
+        </div>
+      </div>
+
+    </div>
+    <!-- <div class="second-section">
+      <div class="connect-phrase-container">
+        <p class="connect-phrase">Discover scientific knowledge</p>
+      </div>
+      <div class="text-container">
+        <p class="visit-phrase">Featured:</p>
+        {% for publication in most_cited %}
         <div class="text-container">
-          <a href="{% url 'publication' publication.0.publication_id %}"> <h3>{{publication.0.title}}</h3> </a>
-          <p>Journal: {{publication.0.journal_id.name}}.</p> 
+          <a href="{% url 'publication' publication.0.publication_id %}">
+            <h3>{{publication.0.title}}</h3>
+          </a>
+          <p>Journal: {{publication.0.journal_id.name}}.</p>
           <p>Cited: {{publication.1}} times</p>
         </div>
         {% endfor %}
-	  </div>
+      </div>
 
-	  
-        </div>
 
-    </div>
+    </div> -->
 
-    </div>
+  </div>
 
-  </body>
-  
+  </div>
+
+</body>
+
 </html>
-
