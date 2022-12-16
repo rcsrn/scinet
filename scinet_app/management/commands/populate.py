@@ -50,7 +50,7 @@ class Command(BaseCommand):
                             content=lorem.paragraphs(20), doi=lorem.words(1))
             p.save()
             for k in range(randrange(1,5)):
-                p.topic.add(Topic.objects.get(topic_id=randrange(0,10)))
+                p.topic.add(Topic.objects.get(topic_id=randrange(0,9)))
                 
         for j in range(100):
             first_name = names.get_first_name(gender=choice(self.gender))
