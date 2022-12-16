@@ -21,7 +21,7 @@ class JournalResource(resources.ModelResource):
 class CitationsResource(resources.ModelResource):
     class Meta:
         model = Citations
-        import_id_fields = ('citer', 'citee')
+        import_id_fields = ('citer', 'cited')
         exclude = ('id')
 
 
