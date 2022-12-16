@@ -85,11 +85,11 @@ class Migration(migrations.Migration):
             name='Citations',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('cited', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='cited', to='scinet_app.publication')),
+                ('citee', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='citee', to='scinet_app.publication')),
                 ('citer', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='citer', to='scinet_app.publication')),
             ],
             options={
-                'unique_together': {('citer', 'cited')},
+                'unique_together': {('citer', 'citee')},
             },
         ),
     ]

@@ -25,8 +25,4 @@ class Migration(migrations.Migration):
             name='citations',
             unique_together={('citer', 'citee')},
         ),
-        migrations.RemoveField(
-            model_name='citations',
-            name='cited',
-        ),
     ]
