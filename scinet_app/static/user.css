@@ -113,9 +113,10 @@ body {
 .right {
     grid-column: 4/4;
     grid-row: 1;
-    text-align: center;
+    text-align: left;
+    margin-left: 20%;
     margin-right: 20%;
-    margin-top: 170px;
+    margin-top: 70px;
 }
 
 .visit-phrase {
@@ -143,16 +144,16 @@ body {
 .info-phrase {
     display: inline-block;
     color: rgb(84, 186, 219);;
-    font-size: 35px;
+    font-size: 26px;
     font-family: League Spartan;
 }
 
 .info {
     display: inline-block;
     font-family: League Spartan;
-    font-size: 30px;
+    font-size: 20px;
     color: black;
-    margin-top: -50px;
+    margin-top: -30px;
     margin-left: 0px;
     text-align: justify;
 }

@@ -33,7 +33,8 @@
             <h3 class="visit-phrase" style="margin-bottom: -40px; font-size: 30px;"> Publications: </h3>
             {%for publication in user.publications.all%}
               <a href="{% url 'publication' publication.publication_id %}"> <p class="list-item">{{publication.title}}</p> </a>
-              <p class="info-link">Journal: {{publication.journal_id.name}}. {{publication.publication_date.year}}. {{publication.topic.all.0.name}}</p>
+              <p class="info-link">Journal: {{publication.journal_id.name}}. {{publication.publication_date.year}}. 
+                <a href={% url 'topic' publication.topic.all.0.topic_id%}>{{publication.topic.all.0.name}}</a></p>
             {%endfor%}
         </div>
         </div>
@@ -50,15 +51,15 @@
         <div class="right">
             <div class="info-container">
                 <div>
-                    <p class="info-phrase"> Username: </p>
+                    <p class="info-phrase"> Username: </p> <br>
                     <p class="info"> {{user.username}} </p>
                 </div>
                 <div>
-                    <p class="info-phrase"> email: </p>
+                    <p class="info-phrase"> email: </p> <br>
                     <p class="info"> {{user.email}} </p>
                 </div>
                 <div>
-                    <p class="info-phrase"> Age: </p>
+                    <p class="info-phrase"> Age: </p> <br>
                     <p class="info"> {{user.age}} </p>
                 </div>
             </div>
