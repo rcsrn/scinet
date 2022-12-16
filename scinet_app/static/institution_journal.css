@@ -1,7 +1,7 @@
 .content_header{
     flex-grow: 1;
     width: 100%;
-    background-color: whitesmoke;
+    background-color: black;
 
 }
 
@@ -26,11 +26,11 @@ body {
 h1{
 text-align: left;
 font-size: 50px;
-color:white;
+color:black;
 padding-left: 30px;
 }
 h3{
-    color: antiquewhite;
+    color: black;
     font: Serif;
 }
 ul {
@@ -39,11 +39,11 @@ list-style-position: outside;
 li {
 list-style: none;
 background: transparent no-repeat left center;
-color: aliceblue;
+color: black;
 padding-left: 20px; 
 }
 a:link{
-    color: aliceblue;
+    color: black;
 }
 
 .header img{
