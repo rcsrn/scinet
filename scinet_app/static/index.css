@@ -220,6 +220,10 @@ body {
     grid-template-rows: 10% 1fr;
 }
 
+.featured-phrase {
+    margin-left: 180px;
+}
+
 @media (min-width: 768px) {
     .main-image-container{
         grid-column: 1/2;
