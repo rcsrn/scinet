@@ -65,12 +65,18 @@ def login(request):
 
 
 def institution_info(request, insti_id):
+<<<<<<< HEAD
 	institution = Institution.objects.get(institution_id=insti_id)
 	#id_authors = Belongs.objects.filter(institution_id=insti_id).values_list('general_user_id', flat=True)
 	id_authors  = GeneralUser.objects.get(institutions=insti_id)
 	authors = []
 	for i in id_authors:
 		authors.append(GeneralUser.objects.get(general_user_id=i))
+=======
+ 	institution = Institution.objects.get(institution_id=insti_id)
+    return render(request, 'institution.html')
+# 	id_authors = Belongs.objects.filter(institution_id=insti_id).values_list('general_user_id', flat=True)
+>>>>>>> e7bfb3f (Indentation error)
 	
 	id_publications = []
 	for id in id_authors:
