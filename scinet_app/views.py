@@ -74,17 +74,10 @@ def login(request):
 
 def institution_info(request, insti_id):
     institution = Institution.objects.get(institution_id=insti_id)
-   # return render(request, 'institution.html')
-# 	id_authors = Belongs.objects.filter(institution_id=insti_id).values_list('general_user_id', flat=True)
-
-    id_publications = []
-    for id in id_authors:
-        id_publications.extend(Writes.objects.filter(
-            general_user_id=id).values_list('publication_id', flat=True))
-
+    authors = GeneralUser.objects.filter(institutions=insti_id)
     publications = []
-    for id in id_publications:
-        publications.append(Publication.objects.get(publication_id=id))
+    for i in authors:
+        publications.append(i.publications.all())
 
     context = {'institution': institution,
                'publications': publications, 'authors': authors}

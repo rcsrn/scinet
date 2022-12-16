@@ -58,9 +58,8 @@
                 {%endif%}
                 {%for publication in publications%}
                 <h3>{{publication.title}}</h3> 
-                <!-- <a href="{% url 'publication' publication.publication_id %}"> 
-                    
-                </a> -->
+                <a href="{% url 'publication' publication.publication_id %}"> 
+                </a>
                 {%endfor%}
             </div>
         </div>

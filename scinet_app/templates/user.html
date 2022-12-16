@@ -42,7 +42,7 @@
             <div class="info-container">
                 <h2 class="visit-phrase">Institutions:</h2>
                 {%for institution in user.institutions.all%}
-                    <a> <p class="list-item">{{institution.name}}</p> </a>
+                    <a href="{% url 'institution' institution.institution_id %}"> <p class="list-item">{{institution.name}}</p> </a>
                 {%endfor%}
             </div>
         </div>
