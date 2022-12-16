@@ -21,7 +21,7 @@ body {
 .logo {
     display: inline-block;
     vertical-align: center;
-    color: rgb(64, 186, 155);
+    color: rgb(84, 186, 219);
     font-family: Montserrat, "sans-serif";
     margin-left: 70px;
     font-weight: 500;
@@ -42,8 +42,8 @@ body {
 .login-button {
     background-color: white;
     font-weight: bold;
-    font-size: 15px;
-    color: rgb(64, 186, 155);
+    font-size: 20px;
+    color: rgb(84, 186, 219);
     cursor: pointer;
     border: none;
 }
@@ -60,10 +60,10 @@ body {
     color: rgb(109, 105, 104);
     background-color: white;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 20px;
     color: rgb(109, 105, 104);
     cursor: pointer;
-    border: none;
+    border: transparent;
 }
 
 .login-button:hover,
@@ -71,181 +71,35 @@ body {
     text-decoration: underline;
 }
 
-
 .middle {
     display: grid;
-    grid-template-rows: 500px 500px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
 }
 
-.first-section {
-    display: grid;
-    grid-template-columns: 50% 50%;
+.center {
+    grid-column: 2 / 4;
+    text-align: center;
 }
 
-.main-image-container {
-    position: relative;
-    height: 500px;
-}
-
-.main-image {
-    width: 430px;
-    position: absolute;
-    top: 10px;
-    right: 168px;   
-}
-
-
-.search-container {
-    display: grid;
-    grid-template-rows: 250px 300px;
-    position: relative;
-    height: 500px;
-}
-
-.search-phrase-container {
-    position: absolute;
-    bottom:50%;
-}
-
-.search-phrase {
-    font-size: 50px;
-    color: rgb(0, 30, 29);
-    font-weight:bold;
-    font-family: Montserrat;
-    position: relative;
-    left: 10px;
-    margin-bottom: 15px;
-}
-
-.search-bar-container {
-    border: 1px solid rgb(168, 166, 166);
-    padding: 20px 90px 5px 20px;
-    border-radius: 5px;
-    position: absolute;
-    left: 5px;
-    
-}
-
-.search-bar {
-    margin-top: 5px;
-    font-size: 25px;
-    width: 450px;
-    height: 20px;
-    border: none;
-    outline: none;
-}
-
-
-.search-button {
-    height: 37px;
-    width: 29px;
-    background-color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.search-icon {
-    height: 25px;
-    position: absolute;
-    bottom: 23px;
-    right: 35px;
-}
-
-.outer-search-bar-container {
-    height: 250px;
-}
-
-
-.connect-phrase-container {
-    position: relative;
-    width: 100%;
-}
-
-.connect-phrase {
-    font-size: 50px;
+.title {
+    font-family: League Spartan;
     font-weight: bold;
-    font-family: Montserrat;
-    color: rgb(0, 30, 29);
-    margin-top: 0px;
+    font-size: 50px;
+    color: rgb(40, 124, 152);
+    margin-top: 50px;
     margin-left: 0px;
-    position: absolute;
-    left: 150px;
+    margin-right: 50px;
 }
 
-.p2 {
-    font-size: 28px;
-    font-family: Montserrat;
-    margin-top: 0px;
-    position: relative;
-    left: 10px;
-}
-
-.second-section {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    position: relative;
-}
-
-.visit-grid {
-    display: grid;
-    grid-auto-rows: 15% 1fr;
-    margin-right: 150px;
-    margin-bottom: 20px;
-    
-}
-
-.visit-subgrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.visit-phrase {
-    color: rgb(123, 123, 123);
-    font-size: 35px;
-    font-family: Montserrat, "sans-serif";
+.list-item {
     font-weight: bold;
+    font-size: 28px;
+    margin-top: 2em;
 }
 
-.visit-button {
-    color: rgb(64, 186, 155);
-    font-size: 100%;
-    font-family: Montserrat;
-    font-weight: 500;
-    border: 3px solid rgb(64, 186, 155);
-    background-color: white;
-    width: 80%;
-    height: 30%;
-    border-radius: 30px;
-    cursor: pointer;
-}
-
-.visit-button:hover {
-    background-color: rgb(234, 234, 234);
-}
-
-.topic-button-container {
-    margin-top: -20px;
-    margin-left: -10px;
-}
-
-.topic-button {
-  display: inline-block;
-  margin: .5em .8em;
-  padding: .2em 1em;
-  background: rgb(128, 225, 201);
-  color: black;
-  border-radius: 2em;   
-  border: none;
-  cursor: pointer;
-  font-size: 1.1em;
-}
-
-.topic-button:hover {
-    background-color: rgb(64, 186, 155);
-    color: white;
-}
-
-.visit-container {
-    margin-top: -180px;
-    margin-left: 20px;
+.info {
+    margin-top: -15px;
+    font-size: 27px;
+    color: rgb(13, 126, 98);
 }

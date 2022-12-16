@@ -11,23 +11,33 @@
     </head>
 
 <body>
-    <div class="left-bar-container">
-        <h2 class="left-bar-title">Authors:</h2>
-        {%for author in authors%}
-            <a href="{% url 'user' author.general_user_id %}"> <p class="link-container">{{author.last_name}} {{author.first_name}}</p> </a>
-        {%endfor%}
-    </div>
+    <div class="top" id="top-id">
+        <div class="logo-container">
+          <p class="logo">SCINET</p>
+        </div>
 
-    <div class="main-container">
-        <h1 style="color: rgb(192, 144, 77); font-size: 50px">{{publication.title}}</h1>
-        <h1 class="info-container"> Journal: {{publication.journal_id.name}}</h1>
-        <h1 class="info-container"> Publication date: {{publication.publication_date}}</h1>
-    </div>
-</body>
+        <div class="login-button-container">
+            <a href="{% url 'index' %}"> <button class="login-button">Home</button> </a>
+          </div>
+          
+          <div class="register-button-container">
+            <button class="register-button" onclick="history.go(-1)">Return</button>
+          </div>
+      </div>
 
-<div class="bottom-container">
-    <a href="{% url 'index' %}"> <button class="register-button">Home</button> </a>
-    <button class="register-button" onclick="history.go(-1)">Return</button>
-</div>
+    
+    <div class="middle">
+        <div class="center">
+            <h1 class="title">{{ topic.name }}</h1>
+            <div class="most-cited-container">
+                {%for publication in publications%}
+                  <a href="{% url 'publication' publication.publication_id %}"> <p class="list-item">{{publication.title}}</p> </a>
+                  <p class="info">Journal: {{publication.journal_id.name}}. {{publication.publication_date.year}}.</p>
+                {%endfor%}
+            </div>
+
+            </div>
+        </div>
+    </div>
 
 </html>

@@ -24,7 +24,11 @@ def register(request):
 
 def topic(request, topic_id):
     topic = Topic.objects.get(topic_id=topic_id)
-    publications = Publication.objects.filter(topic=topic_id)
+    all_publications = Publication.objects.all()
+    publications = []
+    for publication in all_publications:
+        if topic in publication.topic.all():
+            publications.append(publication)
     return render(request, 'topic.html', {'topic': topic, 'publications': publications})
 
 def publication(request, publication_id):
