@@ -9,3 +9,5 @@ django-seed==0.3.1
 django-import-export
 martor
 gunicorn
+lorem_text
+names
