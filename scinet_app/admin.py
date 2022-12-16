@@ -31,7 +31,7 @@ class PublicationAdmin(ImportExportModelAdmin):
 
 class CitationsAdmin(ImportExportModelAdmin):
     resource_class = CitationsResource
-    list_display = ["citer", "cited"]
+    list_display = ["citer", "citee"]
     def save_model(self, request, obj, form, change):
         try:
             obj.save()

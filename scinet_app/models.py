@@ -33,7 +33,7 @@ class Publication(models.Model):
 
 class Citations(models.Model):
     citer = models.ForeignKey('Publication', on_delete=models.CASCADE, related_name='citer')
-    cited = models.ForeignKey('Publication', on_delete=models.CASCADE, related_name='cited')
+    citee = models.ForeignKey('Publication', on_delete=models.CASCADE, related_name='cited')
     
     class Meta:
         unique_together = ('citer', 'cited')

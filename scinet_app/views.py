@@ -7,10 +7,10 @@ def index(request):
     citations = Citations.objects.all()
     cited_publications = {}
     for citation in citations:
-        if citation.cited not in cited_publications.keys():
-            cited_publications[citation.cited] = 1
+        if citation.citee not in cited_publications.keys():
+            cited_publications[citation.citee] = 1
         else:
-            cited_publications[citation.cited] += 1
+            cited_publications[citation.citee] += 1
 
     sorted_publications = sorted(cited_publications.items(), key=operator.itemgetter(1), reverse=True)
     publications = []
