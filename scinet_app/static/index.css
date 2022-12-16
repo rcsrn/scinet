@@ -96,7 +96,6 @@ body {
 
 .search-container {
     grid-column: 1/3;
-    margin-top: -160px;
     display: flex;
     flex-flow: column nowrap;
     height: 500px;
@@ -193,9 +192,10 @@ body {
 
 .visit-phrase {
     color: rgb(123, 123, 123);
-    font-size: 35px;
+    font-size: 15px;
     font-family: Montserrat, "sans-serif";
     font-weight: bold;
+
 }
 
 .visit-button {
@@ -215,56 +215,28 @@ body {
     background-color: rgb(234, 234, 234);
 }
 
-.topic-button-container {
-    margin-top: -20px;
-    margin-left: -10px;
+.featured-container {
+    display: grid;
+    grid-template-rows: 10% 1fr;
 }
 
-.topic-button {
-  display: inline-block;
-  margin: .5em .8em;
-  padding: .5em 1em;
-  background: rgb(128, 225, 201);
-  color: black;
-  border-radius: 2em;   
-  border: none;
-  cursor: pointer;
-  font-size: 1.1em;
-}
-
-.topic-button:hover {
-    background-color: rgb(64, 186, 155);
-    color: white;
-}
-
-.visit-container {
-    margin-top: 0;
-    margin-left: 0px;
-}
-
-.most_cited-container {
-    grid-column: 2/3;
-    margin-left: -180px;
-    margin-top: -400px;
-    font-size: 20px;
-}
-
-.most_cited-phrase {
-    margin-left: -20px;
-    font-size: 55px;
-    color: rgb(0, 30, 52);
-    font-weight:bold;
+.featured-phrase {
+    font-size: 18px;
+    margin-left: 188px;
     font-family: League Spartan;
+    color: gray;
 }
 
-.list {
-    display:list-item;
-    margin-top: 20px;
-    font-weight: bold;
+.scroll-container {
+    scroll-behavior: smooth;
 }
 
-.info {
-    margin-top: -15px;
-    font-size: 20px;
-    color: rgb(13, 126, 98);
+@media (min-width: 768px) {
+    .main-image-container{
+        grid-column: 1/2;
+    }
+
+    .search-container {
+        grid-column: 2/3;
+    }
 }
