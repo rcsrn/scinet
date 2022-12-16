@@ -56,7 +56,20 @@
         </div>
 
         <div class="right">
-            
+            <div class="info-container">
+                <div>
+                    <p class="info-phrase"> DOI: </p>
+                    <p class="info"> {{publication.doi}} </p>
+                </div>
+                <div>
+                    <p class="info-phrase"> Journal: </p>
+                    <a> <p class="info"> {{publication.journal_id.name}} </p> </a>
+                </div>
+                <div>
+                    <p class="info-phrase"> Date: </p>
+                    <p class="info"> {{publication.publication_date}} </p>
+                </div>
+            </div>
         </div>
     </div>
 

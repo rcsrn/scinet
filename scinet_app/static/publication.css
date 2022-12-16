@@ -110,6 +110,14 @@ body {
     margin-right: 30%;
 }
 
+.right {
+    grid-column: 4/4;
+    grid-row: 1;
+    text-align: center;
+    margin-right: 20%;
+    margin-top: 170px;
+}
+
 .visit-phrase {
     color: rgb(123, 123, 123);
     font-size: 35px;
@@ -130,6 +138,23 @@ body {
 
 .info-container {
     margin-top: 100px;
+}
+
+.info-phrase {
+    display: inline-block;
+    color: rgb(84, 186, 219);;
+    font-size: 35px;
+    font-family: League Spartan;
+}
+
+.info {
+    display: inline-block;
+    font-family: League Spartan;
+    font-size: 30px;
+    color: black;
+    margin-top: -50px;
+    margin-left: 0px;
+    text-align: justify;
 }
 
 .scroll-container {
