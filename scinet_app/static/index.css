@@ -175,6 +175,7 @@ body {
     display: grid;
     grid-template-columns: 50% 50%;
     position: relative;
+    margin-top: -30px;
 }
 
 .visit-grid {
@@ -239,4 +240,57 @@ body {
     .search-container {
         grid-column: 2/3;
     }
+}
+
+.topic-button-container {
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+.topic-button {
+  display: inline-block;
+  margin: .5em .8em;
+  padding: .5em 1em;
+  background: rgb(128, 225, 201);
+  color: black;
+  border-radius: 2em;   
+  border: none;
+  cursor: pointer;
+  font-size: 1.1em;
+}
+
+.topic-button:hover {
+    background-color: rgb(64, 186, 155);
+    color: white;
+}
+
+.visit-container {
+    margin-top: 0;
+    margin-left: 0px;
+}
+
+.most-cited-container {
+    margin-left: 0px;
+    margin-top: 0px;
+    font-size: 20px;
+}
+
+.most-cited-phrase {
+    margin-top: -20px;
+    font-size: 55px;
+    font-family: League Spartan;
+    color: gray;
+}
+
+.list {
+    display:list-item;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.info {
+    margin-top: -15px;
+    font-size: 20px;
+    color: rgb(13, 126, 98);
 }

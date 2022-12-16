@@ -17,7 +17,7 @@ def index(request):
     for publication in sorted_publications:
         publications.append(publication[0])
 
-    return render(request, 'index.html', {'topics': topics.values(), 'publications': publications[:6]})
+    return render(request, 'index.html', {'topics': topics.values(), 'publications': publications[:20]})
 
 def register(request):
     return render(request, 'register.html')
