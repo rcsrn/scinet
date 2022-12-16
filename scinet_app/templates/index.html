@@ -17,18 +17,29 @@
     <div class="logo-container">
       <p class="logo">SCINET</p>
     </div>
+
     <div class="login-button-container">
       <button class="login-button" onclick="location.href='login'">Log in</button>
     </div>
+
     <div class="register-button-container">
       <button class="register-button" onclick="location.href='register'">Register</button>
     </div>
   </div>
 
+
   <div class="middle">
     <div class="first-section">
       <div class="main-image-container">
         <img class="main-image" src="{% static 'images/scinetLogo.svg' %}">
+      </div>
+
+      <div class="most_cited-container">
+        <h2 class="most_cited-phrase">Most cited:</h2>
+          {%for publication in publications%}
+            <a href="{% url 'publication' publication.publication_id %}"> <p class="list">{{publication.title}}</p> </a>
+            <p class="info">{{publication.journal_id.name}}, {{publication.publication_date.year}}. {{publication.topic.all.0.name}}.</p>
+          {%endfor%}
       </div>
 
       <div class="search-container">
@@ -61,12 +72,6 @@
         {% endfor %}
     </div>
 	  </div>
-
-    <div class="visit-container">
-        {%for publication in publications%}
-          <a href="{% url 'publication' publication.publication_id %}"> <p>{{publication.title}} in {{publication.journal_id}}</p> </a>
-        {%endfor%}
-    </div>
 
 
     </div>
