@@ -67,7 +67,7 @@ def login(request):
 def institution_info(request, insti_id):
 	institution = Institution.objects.get(institution_id=insti_id)
 	#id_authors = Belongs.objects.filter(institution_id=insti_id).values_list('general_user_id', flat=True)
-	
+	id_authors  = GeneralUser.objects.get(institutions=insti_id)
 	authors = []
 	for i in id_authors:
 		authors.append(GeneralUser.objects.get(general_user_id=i))
