@@ -246,7 +246,7 @@ body {
 
 .topic-button-container {
     margin-top: 0px;
-    margin-left: 0px;
+    margin-left: 20px;
 }
 
 .topic-button {
@@ -279,10 +279,18 @@ body {
 }
 
 .most-cited-phrase {
-    font-size: 55px;
+    font-size: 45px;
     font-family: League Spartan;
     color: gray;
     text-align: center;
+}
+
+.most-cited-phrase2 {
+    font-size: 45px;
+    font-family: League Spartan;
+    color: gray;
+    text-align: center;
+    margin-right: 80px;
 }
 
 .list {
