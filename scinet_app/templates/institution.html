@@ -37,18 +37,13 @@
                     {% for author in authors %}
                     <li>
                       
-                            <a class="nav-item nav-link text-light" href="../../main/author/{{author.general_user_id}}">
-                                <h3>{{author.institution_id}}</h3>
-                            </a>
+                        <a href="{% url 'user' author.general_user_id %}"> <p class="list-item">{{author.first_name}} {{author.last_name}}</p> </a>
                        
                           
                     </li>  
                     {%endfor%}
                 </ul>
 
-                {% for author in authors %}
-                <h3>{{author.first_name}}</h3> 
-                {% endfor %}
             </div>
 
             <div>
@@ -57,9 +52,7 @@
                 <p>No publications</p>
                 {%endif%}
                 {%for publication in publications%}
-                <h3>{{publication.title}}</h3> 
-                <a href="../../main/publication/{{publication.publication_id}}"> 
-                </a>
+                <a href="{% url 'publication' publication.publication_id %}"> <p class="list-item">{{publication.title}}</p> </a>
                 {%endfor%}
             </div>
         </div>

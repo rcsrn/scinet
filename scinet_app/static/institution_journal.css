@@ -33,6 +33,10 @@ h3{
     color: black;
     font: Serif;
 }
+h2{
+    font-size: xx-large;
+}
+
 ul {
 list-style-position: outside;
 }
@@ -109,4 +113,21 @@ a:link{
     margin-left: 170px;
     position: absolute  ;
     bottom: 12px;
+}
+
+/* Lists */
+.list {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.list-item {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.list-long-item {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 2em;
 }
