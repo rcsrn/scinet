@@ -4,26 +4,67 @@
 <html>
     <head>
         <title>{{ user.username }}</title>
-        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link rel="stylesheet" href="{% static 'user.css' %}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">   
-      </head>
+    </head>
 
 <body>
-    <div>
-        <h1 class="text-container">{{user.first_name}} {{user.last_name}}</h1>
-        <h1 class="text-container">Institutions:</h1>
-        <div class="text-container">
-            {%for institution in institutions%}
-                <a href="{% url 'institution' institution.institution_id %}"> <p>{{institution.name}}</p> </a>
+    <div class="top" id="top-id">
+        <div class="logo-container">
+          <p class="logo">SCINET</p>
+        </div>
+
+        <div class="login-button-container">
+            <a href="{% url 'index' %}"> <button class="login-button">Home</button> </a>
+          </div>
+          
+          <div class="register-button-container">
+            <button class="register-button" onclick="history.go(-1)">Return</button>
+          </div>
+      </div>
+
+    
+    <div class="middle">
+        <div class="center">
+        <h1 class="title">{{user.first_name}} {{user.last_name}}</h1>
+        <div class="most-cited-container">
+            <h3 class="visit-phrase" style="margin-bottom: -40px; font-size: 30px;"> Publications: </h3>
+            {%for publication in user.publications.all%}
+              <a href="{% url 'publication' publication.publication_id %}"> <p class="list-item">{{publication.title}}</p> </a>
+              <p class="info-link">Journal: {{publication.journal_id.name}}. {{publication.publication_date.year}}. {{publication.topic.all.0.name}}</p>
             {%endfor%}
-        <h2 class="text-container">Publications:</h2>
-        <div class="text-container">
-            {%for publication in publications%}
-                <a href="{% url 'publication' publication.publication_id %}"> <p>{{publication.title}}</p> </a>
-            {%endfor%}
+        </div>
+        </div>
+
+        <div class="left">
+            <div class="info-container">
+                <h2 class="visit-phrase">Institutions:</h2>
+                {%for institution in user.institutions.all%}
+                    <a> <p class="list-item">{{institution.name}}</p> </a>
+                {%endfor%}
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="info-container">
+                <div>
+                    <p class="info-phrase"> Username: </p>
+                    <p class="info"> {{user.username}} </p>
+                </div>
+                <div>
+                    <p class="info-phrase"> email: </p>
+                    <p class="info"> {{user.email}} </p>
+                </div>
+                <div>
+                    <p class="info-phrase"> Age: </p>
+                    <p class="info"> {{user.age}} </p>
+                </div>
+            </div>
+        </div>
     </div>
+
 </body>
 
 </html>
