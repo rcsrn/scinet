@@ -1,6 +1,7 @@
 from sqlite3 import IntegrityError
 from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
+from django.db import IntegrityError
 
 from .models import Institution
 from .models import GeneralUser
