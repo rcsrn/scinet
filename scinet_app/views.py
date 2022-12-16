@@ -17,7 +17,7 @@ def index(request):
     for publication in sorted_publications:
         publications.append(publication[0])
 
-    return render(request, 'index.html', {'topics': topics.values(), 'publications': publications[:9]})
+    return render(request, 'index.html', {'topics': topics.values(), 'publications': publications[:20]})
 
 def register(request):
     return render(request, 'register.html')
@@ -28,16 +28,20 @@ def topic(request, topic_id):
     return render(request, 'topic.html', {'topic': topic, 'publications': publications})
 
 def publication(request, publication_id):
-	publication = Publication.objects.get(publication_id=publication_id)
-	# id_authors = Writes.objects.filter(publication_id=publication_id).values_list('general_user_id', flat=True)
-	# authors = []
-	# for id in id_authors:
-		# authors.append(GeneralUser.objects.get(general_user_id=id))
+    publication = Publication.objects.get(publication_id=publication_id)
+    all_authors = GeneralUser.objects.all()
+    authors = []
+    for author in all_authors:
+        if publication in author.publications.all():
+            authors.append(author)
 
-	return render(request, 'publication.html', {'publication': publication})
+    citation_ids = Citations.objects.values_list('citer', flat=True).filter(citee=publication_id)
+    cited_by = []
+    for id in citation_ids:
+        cited_by.append(Publication.objects.get(publication_id=id))
+    return render(request, 'publication.html', {'publication': publication, 'authors': authors, 'cited_by': cited_by})
 
-
-# def user(request, user_id):
+def user(request, user_id):
 # 	user = GeneralUser.objects.get(general_user_id=user_id)
 # 	id_publications = Writes.objects.filter(general_user_id=user_id).values_list('publication_id', flat=True)
 # 	publications = []
@@ -49,6 +53,7 @@ def publication(request, publication_id):
 # 	for id in id_institutions:
 # 		institutions.append(Institution.objects.get(institution_id=id))
 # 	return render(request, 'user.html', {'user': user, 'publications': publications, 'institutions': institutions})
+    return render(request, 'user.html')
 
 def login(request):
     return render(request, 'login.html')

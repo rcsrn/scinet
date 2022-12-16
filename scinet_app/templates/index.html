@@ -76,13 +76,11 @@
       <div class="featured-container">
         <div class="featured">
           <p class="most-cited-phrase">Topics</p>
-        <div class="scroll-container">
           <div class="visit-container">
           <div class="topic-button-container">
               {% for topic in topics %}
               <button class="topic-button" onclick="location.href='topic/{{topic.topic_id}}'">{{topic.name}}</button>
               {% endfor %}
-          </div>
           </div>
         </div>
         </div>

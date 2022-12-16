@@ -4,30 +4,62 @@
 <html>
     <head>
         <title>{{ publication.title }}</title>
-        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link rel="stylesheet" href="{% static 'publication.css' %}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">   
     </head>
 
 <body>
-    <div class="left-bar-container">
-        <h2 class="left-bar-title">Authors:</h2>
-        {%for author in authors%}
-            <a href="{% url 'user' author.general_user_id %}"> <p class="link-container">{{author.last_name}} {{author.first_name}}</p> </a>
-        {%endfor%}
+    <div class="top" id="top-id">
+        <div class="logo-container">
+          <p class="logo">SCINET</p>
+        </div>
+
+        <div class="login-button-container">
+            <a href="{% url 'index' %}"> <button class="login-button">Home</button> </a>
+          </div>
+          
+          <div class="register-button-container">
+            <button class="register-button" onclick="history.go(-1)">Return</button>
+          </div>
+      </div>
+
+    
+    <div class="middle">
+        <div class="center">
+        <h1 class="title">{{ publication.title }}</h1>
+        <p class="content">{{ publication.content }}</p>
+        </div>
+
+        <div class="left">
+            <div class="info-container">
+                <h2 class="visit-phrase">Authors:</h2>
+                {%for author in authors%}
+                    <a href="{% url 'user' author.general_user_id %}"> <p class="list-item">{{author.first_name}} {{author.last_name}}</p> </a>
+                {%endfor%}
+            </div>
+            <div class="info-container">
+                <h2 class="visit-phrase">Topics:</h2>
+                {%for topic in publication.topic.all%}
+                    <a href="{% url 'topic' topic.topic_id %}"> <p class="list-item">{{topic.name}}</p> </a>
+                {%endfor%}
+            </div>
+            <div class="info-container">
+                <div class="scroll-container">
+                    <h2 class="visit-phrase">Cited by:</h2>
+                    {%for citation in cited_by%}
+                        <a href="{% url 'publication' citation.publication_id %}"> <p class="list-long-item">{{citation.title}}</p> </a>
+                    {%endfor%}
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            
+        </div>
     </div>
 
-    <div class="main-container">
-        <h1 style="color: rgb(192, 144, 77); font-size: 50px">{{publication.title}}</h1>
-        <h1 class="info-container"> Journal: {{publication.journal_id.name}}</h1>
-        <h1 class="info-container"> Publication date: {{publication.publication_date}}</h1>
-    </div>
 </body>
-
-<div class="bottom-container">
-    <a href="{% url 'index' %}"> <button class="register-button">Home</button> </a>
-    <button class="register-button" onclick="history.go(-1)">Return</button>
-</div>
 
 </html>

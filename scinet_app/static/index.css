@@ -229,6 +229,8 @@ body {
 }
 
 .scroll-container {
+    overflow-y: auto;
+    height: 500px;
     scroll-behavior: smooth;
 }
 
