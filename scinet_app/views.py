@@ -77,7 +77,11 @@ def institution_info(request, insti_id):
     authors = GeneralUser.objects.filter(institutions=insti_id)
     publications = []
     for i in authors:
-        publications.append(i.publications.all())
+        publications.extend(i.publications.all())
+
+    # publications = []
+    # for id in publications_id:
+    #     publications.append(Publication.objects.get(publication_id=id))
 
     context = {'institution': institution,
                'publications': publications, 'authors': authors}

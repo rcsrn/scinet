@@ -51,3 +51,62 @@ a:link{
     width: fit-content;
     height: fit-content;
 }
+
+
+.login-button-container {
+    display: inline-block;
+    position: absolute;
+    top: 22px;
+    right: 180px;
+}
+
+.login-button {
+    background-color: white;
+    font-weight: bold;
+    font-size: 15px;
+    color: rgb(84, 186, 219);
+    cursor: pointer;
+    border: none;
+}
+
+.register-button-container {
+    display: inline-block;
+    position: absolute;
+    top: 22px;
+    right: 250px;
+}
+
+.register-button {
+    margin-right: 15px;
+    color: rgb(109, 105, 104);
+    background-color: white;
+    font-weight: bold;
+    font-size: 15px;
+    color: rgb(109, 105, 104);
+    cursor: pointer;
+    border: transparent;
+}
+
+.login-button:hover,
+.register-button:hover {
+    text-decoration: underline;
+}
+/*styles for name*/
+
+.logo-container {
+    display: inline-block;
+}
+
+.logo {
+    display: inline-block;
+    vertical-align: center;
+    color: rgb(84, 186, 219);
+    font-family: Montserrat, "sans-serif";
+    margin-left: 70px;
+    font-weight: 500;
+    font-size: 30px;
+    margin-bottom: 0px;
+    margin-left: 170px;
+    position: absolute  ;
+    bottom: 12px;
+}
