@@ -34,7 +34,9 @@
             {%for publication in user.publications.all%}
               <a href="{% url 'publication' publication.publication_id %}"> <p class="list-item">{{publication.title}}</p> </a>
               <p class="info-link">Journal: {{publication.journal_id.name}}. {{publication.publication_date.year}}. 
-                <a href={% url 'topic' publication.topic.all.0.topic_id%}>{{publication.topic.all.0.name}}</a></p>
+                {%if publication.topic.all.count > 0%}
+                    <a href="{% url 'topic' publication.topic.all.0.topic_id%}">{{publication.topic.all.0.name}}</a></p>
+                {%endif%}
             {%endfor%}
         </div>
         </div>
