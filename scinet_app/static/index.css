@@ -254,7 +254,7 @@ body {
   margin: .5em .8em;
   padding: .5em 1em;
   background: rgb(84, 186, 219);
-  color: black;
+  color: white;
   border-radius: 2em;   
   border: none;
   cursor: pointer;
@@ -263,7 +263,7 @@ body {
 
 .topic-button:hover {
     background-color: rgb(70, 158, 187);                 ;
-    color: black;
+    color: white;
 }
 
 .visit-container {
@@ -308,6 +308,6 @@ body {
 
 .info {
     margin-top: -15px;
-    -size: 20px;
-    color: rgb(13, 126, 98);
+    font-weight: bold;
+    color: rgb(84, 186, 219);
 }
