@@ -31,7 +31,7 @@
             <h1 class="title">{{ topic.name }}</h1>
             <div class="most-cited-container">
                 {%for publication in publications%}
-                  <a href="{% url 'publication' publication.publication_id %}"> <p class="list-item">{{publication.title}}</p> </a>
+                  <a class="link" href="{% url 'publication' publication.publication_id %}"> <p class="list-item">{{publication.title}}</p> </a>
                   <p class="info">Journal: {{publication.journal_id.name}}. {{publication.publication_date.year}}.</p>
                 {%endfor%}
             </div>

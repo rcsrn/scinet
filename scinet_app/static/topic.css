@@ -103,3 +103,11 @@ body {
     font-size: 27px;
     color: rgb(13, 126, 98);
 }
+
+.link:link {
+    color: rgb(0, 24, 41);
+}
+
+.link:visited {
+    color:rgb(0, 24, 41);
+}

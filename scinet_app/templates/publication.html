@@ -44,14 +44,14 @@
             <div class="info-container">
                 <h2 class="visit-phrase">Topics:</h2>
                 {%for topic in publication.topic.all%}
-                    <a href="{% url 'topic' topic.topic_id %}"> <p class="list-item">{{topic.name}}</p> </a>
+                    <a class="link" href="{% url 'topic' topic.topic_id %}"> <p class="list-item">{{topic.name}}</p> </a>
                 {%endfor%}
             </div>
             <div class="info-container">
                 <div class="scroll-container">
                     <h2 class="visit-phrase">Cited by:</h2>
                     {%for citation in cited_by%}
-                        <a href="{% url 'publication' citation.publication_id %}"> <p class="list-long-item">{{citation.title}}</p> </a>
+                        <a class="link" href="{% url 'publication' citation.publication_id %}"> <p class="list-long-item">{{citation.title}}</p> </a>
                     {%endfor%}
                 </div>
             </div>
