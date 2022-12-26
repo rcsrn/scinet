@@ -232,6 +232,7 @@ body {
     overflow-y: auto;
     height: 500px;
     scroll-behavior: smooth;
+    margin-left: 40px;
 }
 
 @media (min-width: 768px) {
@@ -246,7 +247,7 @@ body {
 
 .topic-button-container {
     margin-top: 0px;
-    margin-left: 20px;
+    margin-left: 50px;
 }
 
 .topic-button {
