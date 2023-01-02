@@ -40,8 +40,12 @@
         </div>
         <div class="outer-search-bar-container">
           <div class="search-bar-container">
-            <input type="text" class="search-bar" placeholder="Search">
-            <button class="search-button">
+            <form method="get" action="search">
+              <input type="text" class="search-bar" placeholder="Search" name="search">
+              <input type= "submit" class="search-button" value="submit">
+            </form>
+            {% comment %} <input type="text" class="search-bar" placeholder="Search">
+            <button class="search-button"> {% endcomment %}
               <svg class="search-icon" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 19.9 19.7">
                 <title id="title">Search Icon</title>
@@ -75,7 +79,7 @@
 
       <div class="featured-container">
         <div class="featured">
-          <p class="most-cited-phrase2">Topics</p>
+          <p class="most-cited-phrase">Topics</p>
           <div class="visit-container">
           <div class="topic-button-container">
               {% for topic in topics %}

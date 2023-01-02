@@ -21,6 +21,9 @@ def index(request):
 
     return render(request, 'index.html', {'topics': topics.values(), 'publications': publications[:20]})
 
+def search(request):
+    publications = Publication.objects.filter(title=request.GET.get('search'))
+    return render(request, {'publications': publications})
 
 def register(request):
     return render(request, 'register.html')

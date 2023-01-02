@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Results</title>
+        <link rel="stylesheet" href="{% static 'topic.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">   
+    </head>
+
+<body>
+    <div class="top" id="top-id">
+        <div class="logo-container">
+          <p class="logo">SCINET</p>
+        </div>
+
+        <div class="login-button-container">
+            <a href="{% url 'index' %}"> <button class="login-button">Home</button> </a>
+          </div>
+          
+          <div class="register-button-container">
+            <button class="register-button" onclick="history.go(-1)">Return</button>
+          </div>
+      </div>
+
+    
+    <div class="middle">
+        <div class="center">
+            <h1 class="title">Results:</h1>
+            <div class="most-cited-container">
+                {%for publication in publications%}
+                  <a href="{% url 'publication' publication.publication_id %}"> <p class="list-item">{{publication.title}}</p> </a>
+                  <p class="info">Journal: {{publication.journal_id.name}}. {{publication.publication_date.year}}.</p>
+                {%endfor%}
+            </div>
+
+            </div>
+        </div>
+    </div>
+
+</html>
