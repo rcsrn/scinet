@@ -50,17 +50,17 @@ class Command(BaseCommand):
                             content=lorem.paragraphs(20), doi=lorem.words(1))
             p.save()
             for k in range(randrange(1,5)):
-                p.topic.add(Topic.objects.get(topic_id=randrange(0,9)))
+                p.topic.add(Topic.objects.get(topic_id=randrange(1,9)))
                 
         for j in range(100):
             first_name = names.get_first_name(gender=choice(self.gender))
             last_name = names.get_last_name()
             username = first_name + last_name
             user = GeneralUser(general_user_id=j, username=username, first_name=first_name, last_name=last_name, email=username + '@scinet.com',
-                               password=lorem.words(1), age=randrange(18,100))
+                               password=lorem.words(1), age=randrange(25,100))
             user.save()
             for k in range(randrange(1,10)):
-                user.publications.add(Publication.objects.get(publication_id=randrange(0,2000)))
+                user.publications.add(Publication.objects.get(publication_id=randrange(0,100)))
             
             for k in range(randrange(1,5)):
                 user.institutions.add(Institution.objects.get(institution_id=randrange(0,50)))
