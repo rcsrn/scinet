@@ -1,4 +1,4 @@
-{% load static %}
+<!-- {% load static %}
 <!DOCTYPE html>
 
 <html>
@@ -23,4 +23,20 @@
             </div>
         </div>
     </body>
-</html>
+</html> -->
+
+{% block content %}
+
+<div class="container py-5">
+    <h1>Login</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ login_form }}
+        <button class="btn btn-primary" type="submit">Login</button>
+    </form>
+    <p class="text-center">
+        Don't have an account? <a href="{% url 'register' %}">Create an account</a>
+    </p>
+</div>
+
+{% endblock %}

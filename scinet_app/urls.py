@@ -11,5 +11,6 @@ urlpatterns = [
     path('main/login', views.login, name='login'),
     path('main/topic/<int:topic_id>', views.topic, name='topic'),
     path('institution/<int:insti_id>', views.institution_info, name ='institution'),
-    path('main/search', views.search, name='search')
+    path('main/search', views.search, name='search'),
+    path('main/logout', views.logout, name='logout')
 ]
