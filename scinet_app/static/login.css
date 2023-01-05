@@ -1,6 +1,8 @@
 .login-phrase {
     font-family: League Spartan;
-    
+    color: rgb(0, 30, 52);
+    margin-left: 650px;
+    font-size: 40px;
 }
 
 .logo {
@@ -29,7 +31,8 @@
     background-color: rgb(84, 186, 219);
 }
 
+
 .py-5 {
     position: relative;
-    top: 100px
+    top: 100px;
 }
