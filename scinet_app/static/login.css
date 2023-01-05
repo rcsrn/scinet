@@ -73,3 +73,8 @@
 .text-center {
     margin-left: 575px;
 }
+
+.flex-container {
+    display: flex;
+    justify-content: column;
+}
