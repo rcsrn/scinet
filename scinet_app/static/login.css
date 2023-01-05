@@ -31,6 +31,45 @@
     background-color: rgb(84, 186, 219);
 }
 
+.login-button-container {.top
+    display: inline-block;
+    position: absolute;
+    top: 22px;
+    right: 180px;
+}
+
+.login-button {
+    background-color: rgb(84, 186, 219);
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.register-button-container {
+    display: inline-block;
+    position: absolute;
+    top: 22px;
+    right: 250px;
+}
+
+.register-button {
+    margin-right: 15px;
+    color: rgb(109, 105, 104);
+    background-color: rgb(84, 186, 219);
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+    border: transparent;
+}
+
+.login-button:hover,
+.register-button:hover {
+    text-decoration: underline;
+}
+
 .btn-primary {
     display: block;
     margin-top: 30px;
