@@ -1,3 +1,10 @@
+.register-phrase {
+    font-family: League Spartan;
+    color: rgb(0, 30, 52);
+    margin-left: 650px;
+    font-size: 40px;
+}
+
 .logo {
     display: inline-block;
     vertical-align: center;
@@ -10,6 +17,11 @@
     margin-left: 170px;
     position: absolute;
     bottom: 12px;
+}
+
+.py-5 {
+    position: relative;
+    top: 100px;
 }
 
 .top {
@@ -62,3 +74,5 @@
 .register-button:hover {
     text-decoration: underline;
 }
+
+
