@@ -34,8 +34,19 @@
 .btn-primary {
     display: block;
     margin-top: 30px;
-    margin-left: 680px;
+    margin-left: 660px;
     margin-bottom: 30px;
+    height: 30px;
+    width: 90px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(191, 191, 191);
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: rgb(210, 210, 210);
 }
 
 .py-5 {
