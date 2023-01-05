@@ -1,0 +1,64 @@
+.logo {
+    display: inline-block;
+    vertical-align: center;
+    color: white;
+    font-family: Montserrat, "sans-serif";
+    margin-left: 70px;
+    font-weight: 500;
+    font-size: 30px;
+    margin-bottom: 0px;
+    margin-left: 170px;
+    position: absolute;
+    bottom: 12px;
+}
+
+.top {
+    border-bottom: 1px solid rgb(209, 209, 209);
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    height: 70px;
+    background-color: white;
+    z-index: 100;
+    background-color: rgb(84, 186, 219);
+}
+
+.login-button-container {.top
+    display: inline-block;
+    position: absolute;
+    top: 22px;
+    right: 180px;
+}
+
+.login-button {
+    background-color: rgb(84, 186, 219);
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.register-button-container {
+    display: inline-block;
+    position: absolute;
+    top: 22px;
+    right: 250px;
+}
+
+.register-button {
+    margin-right: 15px;
+    color: rgb(109, 105, 104);
+    background-color: rgb(84, 186, 219);
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+    border: transparent;
+}
+
+.login-button:hover,
+.register-button:hover {
+    text-decoration: underline;
+}
