@@ -1,3 +1,35 @@
 .login-phrase {
-    color: rgb(84, 186, 219);
+    font-family: League Spartan;
+    
+}
+
+.logo {
+    display: inline-block;
+    vertical-align: center;
+    color: white;
+    font-family: Montserrat, "sans-serif";
+    margin-left: 70px;
+    font-weight: 500;
+    font-size: 30px;
+    margin-bottom: 0px;
+    margin-left: 170px;
+    position: absolute;
+    bottom: 12px;
+}
+
+.top {
+    border-bottom: 1px solid rgb(209, 209, 209);
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    height: 70px;
+    background-color: white;
+    z-index: 100;
+    background-color: rgb(84, 186, 219);
+}
+
+.py-5 {
+    position: relative;
+    top: 100px
 }
