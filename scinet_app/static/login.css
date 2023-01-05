@@ -31,8 +31,34 @@
     background-color: rgb(84, 186, 219);
 }
 
+.btn-primary {
+    display: block;
+    margin-top: 30px;
+    margin-left: 680px;
+    margin-bottom: 30px;
+}
 
 .py-5 {
     position: relative;
     top: 100px;
+}
+
+.form-control-username {
+    display: block;
+    margin-bottom: 40px;
+    margin-left: 525px;
+    width: 360px;
+    height: 30px;
+}
+
+.form-control-password {
+    display: block;
+    margin-bottom: 20px;
+    margin-left: 525px;
+    width: 360px;
+    height: 30px;
+}
+
+.text-center {
+    margin-left: 575px;
 }
