@@ -1,4 +1,4 @@
- {% load static %}
+{% load static %}
 <!DOCTYPE html>
 
 <html>
@@ -6,6 +6,7 @@
     <title>Register</title>
     <link rel="stylesheet" href="{% static 'login.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
@@ -19,6 +20,7 @@
     {% block content %}
     <div class="container py-5">
       <h1 class="login-phrase">Log in</h1>
+					  
       <form class="container form" method="post">
 	<input type="input" class="form-control-username" name="username" id="inputEmail" required>
 	<input type="password" class="form-control-password" name="password" id="inputPass" required>
