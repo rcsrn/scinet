@@ -7,10 +7,12 @@ services:
     environment:
       - POSTGRES_DB=scinet
       - POSTGRES_USER=scinet
-      - POSTGRES_PASSWORD=<your passwor> 
+      - POSTGRES_PASSWORD=<password>
   web:
+    restart: always
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: bash -c "python manage.py runserver 0.0.0.0:8000 
+                      && pythom manage.py populate"
     volumes:
       - .:/code
     ports:

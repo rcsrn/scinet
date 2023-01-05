@@ -18,7 +18,9 @@ COPY . /code/
 
 
 EXPOSE 8000
+ENTRYPOINT [ "./entrypoint.sh" ]
 
 # runs the production server
 # ENTRYPOINT ["python", "manage.py"]
 # CMD ["runserver", "0.0.0.0:8000"]
+# CMD echo python manage.py populate
