@@ -32,7 +32,7 @@ body {
     bottom: 12px;
 }
 
-.login-button-container {
+.login-button-container {.top
     display: inline-block;
     position: absolute;
     top: 22px;
@@ -74,10 +74,11 @@ body {
 
 .middle {
     display: grid;
-    grid-template-rows: 500px 500px;
+    grid-template-rows: 700px 500px;
 }
 
 .first-section {
+    margin-top: 30px;
     display: grid;
     grid-template-columns: 50% 50%;
 }
