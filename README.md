@@ -21,7 +21,7 @@ python manage.py runserver
 python manage.py makemigrations scinet_app
 python manage.py migrate scinet_app
 ```
-## Crear migraaciones y aplicarlas para docker-compose
+## Crear migraciones y aplicarlas para docker-compose
 ```
 docker-compose run web python manage.py makemigrations
 docker-compose run web python manage.py migrate
