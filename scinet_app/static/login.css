@@ -138,5 +138,50 @@
 	bottom: 12px;
     }
 
+    .login-phrase {
+    font-family: League Spartan;
+    color: rgb(0, 30, 52);
+    margin-left: 250px;
+    font-size: 40px;
+    justify-content: center;
+    }
+    
+    .btn-primary {
+	display: block;
+	margin-top: 30px;
+	margin-left: 260px;
+	margin-bottom: 30px;
+	height: 30px;
+	width: 90px;
+	border-radius: 10px;
+	border: none;
+	cursor: pointer;
+	background-color: rgb(191, 191, 191);
+	font-weight: bold;
+    }
+    
+    .py-5 {
+	position: relative;
+	top: 100px;
+    }
 
+    .form-control-username {
+	display: block;
+	margin-bottom: 40px;
+	margin-left: 125px;
+	width: 360px;
+	height: 30px;
+    }
+
+    .form-control-password {
+	display: block;
+	margin-bottom: 20px;
+	margin-left: 125px;
+	width: 360px;
+	height: 30px;
+    }
+
+    .text-center {
+	margin-left: 175px;
+    }
 }
