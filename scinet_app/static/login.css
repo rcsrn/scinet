@@ -124,6 +124,21 @@
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
+    .logo {
+	display: none;
+	vertical-align: center;
+	color: white;
+	font-family: Montserrat, "sans-serif";
+	margin-left: 70px;
+	font-weight: 500;
+	font-size: 30px;
+	margin-bottom: 0px;
+	margin-left: 170px;
+	position: absolute;
+	bottom: 12px;
+    }
+
+    
     .login-phrase {
 	font-family: League Spartan;
 	color: rgb(0, 30, 52);
