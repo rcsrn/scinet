@@ -28,11 +28,16 @@
 
     <div class="container py-5">
       <h1 class="register-phrase">Register</h1>
-	<form method="post">
-          {% csrf_token %}
-          {{ register_form }}
-          <button class="btn btn-primary" type="submit">Register</button>
-	</form>
+      <form method="post">
+        {% csrf_token %}
+	<div class="input-container">
+	<input type="input" class="form-control-username" placeholder="Username" id="inputEmail" required>
+	<input type="input" class="form-control-email" placeholder="Email" id="inputEmail" required>
+	<input type="password" class="form-control-password" placeholder="Password" id="inputPass" required>
+	</div>
+	
+        <button class="btn btn-primary" type="submit">Register</button>
+      </form>
       <p class="text-center">
         If you already have an account, <a href="{% url 'login' %}">login</a> instead.
       </p>

@@ -1,7 +1,7 @@
 .register-phrase {
     font-family: League Spartan;
     color: rgb(0, 30, 52);
-    margin-left: 650px;
+    margin-left: 637px;
     font-size: 40px;
 }
 
@@ -22,6 +22,9 @@
 .py-5 {
     position: relative;
     top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .top {
@@ -75,4 +78,51 @@
     text-decoration: underline;
 }
 
+.form-control-username {
+    display: block;
+    margin-left: 525px;
+    width: 360px;
+    height: 30px;
+    justify-content: center;
+    margin-bottom: 28px;
+}
 
+.form-control-email {
+    display: block;
+    margin-left: 525px;
+    width: 360px;
+    height: 30px;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+
+
+.form-control-password {
+    display: block;
+    margin-left: 525px;
+    width: 360px;
+    height: 30px;
+    justify-content: center;
+    margin-bottom: 28px;
+    
+}
+
+.btn-primary {
+    display: block;
+    margin-top: 30px;
+    margin-left: 660px;
+    margin-bottom: 30px;
+    height: 30px;
+    width: 90px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(191, 191, 191);
+    font-weight: bold;
+    transition: all 0.2s; 
+}
+
+.text-center {
+    margin-left: 563px;
+    justify-content: center;    
+}
