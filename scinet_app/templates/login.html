@@ -23,24 +23,23 @@
         <button class="register-button" onclick="history.go(-1)">Return</button>
       </div>
     </div>
-</div>
 
-{% block content %}
-<div class="container py-5">
-  <h1 class="login-phrase">Log in</h1>
-  <div class="flex-container">
-    <form class="container form" method="post">
-      {% csrf_token %}
-      <input type="input" class="form-control-username" placeholder="Username" id="inputEmail" required>
-      <input type="password" class="form-control-password" placeholder="Password" id="inputPass" required>
-      <button class="btn btn-primary" type="submit">Log in</button>
-    </form>
-  </div>
-  <p class="text-center">
-    Don't have an account? <a href="{% url 'register' %}">Create an account</a>
-  </p>
-</div>
-{% endblock %}
+    {% block content %}
+    <div class="container py-5">
+      <h1 class="login-phrase">Log in</h1>
+      <div class="flex-container">
+	<form class="container form" method="post">
+	  {% csrf_token %}
+	  <input type="input" class="form-control-username" placeholder="Username" id="inputEmail" required>
+	  <input type="password" class="form-control-password" placeholder="Password" id="inputPass" required>
+	  <button class="btn btn-primary" type="submit">Log in</button>
+	</form>
+      </div>
+      <p class="text-center">
+	Don't have an account? <a href="{% url 'register' %}">Create an account</a>
+      </p>
+    </div>
+    {% endblock %}
 
-</body>
+  </body>
 </html> 

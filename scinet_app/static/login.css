@@ -82,6 +82,7 @@
     cursor: pointer;
     background-color: rgb(191, 191, 191);
     font-weight: bold;
+    transition: all 0.2s;
 }
 
 .btn-primary:hover {

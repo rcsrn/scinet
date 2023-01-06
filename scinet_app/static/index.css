@@ -261,10 +261,11 @@ body {
   border: none;
   cursor: pointer;
   font-size: 1.1em;
+  transition: all 0.4s;
 }
 
 .topic-button:hover {
-    background-color: rgb(70, 158, 187);                 ;
+    background-color: rgb(51, 139, 168);                 ;
     color: white;
 }
 
