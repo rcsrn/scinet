@@ -35,3 +35,8 @@ docker-compose up
 ```
 docker-compose run web python manage.py populate
 ```
+
+## Running interactive shell in a docker container
+```
+docker exec -it <container-name> sh
+```
