@@ -17,7 +17,7 @@ class PublicationsTestCase(TestCase):
         print("Number of publications: "+str(publications.__len__())+"\n")
         
         for pub in publications:
-            if pub.generaluser_set.filter(slug=requested_slug).exists():
+            if pub.generaluser_set.filter(publications.__contains__(pub)).exists():
                 self.assertTrue(True)
             else:
                 self.assertTrue(False)
