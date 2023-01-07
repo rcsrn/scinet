@@ -8,7 +8,7 @@ pip install -r requirements.txt
 ```
 ## Salir del entorno virtual
 ```
-deactive
+deactivate
 ```
 
 ## Ejecutar aplicación
@@ -29,4 +29,9 @@ docker-compose run web python manage.py migrate
 ## Correr docker server
 ```
 docker-compose up
+```
+
+## Llenar base de datos en docker
+```
+docker-compose run web python manage.py populate
 ```
