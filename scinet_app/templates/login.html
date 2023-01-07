@@ -1,43 +1,42 @@
-{% load static %}
+<!-- {% load static %}
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <title>Login</title>
-    <link rel="stylesheet" href="{% static 'login.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=League+Spartan:wght@700&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
+    <head>
+        <title>Register</title>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
 
-  <body>
-    
-    <div class="top" id="top-id">
-      <div class="logo-container">
-	<p class="logo">SCINET</p>
-      </div>
-      <div class="login-button-container">
-        <a href="{% url 'index' %}"> <button class="login-button">Home</button> </a>
-      </div>
-      
-      <div class="register-button-container">
-        <button class="register-button" onclick="history.go(-1)">Return</button>
-      </div>
-    </div>
-    
-    {% block content %}
-    <div class="container py-5">
-      <h1 class="login-phrase">Log in</h1>
-      <form class="container form" method="post">
-	{% csrf_token %}
-	<input type="input" class="form-control-username" placeholder="Username" id="inputEmail" required>
-	<input type="password" class="form-control-password" placeholder="Password" id="inputPass" required>
-	<button class="btn btn-primary" type="submit">Log in</button>
-      </form>
-      <p class="text-center">
-	Don't have an account? <a href="{% url 'register' %}">Create an account</a>
-      </p>
-    </div>
-    {% endblock %}
+    <body class="register">
+        <div class="top-container"></div>
+        <div class="middle-container">
+            <div class="form-container">
+                <h class="title">Log-in</h>
+                <form>
+                    <label for="email">E-mail:</label><br>
+                    <input class="input-form" type="email" id="email"><br>
+                    <label for="password">Password:</label><br>
+                    <input class="input-form" type="password" id="password"><br>
+                    <input onclick="location.href = 'index.html'" class="cancel-button" type="submit" value="Cancel">
+                    <input class="submit-button" type="submit" value="Log-in">
+                </form>
+            </div>
+        </div>
+    </body>
+</html> -->
 
-  </body>
-</html> 
+{% block content %}
+
+<div class="container py-5">
+    <h1>Login</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ login_form }}
+        <button class="btn btn-primary" type="submit">Login</button>
+    </form>
+    <p class="text-center">
+        Don't have an account? <a href="{% url 'register' %}">Create an account</a>
+    </p>
+</div>
+
+{% endblock %}
