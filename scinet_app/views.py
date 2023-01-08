@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate as auth
 from django.contrib.auth.forms import AuthenticationForm
 
 from .models import Publication, GeneralUser, Institution, Topic, Citations
-from .forms import NewUserForm, NewResearcherForm
+from .forms import NewUserForm, NewResearcherForm, NewPublicationForm
 
 def index(request):
     users = []
@@ -89,6 +89,8 @@ def newResearcher(request):
             researcher = form.save(commit=False)
             researcher.general_user_id = GeneralUser.objects.all().count() + 1
             researcher.save()
+            form.save()
+            messages.success(request, "You have successfully become researcher")
             return redirect(index)
         else:
             messages.error(request, "The username already exists")
@@ -96,6 +98,25 @@ def newResearcher(request):
         form = NewResearcherForm()
     return render(request,'researcher_form.html', {'form': form})
 
+
+def newPublication(request):
+    if request.method == "POST":
+        form = NewPublicationForm(request.POST)
+        if form.is_valid():
+            publication = form.save(commit=False)
+            publication.publication_id = Publication.objects.all().count() + 1
+            publication.save()
+            user = GeneralUser.objects.get(username=request.user.username)
+            user.publications.add(publication)
+            user.save()
+            form.save()
+            messages.success(request, "Your publication has been uploaded")
+            return redirect(index)
+        else:
+            messages.error(request, "The publication could not be uploaded")
+    else:
+        form = NewPublicationForm()
+    return render(request,'publication_form.html', {'form': form})
 
 def login(request):
     if request.method == "POST":

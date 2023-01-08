@@ -4,6 +4,18 @@ from django.contrib.auth.models import User
 
 from .models import *
 
+class CustomTopicMMCF(forms.ModelMultipleChoiceField):
+    def label_from_instance(self, topic):
+        return "%s" % topic.name
+
+class CustomInstitutionMMCF(forms.ModelMultipleChoiceField):
+    def label_from_instance(self, institution):
+        return "%s" % institution.name
+
+class CustomJournalMCF(forms.ModelChoiceField):
+    def label_from_instance(self, journal):
+        return "%s" % journal.name
+
 class NewUserForm(UserCreationForm):
     email = forms.EmailField(required=True)
 
@@ -19,20 +31,26 @@ class NewUserForm(UserCreationForm):
         return user
 
 class NewResearcherForm(forms.ModelForm):
+    institutions = CustomInstitutionMMCF(queryset=Institution.objects.all(),
+                    widget=forms.CheckboxSelectMultiple)
     class Meta:
         model = GeneralUser
         fields = ["general_user_id", "username", "first_name", "last_name", "email", 
-                "password", "age",]
+                "password", "age", "institutions"]
         labels = {'general_user_id':"General user id", 'username':"Username", 'first_name':"First Name",
                  'last_name':"Last Name", 'email':"E-mail", 
-                'password':"Password", 'age':"Age"}
+                'password':"Password", 'age':"Age", 'institutions':"Institutions"}
 
-# class NewPublicationForm(forms.ModelForm):
-#     class Meta:
-#         model = Publication
-#         fields = ["publication_id", "username", "first_name", "last_name", "email", 
-#                 "password", "age",]
-#         labels = {'general_user_id':"General user id", 'username':"Username", 'first_name':"First Name",
-#                  'last_name':"Last Name", 'email':"E-mail", 
-#                 'password':"Password", 'age':"Age"}
+class NewPublicationForm(forms.ModelForm):
+    journal_id = CustomJournalMCF(queryset=Journal.objects.all())
+    publication_date = forms.DateField()
+    topic = CustomTopicMMCF(queryset=Topic.objects.all(), 
+                widget=forms.CheckboxSelectMultiple)
+    class Meta:
+        model = Publication
+        fields = ["publication_id", "journal_id", "title", "publication_date", "content", 
+                "doi", "topic",]
+        labels = {'publication_id':"Publication id", 'journal_id':"Select journal", 
+                'title':"Title", 'publication_date':"Publication Date", 'content':"Article", 
+                'doi':"DOI", 'topic':"Topic"}
 

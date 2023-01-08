@@ -26,7 +26,7 @@
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button class="btn btn-primary" type="submit">Register</button>
+        <button class="btn btn-primary" type="submit">Add</button>
     </form>
     <p class="text-center">
         If you don't have an account yet, <a href="{% url 'register' %}">register</a> instead.
