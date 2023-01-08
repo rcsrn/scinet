@@ -34,6 +34,8 @@ class NewResearcherForm(forms.ModelForm):
     institutions = CustomInstitutionMMCF(queryset=Institution.objects.all(),
                     widget=forms.CheckboxSelectMultiple)
     username = forms.CharField(disabled=True)
+    institutions = CustomInstitutionMMCF(queryset=Institution.objects.all(),
+                    widget=forms.CheckboxSelectMultiple)
     class Meta:
         model = GeneralUser
         fields = ["general_user_id", "username", "first_name", "last_name", "email", 
