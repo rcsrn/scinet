@@ -84,7 +84,6 @@ def user(request, user_id):
 def newResearcher(request):
     if request.method == "POST":
         form = NewResearcherForm(request.POST, initial = {'username':request.user.username})
-        #form['fieldname'].field.widget.attr['readonly'] = 'readonly'
         if GeneralUser.objects.filter(username=form.data['username']).count() <= 0:
             researcher = form.save(commit=False)
             researcher.general_user_id = GeneralUser.objects.all().count() + 1
@@ -127,7 +126,7 @@ def login(request):
             user = auth(username=username, password=password)
             if user is not None:
                 auth_login(request, user)
-                messages.info(request, f"You are now logged in as {username}.")
+                messages.success(request, f"You are now logged in as {username}.")
                 return redirect(index)
             else:
                 messages.error(request, "Invalid username or password.")

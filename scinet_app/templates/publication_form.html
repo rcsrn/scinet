@@ -25,7 +25,14 @@
     <h1>Sign up as researcher</h1>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form.non_field_errors }}
+        {% for field in form %}
+            <p>
+                {{ field.errors }}
+                {{ field.label }}
+                {{ field }}
+            </p>
+        {% endfor %}
         <button class="btn btn-primary" type="submit">Add</button>
     </form>
     <p class="text-center">

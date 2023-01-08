@@ -25,7 +25,14 @@
     <h1>Login</h1>
     <form method="post">
         {% csrf_token %}
-        {{ login_form }}
+        {{ login_form.non_field_errors }}
+        {% for field in login_form %}
+            <p>
+                {{ field.errors }}
+                {{ field.label }}
+                {{ field }}
+            </p>
+        {% endfor %}
         <button class="btn btn-primary" type="submit">Login</button>
     </form>
     <p class="text-center">
