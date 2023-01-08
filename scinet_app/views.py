@@ -7,11 +7,16 @@ from django.contrib.auth import authenticate as auth
 from django.contrib.auth.forms import AuthenticationForm
 
 from .models import Publication, GeneralUser, Institution, Topic, Citations
-from .forms import NewUserForm
-
-
+from .forms import NewUserForm, NewResearcherForm
 
 def index(request):
+    users = []
+    username = request.user.username
+    isResearcher = GeneralUser.objects.filter(username=username).count() > 0
+
+    if request.user.is_authenticated and isResearcher:
+        users.append(GeneralUser.objects.filter(username=request.user.username))
+        
     topics = Topic.objects.all()
     citations = Citations.objects.all()
     cited_publications = {}
@@ -27,7 +32,7 @@ def index(request):
     for publication in sorted_publications:
         publications.append(publication[0])
 
-    return render(request, 'index.html', {'topics': topics.values(), 'publications': publications[:20]})
+    return render(request, 'index.html', {'topics': topics.values(), 'publications': publications[:20], 'users':users},)
 
 def search(request):
     publications = Publication.objects.filter(title__icontains=request.GET.get('search'))
@@ -73,18 +78,23 @@ def publication(request, publication_id):
 
 def user(request, user_id):
     user = GeneralUser.objects.get(general_user_id=user_id)
-# 	user = GeneralUser.objects.get(general_user_id=user_id)
-# 	id_publications = Writes.objects.filter(general_user_id=user_id).values_list('publication_id', flat=True)
-# 	publications = []
-# 	for id in id_publications:
-# 		publications.append(Publication.objects.get(publication_id=id))
-
-# 	id_institutions = Belongs.objects.filter(general_user_id=user_id).values_list('institution_id', flat=True)
-# 	institutions = []
-# 	for id in id_institutions:
-# 		institutions.append(Institution.objects.get(institution_id=id))
-# 	return render(request, 'user.html', {'user': user, 'publications': publications, 'institutions': institutions})
     return render(request, 'user.html', {'user': user})
+
+
+def newResearcher(request):
+    if request.method == "POST":
+        form = NewResearcherForm(request.POST, initial = {'username':request.user.username})
+        #form['fieldname'].field.widget.attr['readonly'] = 'readonly'
+        if GeneralUser.objects.filter(username=form.data['username']).count() <= 0:
+            researcher = form.save(commit=False)
+            researcher.general_user_id = GeneralUser.objects.all().count() + 1
+            researcher.save()
+            return redirect(index)
+        else:
+            messages.error(request, "The username already exists")
+    else:
+        form = NewResearcherForm()
+    return render(request,'researcher_form.html', {'form': form})
 
 
 def login(request):
@@ -133,3 +143,4 @@ def institution_info(request, insti_id):
                'iterateOver': range(len(authors)),
                'authors_publications': authors_publications}
     return render(request, 'institution.html', context)
+

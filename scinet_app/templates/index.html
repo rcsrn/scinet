@@ -24,6 +24,20 @@
       <button class="login-button" onclick="location.href='logout'">Log out</button>
     </div>
 
+      {% if users %}
+
+      <div class="register-button-container">
+        <button class="register-button" onclick="location.href='register'">Add publication</button>
+      </div>
+
+      {% else %}
+
+      <div class="register-button-container">
+        <button class="register-button" onclick="location.href='researcher'">Sign up as researcher</button>
+      </div>
+
+      {% endif %}
+
     {% else %}
 
     <div class="login-button-container">

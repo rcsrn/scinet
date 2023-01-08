@@ -1,29 +1,23 @@
-<!-- {% load static %}
+{% load static %}
 <!DOCTYPE html>
 
 <html>
     <head>
-        <title>Register</title>
-        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <title>Scinet</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'index.css' %}">
     </head>
 
-    <body class="register">
-        <div class="top-container"></div>
-        <div class="middle-container">
-            <div class="form-container">
-                <h class="title">Log-in</h>
-                <form>
-                    <label for="email">E-mail:</label><br>
-                    <input class="input-form" type="email" id="email"><br>
-                    <label for="password">Password:</label><br>
-                    <input class="input-form" type="password" id="password"><br>
-                    <input onclick="location.href = 'index.html'" class="cancel-button" type="submit" value="Cancel">
-                    <input class="submit-button" type="submit" value="Log-in">
-                </form>
-            </div>
-        </div>
-    </body>
-</html> -->
+<body class="register">
+
+<div class="top" id="top-id">
+    <div class="logo-container">
+      <a class="logo" href="{% url 'index' %}">SCINET</a>
+    </div>
+</div>
 
 {% block content %}
 
@@ -40,3 +34,6 @@
 </div>
 
 {% endblock %}
+
+</body>
+</html>

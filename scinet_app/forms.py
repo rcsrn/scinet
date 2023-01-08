@@ -18,16 +18,21 @@ class NewUserForm(UserCreationForm):
             user.save()
         return user
 
-# class NewResearcherForm(UserCreationForm):
-#     first_name = forms.CharField(max_length=255, required=True)
-#     last_name = forms.CharField(max_length=255, required=True)
-#     email = forms.EmailField(required=True)
-#     age = forms.IntegerField(required=True)
+class NewResearcherForm(forms.ModelForm):
+    class Meta:
+        model = GeneralUser
+        fields = ["general_user_id", "username", "first_name", "last_name", "email", 
+                "password", "age",]
+        labels = {'general_user_id':"General user id", 'username':"Username", 'first_name':"First Name",
+                 'last_name':"Last Name", 'email':"E-mail", 
+                'password':"Password", 'age':"Age"}
 
+# class NewPublicationForm(forms.ModelForm):
 #     class Meta:
-#         model = GeneralUser
-#         fields = ("username", "first_name", "last_name", "email", 
-#                 "password1", "password2", "age")
-    
-#     def save(self, commit=True):
+#         model = Publication
+#         fields = ["publication_id", "username", "first_name", "last_name", "email", 
+#                 "password", "age",]
+#         labels = {'general_user_id':"General user id", 'username':"Username", 'first_name':"First Name",
+#                  'last_name':"Last Name", 'email':"E-mail", 
+#                 'password':"Password", 'age':"Age"}
 
