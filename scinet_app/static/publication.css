@@ -10,7 +10,7 @@ body {
     right: 0px;
     left: 0px;
     height: 70px;
-    background-color: white;
+    background-color: rgb(84, 186, 219);
     z-index: 100;
 }
 
@@ -21,7 +21,7 @@ body {
 .logo {
     display: inline-block;
     vertical-align: center;
-    color: rgb(84, 186, 219);
+    color: white;
     font-family: Montserrat, "sans-serif";
     margin-left: 70px;
     font-weight: 500;

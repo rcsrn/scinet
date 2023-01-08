@@ -15,7 +15,7 @@
 <body>
   <div class="top" id="top-id">
     <div class="logo-container">
-      <p class="logo">SCINET</p>
+      <a class="logo" href="{% url 'index' %}">SCINET</a>
     </div>
 
     {% if user.is_authenticated %}
