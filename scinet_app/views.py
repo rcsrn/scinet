@@ -39,6 +39,7 @@ def search(request):
     return render(request, 'search.html', {'publications': publications})
 
 def register(request):
+    form = NewUserForm(request.POST or None)
     if request.method == "POST":
         form = NewUserForm(request.POST)
         if form.is_valid():
@@ -47,7 +48,6 @@ def register(request):
             messages.success(request, "Registration successful.")
             return redirect("index")
         messages.error(request, "Unsuccessful registration. Invalid information.")
-    form = NewUserForm()
     return render(request, 'register.html', {"register_form":form})
 
 def topic(request, topic_id):
