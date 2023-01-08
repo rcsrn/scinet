@@ -131,6 +131,12 @@ body {
     font-size: 22px;
 }
 
+.list-card-item {
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 2em;
+}
+
 .list-long-item {
     font-weight: bold;
     font-size: 20px;
@@ -222,6 +228,15 @@ body {
 
 .info-link {
     margin-top: -15px;
-    font-size: 27px;
+    font-size: 22px;
     color: rgb(13, 126, 98);
+}
+
+.card{
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.card-hover{
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
