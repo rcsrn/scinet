@@ -84,7 +84,7 @@ def user(request, user_id):
 def newResearcher(request):
     if request.method == "POST":
         form = NewResearcherForm(request.POST, initial = {'username':request.user.username})
-        if GeneralUser.objects.filter(username=form.data['username']).count() <= 0:
+        if form.is_valid():
             researcher = form.save(commit=False)
             researcher.general_user_id = GeneralUser.objects.all().count() + 1
             researcher.save()
@@ -94,7 +94,7 @@ def newResearcher(request):
         else:
             messages.error(request, "The username already exists")
     else:
-        form = NewResearcherForm()
+        form = NewResearcherForm(initial={'username': request.user.username})
     return render(request,'researcher_form.html', {'form': form})
 
 
