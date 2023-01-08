@@ -138,4 +138,4 @@ GitHub.sublime-settings
 .history
 
 # Docker #
-docker-compose.yml
+./docker-compose.yml

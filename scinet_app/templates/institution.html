@@ -12,7 +12,8 @@
         <link href="https://fonts.googleapis.com/css?family=League Spartan" rel="stylesheet">
       </head>
 
-     
+    <hr>
+
     <body>
 
         <div class="top" id="top-id">
@@ -30,15 +31,25 @@
           </div>
 
 
-        <div style="display: flex; justify-content: space-around">
+       
             <div>
                 <h2 class="text-container", style="margin-left: 60px;">Authors</h2>
                 <ul >
-                    {% for author in authors %}
+                    {% for author, num in authors_publications %}
                     <li>
                       
-                        <a href="{% url 'user' author.general_user_id %}"> <p class="list-item">{{author.first_name}} {{author.last_name}}</p> </a>
-                       
+                        <script type="text/javascript">
+                            let authors = document.getElementsByTagName
+                        </script>
+                        <div class="card">
+                            <div class="container">
+                                <a href="{% url 'user' author.general_user_id %}">
+                                     <p class="list-item">{{author.last_name}}, {{author.first_name}} </p> </a>
+                               
+                                <h4><b>Number of publications: {{num}}</b></h4> 
+                                <p>{{i}}</p>
+                            </div>
+                       </div>
                           
                     </li>  
                     {%endfor%}
@@ -46,21 +57,10 @@
 
             </div>
 
-            <div>
-                <h2 class="text-container", style="margin-left: 60px;">Publications</h2>
-                {%if publications.len == 0%}
-                <p>No publications</p>
-                {%endif%}
-                {%for publication in publications%}
-                <a href="{% url 'publication' publication.publication_id %}"> <p class="list-item">{{publication.title}}</p> </a>
-                {%endfor%}
-            </div>
-        </div>
+         
+      
         
-        <div class="text-container">
-            <div class="text-container">
-            
-        </div>
+       
         
     </body>
 </html>

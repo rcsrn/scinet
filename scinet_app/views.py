@@ -121,6 +121,15 @@ def institution_info(request, insti_id):
     # for id in publications_id:
     #     publications.append(Publication.objects.get(publication_id=id))
 
+    pub_num = []
+    for i in authors:
+        pub_num.append(i.publications.count())
+
+    authors_publications = zip(authors, pub_num)
     context = {'institution': institution,
-               'publications': publications, 'authors': authors}
+               'publications': publications, 
+               'authors': authors, 
+               'pub_num': pub_num,
+               'iterateOver': range(len(authors)),
+               'authors_publications': authors_publications}
     return render(request, 'institution.html', context)
