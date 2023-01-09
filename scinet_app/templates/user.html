@@ -3,7 +3,7 @@
 
 <html>
     <head>
-        <title>{{ user.username }}</title>
+        <title>{{ user.last_name }}</title>
         <link rel="stylesheet" href="{% static 'user.css' %}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,10 +54,6 @@
 
         <div class="right">
             <div class="info-container">
-                <div>
-                    <p class="info-phrase"> Username: </p> <br>
-                    <p class="info"> {{user.username}} </p>
-                </div>
                 <div>
                     <p class="info-phrase"> email: </p> <br>
                     <p class="info"> {{user.email}} </p>
