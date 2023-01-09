@@ -11,6 +11,46 @@
   </head>
 
   <body>
+      <div class="top" id="top-id">
+    <div class="logo-container">
+      <a class="logo" href="{% url 'index' %}">SCINET</a>
+    </div>
+
+    {% if user.is_authenticated %}
+
+    <div class="login-button-container">
+      <button class="login-button" onclick="location.href='logout'">Log out</button>
+    </div>
+
+      {% if users %}
+
+      <div class="register-button-container">
+        <button class="register-button" onclick="location.href='new-publication'">Add publication</button>
+      </div>
+
+      {% else %}
+
+      <div class="register-button-container">
+        <button class="register-button" onclick="location.href='researcher'">Sign up as researcher</button>
+      </div>
+
+      {% endif %}
+
+    {% else %}
+
+    <div class="login-button-container">
+      <button class="login-button" onclick="location.href='login'">Log in</button>
+    </div>
+    <div class="register-button-container">
+      <button class="register-button" onclick="location.href='register'">Register</button>
+    </div>
+
+    {% endif %}
+
+  </div>
+
+
+    
     <p class="most-cited-phrase" href="{% url 'featured' %}">Featured</p>
     
     <div class="scroll-container">
