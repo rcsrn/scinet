@@ -275,10 +275,10 @@ body {
 }
 
 .most-cited-container {
-    margin-left: 0px;
+    margin-left: 60px;
     margin-top: 0px;
     font-size: 20px;
-    text-align: center;
+    text-align: left;
 }
 
 .most-cited-phrase {
