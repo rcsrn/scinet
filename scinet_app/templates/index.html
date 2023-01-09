@@ -3,26 +3,26 @@
 
 <html>
 
-<head>
-  <title>Scinet</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=League+Spartan:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'index.css' %}">
-</head>
+  <head>
+    <title>Scinet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+  </head>
 
-<body>
-  <div class="top" id="top-id">
-    <div class="logo-container">
-      <a class="logo" href="{% url 'index' %}">SCINET</a>
-    </div>
+  <body>
+    <div class="top" id="top-id">
+      <div class="logo-container">
+	<a class="logo" href="{% url 'index' %}">SCINET</a>
+      </div>
 
-    {% if user.is_authenticated %}
+      {% if user.is_authenticated %}
 
-    <div class="login-button-container">
-      <button class="login-button" onclick="location.href='logout'">Log out</button>
-    </div>
+      <div class="login-button-container">
+	<button class="login-button" onclick="location.href='logout'">Log out</button>
+      </div>
 
       {% if users %}
 
@@ -38,85 +38,92 @@
 
       {% endif %}
 
-    {% else %}
+      {% else %}
 
-    <div class="login-button-container">
-      <button class="login-button" onclick="location.href='login'">Log in</button>
-    </div>
-    <div class="register-button-container">
-      <button class="register-button" onclick="location.href='register'">Register</button>
-    </div>
-
-    {% endif %}
-
-  </div>
-
-  <div class="middle">
-    <div class="first-section">
-      <div class="main-image-container">
-        <img class="main-image" src="{% static 'images/scinetLogo.svg' %}">
+      <div class="login-button-container">
+	<button class="login-button" onclick="location.href='login'">Log in</button>
+      </div>
+      <div class="register-button-container">
+	<button class="register-button" onclick="location.href='register'">Register</button>
       </div>
 
-      <div class="search-container">
-        <div class="outer-search-phrase-container">
-          <div class="search-phrase-container">
-            <p class="search-phrase">Search Publications</p>
-            <p class="p2">Connect with your scientific community!</p>
-          </div>
-        </div>
-        <div class="outer-search-bar-container">
-          <form method="get" action="search">
-            <div class="search-bar-container">
-              <input type="text" class="search-bar" placeholder="Search" name="search">
-              <button class="search-button">
-                <svg class="search-icon" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 19.9 19.7">
-                  <title id="title">Search Icon</title>
-                  <desc id="desc">A magnifying glass icon.</desc>
-                  <g class="search-path" fill="none" stroke="gray" stroke-width="2">
-                    <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4" />
-                    <circle cx="8" cy="8" r="7" />
-                  </g>
-                </svg>
-              </button>
+      {% endif %}
+
+    </div>
+
+    <div class="middle">
+      <div class="first-section">
+	<div class="main-image-container">
+          <img class="main-image" src="{% static 'images/scinetLogo.svg' %}">
+	</div>
+
+	<div class="search-container">
+          <div class="outer-search-phrase-container">
+            <div class="search-phrase-container">
+              <p class="search-phrase">Search Publications</p>
+              <p class="p2">Connect with your scientific community!</p>
             </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <div class="second-section">
-      <div class="featured-container">
-        <div class="featured">
-          <a class="most-cited-phrase" href="{% url 'featured' %}">Featured</a>
-        <div class="scroll-container">
-          <div class="most-cited-container">
-              {%for publication in publications%}
-                <a class="link" href="{% url 'publication' publication.publication_id %}"> <p class="list">{{publication.title}}</p> </a>
-                <p class="info">Journal: {{publication.journal_id.name}}. {{publication.publication_date.year}}. {{publication.topic.all.0.name}}</p>
-              {%endfor%}
           </div>
-        </div>
-        </div>
-      </div>
+          <div class="outer-search-bar-container">
+            <form method="get" action="search">
+              <div class="search-bar-container">
+		<input type="text" class="search-bar" placeholder="Search" name="search">
+		<button class="search-button">
+                  <svg class="search-icon" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg"
+                       viewBox="0 0 19.9 19.7">
+                    <title id="title">Search Icon</title>
+                    <desc id="desc">A magnifying glass icon.</desc>
+                    <g class="search-path" fill="none" stroke="gray" stroke-width="2">
+                      <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4" />
+                      <circle cx="8" cy="8" r="7" />
+                    </g>
+                  </svg>
+		</button>
+              </div>
+            </form>
 
-      <div class="featured-container">
-        <div class="featured">
-          <p class="most-cited-phrase">Topics</p>
-          <div class="visit-container">
-          <div class="topic-button-container">
+	    <div class="topic-button-container">
               {% for topic in topics %}
               <button class="topic-button" onclick="location.href='topic/{{topic.topic_id}}'">{{topic.name}}</button>
               {% endfor %}
+            </div>
+	    
           </div>
-        </div>
-        </div>
+	</div>
       </div>
-    </div> 
 
-  </div>
+      <!-- <div class="second-section"> -->
+      <!-- 	<div class="featured-container"> -->
+      <!--     <div class="featured"> -->
+      <!--       <a class="most-cited-phrase" href="{% url 'featured' %}">Featured</a> -->
+      <!--       <div class="scroll-container"> -->
+      <!--         <div class="most-cited-container"> -->
+      <!-- 		{%for publication in publications%} -->
+      <!--           <a class="link" href="{% url 'publication' publication.publication_id %}"> <p class="list">{{publication.title}}</p> </a> -->
+      <!--           <p class="info">Journal: {{publication.journal_id.name}}. {{publication.publication_date.year}}. {{publication.topic.all.0.name}}</p> -->
+      <!-- 		{%endfor%} -->
+      <!--         </div> -->
+      <!--       </div> -->
+      <!--     </div> -->
+      <!-- 	</div> -->
 
-  </div>
+	<!-- <div class="featured-container"> -->
+        <!--   <div class="featured"> -->
+        <!--     <p class="most-cited-phrase">Topics</p> -->
+        <!--     <div class="visit-container"> -->
+        <!--       <div class="topic-button-container"> -->
+	<!-- 	{% for topic in topics %} -->
+	<!-- 	<button class="topic-button" onclick="location.href='topic/{{topic.topic_id}}'">{{topic.name}}</button> -->
+	<!-- 	{% endfor %} -->
+        <!--       </div> -->
+        <!--     </div> -->
+        <!--   </div> -->
+	<!-- </div> -->
+      <!-- </div>  -->
+
+    </div>
+
+</div>
 
 </body>
 
