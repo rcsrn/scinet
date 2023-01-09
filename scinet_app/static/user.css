@@ -40,10 +40,10 @@ body {
 }
 
 .login-button {
-    background-color: white;
+    background-color: rgb(84, 186, 219);
     font-weight: bold;
     font-size: 20px;
-    color: rgb(84, 186, 219);
+    color: white;
     cursor: pointer;
     border: none;
 }
@@ -58,7 +58,7 @@ body {
 .register-button {
     margin-right: 15px;
     color: rgb(109, 105, 104);
-    background-color: white;
+    background-color: rgb(84, 186, 219);
     font-weight: bold;
     font-size: 20px;
     color: rgb(109, 105, 104);
