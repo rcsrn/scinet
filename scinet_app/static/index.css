@@ -270,8 +270,20 @@ body {
 }
 
 .topic-button:hover {
-    background-color: rgb(51, 139, 168);                 ;
+    background-color: rgb(51, 139, 168);                 
+}
+
+.featured-button {
+    display: inline-block;
+    margin: .5em .8em;
+    padding: .5em 1em;
+    background: rgb(84, 186, 219);
     color: white;
+    border-radius: 2em;   
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: all 0.4s;
 }
 
 .visit-container {
