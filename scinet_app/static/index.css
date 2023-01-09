@@ -75,7 +75,7 @@ body {
 
 .middle {
     display: grid;
-    grid-template-rows: 700px 500px;
+    grid-template-rows: 700px;
 }
 
 .first-section {
@@ -277,7 +277,7 @@ body {
     display: inline-block;
     margin: .5em .8em;
     padding: .5em 1em;
-    background: rgb(84, 186, 219);
+    background: rgb(7, 132, 208);
     color: white;
     border-radius: 2em;   
     border: none;
@@ -287,7 +287,7 @@ body {
 }
 
 .featured-button:hover {
-    background-color: rgb(51, 139, 168);                 
+        background-color: rgb(51, 139, 168);    
 }
 
 .visit-container {
