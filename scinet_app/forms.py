@@ -31,8 +31,6 @@ class NewUserForm(UserCreationForm):
         return user
 
 class NewResearcherForm(forms.ModelForm):
-    institutions = CustomInstitutionMMCF(queryset=Institution.objects.all(),
-                    widget=forms.CheckboxSelectMultiple)
     username = forms.CharField(disabled=True)
     institutions = CustomInstitutionMMCF(queryset=Institution.objects.all(),
                     widget=forms.CheckboxSelectMultiple)
