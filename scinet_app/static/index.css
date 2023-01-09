@@ -91,7 +91,7 @@ body {
 
 .main-image {
     width: 600px;
-    margin-left: 110px;
+    margin-left: 90px;
     margin-top: 0px;
 }
 
@@ -241,16 +241,6 @@ body {
     margin-left: 40px;
 }
 
-@media (min-width: 768px) {
-    .main-image-container{
-        grid-column: 1/2;
-    }
-
-    .search-container {
-        grid-column: 2/3;
-    }
-}
-
 .topic-button-container {
     margin-top: 50px;
     margin-right: 20px;
@@ -334,4 +324,15 @@ body {
     margin-top: -15px;
     font-weight: bold;
     color: rgb(84, 186, 219);
+}
+
+/* RESPONSIVE */
+@media (min-width: 1291px) {
+    .main-image-container{
+        grid-column: 1/2;
+    }
+
+    .search-container {
+        grid-column: 2/3;
+    }
 }
