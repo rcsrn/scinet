@@ -83,11 +83,10 @@
             </form>
 
 	    <div class="topic-button-container">
-	      <button class="featured-button" onclick="location.href='{% url 'featured' %}'">Featured</button>
               {% for topic in topics %}
               <button class="topic-button" onclick="location.href='topic/{{topic.topic_id}}'">{{topic.name}}</button>
               {% endfor %}
-
+	      <button class="featured-button" onclick="location.href='{% url 'featured' %}'">Featured</button>
             </div>
 	    
           </div>
