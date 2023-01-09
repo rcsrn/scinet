@@ -14,5 +14,6 @@ urlpatterns = [
     path('main/search', views.search, name='search'),
     path('main/logout', views.logout, name='logout'),
     path('main/researcher', views.newResearcher, name='researcher'),
-    path('main/new-publication', views.newPublication, name='new-publication')
+    path('main/new-publication', views.newPublication, name='new-publication'),
+    path('main/featured', views.featured, name='featured')
 ]

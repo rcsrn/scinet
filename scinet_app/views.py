@@ -164,3 +164,20 @@ def institution_info(request, insti_id):
                'authors_publications': authors_publications}
     return render(request, 'institution.html', context)
 
+def featured(request):
+    citations = Citations.objects.all()
+    cited_publications = {}
+    for citation in citations:
+        if citation.citee not in cited_publications.keys():
+            cited_publications[citation.citee] = 1
+        else:
+            cited_publications[citation.citee] += 1
+            
+    sorted_publications = sorted(
+    cited_publications.items(), key=operator.itemgetter(1), reverse=True)
+    publications = []
+    
+    for publication in sorted_publications:
+        publications.append(publication[0])
+        
+    return render(request, 'featured.html', {'publications': publications[:20]})

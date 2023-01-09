@@ -88,7 +88,7 @@
     <div class="second-section">
       <div class="featured-container">
         <div class="featured">
-          <p class="most-cited-phrase">Featured</p>
+          <a class="most-cited-phrase" href="{% url 'featured' %}">Featured</a>
         <div class="scroll-container">
           <div class="most-cited-container">
               {%for publication in publications%}

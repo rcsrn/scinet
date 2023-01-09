@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'featured.css' %}">
+  </head>
+
+  <body>
+    <p class="most-cited-phrase" href="{% url 'featured' %}">Featured</p>
+    
+    <div class="scroll-container">
+      <div class="most-cited-container">
+        {%for publication in publications%}
+        <a class="link" href="{% url 'publication' publication.publication_id %}"> <p class="list">{{publication.title}}</p> </a>
+        <p class="info">Journal: {{publication.journal_id.name}}. {{publication.publication_date.year}}. {{publication.topic.all.0.name}}</p>
+        {%endfor%}
+      </div>
+    </div>
+
+  </body>
+</html>
