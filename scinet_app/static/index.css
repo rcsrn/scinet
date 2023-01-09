@@ -286,6 +286,10 @@ body {
     transition: all 0.4s;
 }
 
+.featured-button:hover {
+    background-color: rgb(51, 139, 168);                 
+}
+
 .visit-container {
     margin-top: 0;
     margin-left: 0px;
