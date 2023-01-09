@@ -1,6 +1,7 @@
 body {
     height: 1000px;
     padding-top: 70px;
+    background-color: rgb(249, 249, 249);
 }
 
 .top {
@@ -128,6 +129,7 @@ body {
     font-size: 20px;
     border: none;
     outline: none;
+    background-color: rgb(249, 249, 249);;
 }
 
 
