@@ -170,10 +170,6 @@ def institution_info(request, insti_id):
     for i in authors:
         publications.extend(i.publications.all())
 
-    # publications = []
-    # for id in publications_id:
-    #     publications.append(Publication.objects.get(publication_id=id))
-
     pub_num = []
     for i in authors:
         pub_num.append(i.publications.count())
