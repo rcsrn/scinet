@@ -10,19 +10,20 @@
     <link rel="stylesheet" href="{% static 'featured.css' %}">
   </head>
 
-  <div class="top" id="top-id">
-    <div class="logo-container">
+  <body>
+    <div class="top" id="top-id">
+      <div class="logo-container">
         <a class="logo" href="{% url 'index' %}">SCINET</a>
-    </div>
+      </div>
 
-    <div class="login-button-container">
+      <div class="login-button-container">
         <a href="{% url 'index' %}"> <button class="login-button">Home</button> </a>
       </div>
       
       <div class="register-button-container">
         <button class="register-button" onclick="history.go(-1)">Return</button>
       </div>
-  </div>
+    </div>
 
 
     
