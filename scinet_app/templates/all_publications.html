@@ -35,6 +35,7 @@
 	{%for publication in publications%}
 	<a class="link" href="{% url 'publication' publication.publication_id %}"> <p class="list">{{publication.title}}</p> </a>
 	<p class="info">Journal: {{publication.journal_id.name}}. {{publication.publication_date.year}}.</p>
+	<hr>
 	{%endfor%}
       </div>
     </div>
