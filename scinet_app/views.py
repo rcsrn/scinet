@@ -189,3 +189,8 @@ def featured(request):
         publications.append(publication[0])
         
     return render(request, 'featured.html', {'publications': publications[:20]})
+
+
+def allPublications(request):
+    publications = Publication.objects.all()
+    return render(request, 'all_publications.html', {'publications': publications})
