@@ -15,7 +15,7 @@ def index(request):
     isResearcher = GeneralUser.objects.filter(username=username).count() > 0
 
     if request.user.is_authenticated and isResearcher:
-        users.append(GeneralUser.objects.filter(username=request.user.username))
+        users.extend(GeneralUser.objects.filter(username=request.user.username))
         
     topics = Topic.objects.all()
     citations = Citations.objects.all()

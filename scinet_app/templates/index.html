@@ -31,10 +31,12 @@
       <div class="register-button-container">
         <button class="register-button" onclick="location.href='new-publication'">Add publication</button>
       </div>
+      {% for author in authors %}
+        <div class="logo-container"></div>
+            <a class="account" href="{% url 'user' author.general_user_id %}">Account</a>
+        </div>
+      {%endfor%}
 
-      <div class="logo-container"></div>
-          <a class="account" href="{% url 'user' authors.0.general_user_id %}">Account</a>
-      </div>
 
       {% else %}
 
