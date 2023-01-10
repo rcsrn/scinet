@@ -24,10 +24,10 @@
             <button class="register-button" onclick="history.go(-1)">Return</button>
           </div>
 
-          {% if user.is_authenticated %}
+          {% if user.is_authenticated and user.username == author.username %}
           
           <div class="logo-container"></div> 
-            <a class="account" href="{% url 'edit-profile' %}">Edit account</a>
+            <a class="account" href="{% url 'edit-profile' %}">Edit profile</a>
           </div>
 
           {% endif %}
