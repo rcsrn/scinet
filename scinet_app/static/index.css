@@ -330,7 +330,7 @@ body {
 .featured-link {
     position: absolute;
     left: 450px;
-    top: 22px;
+    top: 20px;
     color: white;
     font-size: 16px;
     text-decoration: none;
@@ -344,7 +344,7 @@ body {
 .all-publications {
     position: absolute;
     left: 580px;
-    top: 22px;
+    top: 20px;
     color: white;
     font-size: 16px;
     text-decoration: none;
