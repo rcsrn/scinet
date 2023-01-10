@@ -16,16 +16,18 @@ class PublicationsTestCase(TestCase):
 
         authors = []
         authors = GeneralUser.objects.all()
-
+        found = False
         for publication in publications:
             for author in authors:
                 if author.publications.filter(publication_id=publication.publication_id).exists():
                     self.assertTrue(True)
+                    found = True
                     break
-                else:
-                    print(str(publication.publication_id )+"\n")
-                    self.assertTrue(False)
-                    break
+
+            if not found:
+                print(str(publication.publication_id )+"\n")
+                self.assertTrue(False)
+                break        
 
         
 
