@@ -44,7 +44,7 @@ body {
 .login-button {
     background-color: rgb(84, 186, 219);
     font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
     color: white;
     cursor: pointer;
     border: none;
@@ -62,7 +62,7 @@ body {
     color: rgb(109, 105, 104);
     background-color: rgb(84, 186, 219);
     font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
     color: rgb(109, 105, 104);
     cursor: pointer;
     border: transparent;
@@ -222,23 +222,8 @@ body {
     margin-left: 20px;
 }
 
-.list-item {
-    font-weight: bold;
-    font-size: 28px;
-    margin-top: 2em;
-}
-
 .info-link {
     margin-top: -15px;
     font-size: 22px;
     color: rgb(13, 126, 98);
-}
-
-.card{
-    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-}
-
-.card-hover{
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
