@@ -62,6 +62,12 @@
 
         <div class="right">
             <div class="info-container">
+                {% if user.is_authenticated and user.username == author.username %}
+                    <div>
+                        <p class="info-phrase"> Username: </p> <br>
+                        <p class="info"> {{author.username}} </p>
+                    </div>
+                {% endif %}
                 <div>
                     <p class="info-phrase"> email: </p> <br>
                     <p class="info"> {{author.email}} </p>
