@@ -10,43 +10,18 @@
     <link rel="stylesheet" href="{% static 'featured.css' %}">
   </head>
 
-  <body>
-      <div class="top" id="top-id">
+  <div class="top" id="top-id">
     <div class="logo-container">
-      <a class="logo" href="{% url 'index' %}">SCINET</a>
+        <a class="logo" href="{% url 'index' %}">SCINET</a>
     </div>
-
-    {% if user.is_authenticated %}
 
     <div class="login-button-container">
-      <button class="login-button" onclick="location.href='logout'">Log out</button>
-    </div>
-
-      {% if users %}
-
-      <div class="register-button-container">
-        <button class="register-button" onclick="location.href='new-publication'">Add publication</button>
+        <a href="{% url 'index' %}"> <button class="login-button">Home</button> </a>
       </div>
-
-      {% else %}
-
+      
       <div class="register-button-container">
-        <button class="register-button" onclick="location.href='researcher'">Sign up as researcher</button>
+        <button class="register-button" onclick="history.go(-1)">Return</button>
       </div>
-
-      {% endif %}
-
-    {% else %}
-
-    <div class="login-button-container">
-      <button class="login-button" onclick="location.href='login'">Log in</button>
-    </div>
-    <div class="register-button-container">
-      <button class="register-button" onclick="location.href='register'">Register</button>
-    </div>
-
-    {% endif %}
-
   </div>
 
 
