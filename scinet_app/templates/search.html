@@ -4,7 +4,7 @@
 <html>
     <head>
         <title>Results</title>
-        <link rel="stylesheet" href="{% static 'topic.css' %}">
+        <link rel="stylesheet" href="{% static 'search.css' %}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">   
@@ -29,15 +29,34 @@
     <div class="middle">
         <div class="center">
             <h1 class="title">Results:</h1>
-            <div class="most-cited-container">
-                {%for publication in publications%}
-                  <a href="{% url 'publication' publication.publication_id %}"> <p class="list-item">{{publication.title}}</p> </a>
-                  <p class="info">Journal: {{publication.journal_id.name}}. {{publication.publication_date.year}}.</p>
-                {%endfor%}
-                {%for author in authors%}
-                  <a href="{% url 'user' author.general_user_id %}"> <p class="list-item">{{author.first_name}} {{author.last_name}}</p> </a>
-              {%endfor%}
-            </div>
+            {%if publications%}
+              <hr>
+              <div class="list-container">
+                <h1 class="subtitle">Publications:</h3>
+                  {%for publication in publications%}
+                    <a href="{% url 'publication' publication.publication_id %}"> <p class="list-item">{{publication.title}}</p> </a>
+                    <p class="info">Journal: {{publication.journal_id.name}}. {{publication.publication_date.year}}.</p>
+                  {%endfor%}
+              </div>
+            {%endif%}
+            {%if authors%}
+              <hr>
+              <div class="list-container">
+                <h1 class="subtitle">Authors:</h3>
+                  {%for author in authors%}
+                    <a href="{% url 'user' author.general_user_id %}"> <p class="list-item">{{author.first_name}} {{author.last_name}}</p> </a>
+                  {%endfor%}
+              </div>
+            {%endif%}
+            {%if institutions%}
+              <hr>
+              <div class="list-container">
+                <h1 class="subtitle">Institutions:</h3>
+                  {%for institution in institutions%}
+                    <a href="{% url 'user' institution.institution_id %}"> <p class="list-item">{{institution.name}}</p> </a>
+                  {%endfor%}
+              </div>
+            {%endif%}
 
             </div>
         </div>
