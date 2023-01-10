@@ -41,13 +41,12 @@
         <div class="most-cited-container">
             <h3 class="visit-phrase" style="margin-bottom: -40px; font-size: 30px;"> Publications: </h3>
             {%for publication in author.publications.all%}
-            <div class="card">
               <a href="{% url 'publication' publication.publication_id %}"> <p class="list-card-item">{{publication.title}}</p> </a>
               <p class="info-link">Journal: {{publication.journal_id.name}}. {{publication.publication_date.year}}. 
                 {%if publication.topic.all.count > 0%}
                     <a href="{% url 'topic' publication.topic.all.0.topic_id%}">{{publication.topic.all.0.name}}</a></p>
                 {%endif%}
-            </div>
+            <hr>
             {%endfor%}
         </div>
         </div>
