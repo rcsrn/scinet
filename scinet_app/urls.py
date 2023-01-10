@@ -16,5 +16,6 @@ urlpatterns = [
     path('main/researcher', views.newResearcher, name='researcher'),
     path('main/new-publication', views.newPublication, name='new-publication'),
     path('main/featured', views.featured, name='featured'),
-    path('main/all', views.allPublications, name = 'all')
+    path('main/all', views.allPublications, name = 'all'),
+    path('main/edit-profile', views.editProfile, name='edit-profile')
 ]

@@ -149,6 +149,20 @@ body {
     margin-top: 100px;
 }
 
+.account {
+    position: absolute;
+    left: 450px;
+    top: 20px;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    font-family: sans-serif;
+    border: 1px solid white;
+    padding: 5px 20px 5px 20px;
+    border-radius: 10px;
+    background: rgb(84, 186, 219);
+}
+
 .info-phrase {
     display: inline-block;
     color: rgb(84, 186, 219);;

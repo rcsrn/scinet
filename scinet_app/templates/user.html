@@ -3,7 +3,7 @@
 
 <html>
     <head>
-        <title>{{ user.last_name }}</title>
+        <title>{{ author.last_name }}</title>
         <link rel="stylesheet" href="{% static 'user.css' %}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,15 +23,24 @@
           <div class="register-button-container">
             <button class="register-button" onclick="history.go(-1)">Return</button>
           </div>
-      </div>
+
+          {% if user.is_authenticated %}
+          
+          <div class="logo-container"></div> 
+            <a class="account" href="{% url 'edit-profile' %}">Edit account</a>
+          </div>
+
+          {% endif %}
+
+        </div>
 
     
     <div class="middle">
         <div class="center">
-        <h1 class="title">{{user.first_name}} {{user.last_name}}</h1>
+        <h1 class="title">{{author.first_name}} {{author.last_name}}</h1>
         <div class="most-cited-container">
             <h3 class="visit-phrase" style="margin-bottom: -40px; font-size: 30px;"> Publications: </h3>
-            {%for publication in user.publications.all%}
+            {%for publication in author.publications.all%}
             <div class="card">
               <a href="{% url 'publication' publication.publication_id %}"> <p class="list-card-item">{{publication.title}}</p> </a>
               <p class="info-link">Journal: {{publication.journal_id.name}}. {{publication.publication_date.year}}. 
@@ -46,7 +55,7 @@
         <div class="left">
             <div class="info-container">
                 <h2 class="visit-phrase">Institutions:</h2>
-                {%for institution in user.institutions.all%}
+                {%for institution in author.institutions.all%}
                     <a href="{% url 'institution' institution.institution_id %}"> <p class="list-item">{{institution.name}}</p> </a>
                 {%endfor%}
             </div>
@@ -56,11 +65,11 @@
             <div class="info-container">
                 <div>
                     <p class="info-phrase"> email: </p> <br>
-                    <p class="info"> {{user.email}} </p>
+                    <p class="info"> {{author.email}} </p>
                 </div>
                 <div>
                     <p class="info-phrase"> Age: </p> <br>
-                    <p class="info"> {{user.age}} </p>
+                    <p class="info"> {{author.age}} </p>
                 </div>
             </div>
         </div>

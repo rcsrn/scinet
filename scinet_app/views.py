@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate as auth
 from django.contrib.auth.forms import AuthenticationForm
 
 from .models import Publication, GeneralUser, Institution, Topic, Citations
-from .forms import NewUserForm, NewResearcherForm, NewPublicationForm
+from .forms import NewUserForm, NewResearcherForm, NewPublicationForm, EditProfileForm
 
 def index(request):
     users = []
@@ -86,7 +86,7 @@ def publication(request, publication_id):
 
 def user(request, user_id):
     user = GeneralUser.objects.get(general_user_id=user_id)
-    return render(request, 'user.html', {'user': user})
+    return render(request, 'user.html', {'author': user})
 
 
 def newResearcher(request):
@@ -105,6 +105,18 @@ def newResearcher(request):
         form = NewResearcherForm(initial={'username': request.user.username})
     return render(request,'researcher_form.html', {'form': form})
 
+def editProfile(request):
+    researcher = GeneralUser.objects.get(username=request.user.username)
+    if request.method == "POST":
+        form = EditProfileForm(request.POST, initial = {'username':request.user.username}, instance=researcher)
+        if form.is_valid():
+            form.save()
+            return redirect(user, researcher.general_user_id)
+        else:
+            messages.error(request, "The username already exists")
+    else:
+        form = EditProfileForm(initial={'username': request.user.username}, instance=researcher)
+    return render(request,'edit_profile.html', {'form': form})
 
 def newPublication(request):
     if request.method == "POST":

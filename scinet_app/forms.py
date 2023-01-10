@@ -42,6 +42,19 @@ class NewResearcherForm(forms.ModelForm):
                  'last_name':"Last Name", 'email':"E-mail", 
                 'password':"Password", 'age':"Age", 'institutions':"Institutions"}
 
+class EditProfileForm(forms.ModelForm):
+    username = forms.CharField(disabled=True)
+    institutions = CustomInstitutionMMCF(queryset=Institution.objects.all(),
+                    widget=forms.CheckboxSelectMultiple)
+    class Meta:
+        model = GeneralUser
+        fields = ["username", "first_name", "last_name", "email", 
+                 "age", "institutions"]
+        labels = {'username':"Username", 'first_name':"First Name",
+                 'last_name':"Last Name", 'email':"E-mail", 
+                 'age':"Age", 'institutions':"Institutions"}
+
+
 class NewPublicationForm(forms.ModelForm):
     journal_id = CustomJournalMCF(queryset=Journal.objects.all())
     publication_date = forms.DateField()
