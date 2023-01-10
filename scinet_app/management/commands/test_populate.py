@@ -25,6 +25,7 @@ class PublicationsTestCase(TestCase):
                 else:
                     print(str(publication.publication_id )+"\n")
                     self.assertTrue(False)
+                    break
 
         
 

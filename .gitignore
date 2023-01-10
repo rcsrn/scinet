@@ -138,5 +138,5 @@ GitHub.sublime-settings
 .history
 
 # Docker-compose 
-./docker-compose.yml
+docker-compose.yml
 ./data
