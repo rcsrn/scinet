@@ -16,7 +16,8 @@
     <div class="top" id="top-id">
       <div class="logo-container">
 	<a class="logo" href="{% url 'index' %}">SCINET</a>
-	<!-- <a class="featured-link" href="{% url 'featured' %}">Featured</a> -->
+	<a class="featured-link" href="{% url 'featured' %}">Featured</a>
+	<a class="all-publications" href="">All</a>
       </div>
 
       {% if user.is_authenticated %}
@@ -87,7 +88,7 @@
               {% for topic in topics %}
               <button class="topic-button" onclick="location.href='topic/{{topic.topic_id}}'">{{topic.name}}</button>
               {% endfor %}
-	      <button class="featured-button" onclick="location.href='{% url 'featured' %}'">Featured</button>
+	      <!-- <button class="featured-button" onclick="location.href='{% url 'featured' %}'">Featured</button> -->
             </div>
 	    
           </div>

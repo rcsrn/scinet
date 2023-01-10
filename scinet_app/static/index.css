@@ -29,6 +29,7 @@ body {
     margin-bottom: 0px;
     margin-left: 170px;
     position: absolute;
+    top: 16px;
     bottom: 12px;
     text-decoration: none;
 }
@@ -339,9 +340,35 @@ body {
 
 .featured-link {
     position: absolute;
-    left: 350px;
-    top: 30px;
+    left: 450px;
+    top: 22px;
     color: white;
-    font-size: 20px;
+    font-size: 16px;
     text-decoration: none;
+    font-family: sans-serif;
+    border: 1px solid white;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+}
+
+
+.all-publications {
+    position: absolute;
+    left: 580px;
+    top: 22px;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    font-family: sans-serif;
+    border: 1px solid white;
+    padding: 5px 20px 5px 20px;
+    border-radius: 10px;
+    background: rgb(84, 186, 219);
+}
+
+
+.all-publications:hover,
+.featured-link:hover{
+    background-color: rgb(136, 211, 235);
+    transition: all 0.5s;
 }
