@@ -34,6 +34,9 @@
                   <a href="{% url 'publication' publication.publication_id %}"> <p class="list-item">{{publication.title}}</p> </a>
                   <p class="info">Journal: {{publication.journal_id.name}}. {{publication.publication_date.year}}.</p>
                 {%endfor%}
+                {%for author in authors%}
+                  <a href="{% url 'user' author.general_user_id %}"> <p class="list-item">{{author.first_name}} {{author.last_name}}</p> </a>
+              {%endfor%}
             </div>
 
             </div>

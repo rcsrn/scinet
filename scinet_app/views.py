@@ -40,11 +40,14 @@ def search(request):
         return index(request)
     
     publications = Publication.objects.filter(title__icontains = searched)
+    institutions = Institution.objects.filter(name__icontains = searched)
+    authors = GeneralUser.objects.filter(first_name__icontains = searched)
+    authors = authors.union(GeneralUser.objects.filter(last_name__icontains = searched))
 
-    if len(publications) == 0:
+    if len(publications) == 0 and len(institutions) == 0 and len(authors) == 0:
         return render(request, 'no_results.html')
     
-    return render(request, 'search.html', {'publications': publications})
+    return render(request, 'search.html', {'publications': publications, 'institutions': institutions, 'authors': authors})
 
 def register(request):
     form = NewUserForm(request.POST or None)
