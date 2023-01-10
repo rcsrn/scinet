@@ -16,7 +16,6 @@
     <div class="top" id="top-id">
       <div class="logo-container">
 	<a class="logo" href="{% url 'index' %}">SCINET</a>
-	<a class="account" href="">Account</a>
 	<a class="featured-link" href="{% url 'featured' %}">Featured</a>
 	<a class="all-publications" href="{% url 'all' %}">All</a>
       </div>
@@ -27,10 +26,14 @@
 	<button class="login-button" onclick="location.href='logout'">Log out</button>
       </div>
 
-      {% if users %}
+      {% if authors %}
 
       <div class="register-button-container">
         <button class="register-button" onclick="location.href='new-publication'">Add publication</button>
+      </div>
+
+      <div class="logo-container"></div>
+          <a class="account" href="{% url 'user' authors.0.general_user_id %}">Account</a>
       </div>
 
       {% else %}

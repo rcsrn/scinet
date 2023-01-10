@@ -32,7 +32,7 @@ def index(request):
     for publication in sorted_publications:
         publications.append(publication[0])
 
-    return render(request, 'index.html', {'topics': topics.values(), 'publications': publications[:20], 'users':users},)
+    return render(request, 'index.html', {'topics': topics.values(), 'publications': publications[:20], 'authors':users},)
 
 def search(request):
     searched = request.GET.get('search')
