@@ -35,7 +35,11 @@ def index(request):
     return render(request, 'index.html', {'topics': topics.values(), 'publications': publications[:20], 'users':users},)
 
 def search(request):
-    publications = Publication.objects.filter(title__icontains=request.GET.get('search'))
+    searched = request.GET.get('search')
+    if searched == "":
+        return index(request)
+    
+    publications = Publication.objects.filter(title__icontains = searched)
     return render(request, 'search.html', {'publications': publications})
 
 def register(request):
