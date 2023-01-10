@@ -29,8 +29,9 @@ body {
     font-size: 30px;
     margin-bottom: 0px;
     margin-left: 170px;
-    position: absolute  ;
+    position: absolute;
     bottom: 12px;
+    text-decoration: none;
 }
 
 .login-button-container {
