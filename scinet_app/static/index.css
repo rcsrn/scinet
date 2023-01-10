@@ -327,17 +327,6 @@ body {
     color: rgb(84, 186, 219);
 }
 
-/* RESPONSIVE */
-@media (min-width: 1291px) {
-    .main-image-container{
-        grid-column: 1/2;
-    }
-
-    .search-container {
-        grid-column: 2/3;
-    }
-}
-
 .featured-link {
     position: absolute;
     left: 450px;
@@ -371,4 +360,20 @@ body {
 .featured-link:hover{
     background-color: rgb(136, 211, 235);
     transition: all 0.5s;
+}
+
+/* RESPONSIVE */
+@media (min-width: 1291px) {
+    .main-image-container{
+        grid-column: 1/2;
+    }
+
+    .search-container {
+        grid-column: 2/3;
+    }
+
+    /* .register-button, .login-button, */
+    /* .featured-link, .all-publications { */
+    /* 	display: none; */
+    /* } */
 }
