@@ -40,6 +40,10 @@ def search(request):
         return index(request)
     
     publications = Publication.objects.filter(title__icontains = searched)
+
+    if len(publications) == 0:
+        return render(request, 'no_results.html')
+    
     return render(request, 'search.html', {'publications': publications})
 
 def register(request):
