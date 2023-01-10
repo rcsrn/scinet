@@ -8,7 +8,7 @@ pip install -r requirements.txt
 ```
 ## Salir del entorno virtual
 ```
-deactive
+deactivate
 ```
 
 ## Ejecutar aplicación
@@ -20,4 +20,18 @@ python manage.py runserver
 ```
 python manage.py makemigrations scinet_app
 python manage.py migrate scinet_app
+```
+## Crear migraciones y aplicarlas para docker-compose
+```
+docker-compose run web python manage.py makemigrations
+docker-compose run web python manage.py migrate
+```
+## Correr docker server
+```
+docker-compose up
+```
+
+## Llenar base de datos en docker
+```
+docker-compose run web python manage.py populate
 ```
