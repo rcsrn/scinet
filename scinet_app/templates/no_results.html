@@ -2,35 +2,32 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>Results</title>
-        <link rel="stylesheet" href="{% static 'topic.css' %}">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">   
-    </head>
+  <head>
+    <title>Results</title>
+    <link rel="stylesheet" href="{% static 'topic.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">   
+  </head>
 
-<body>
+  <body>
     <div class="top" id="top-id">
-        <div class="logo-container">
-          <a class="logo" href="{% url 'index' %}">SCINET</a>
-        </div>
-
-        <div class="login-button-container">
-            <a href="{% url 'index' %}"> <button class="login-button">Home</button> </a>
-          </div>
-          
-          <div class="register-button-container">
-            <button class="register-button" onclick="history.go(-1)">Return</button>
-          </div>
+      <div class="logo-container">
+        <a class="logo" href="{% url 'index' %}">SCINET</a>
       </div>
-
-    
+      <div class="login-button-container">
+        <a href="{% url 'index' %}"> <button class="login-button">Home</button> </a>
+      </div>
+      
+      <div class="register-button-container">
+        <button class="register-button" onclick="history.go(-1)">Return</button>
+      </div>
+    </div>    
     <div class="middle">
-        <div class="center">
-            <h1 class="title">Sorry, we could not find any matches for your search.</h1>
-            </div>
-        </div>
+      <div class="center">
+        <h1 class="title">Sorry, we could not find any matches for your search.</h1>
+      </div>
     </div>
+</div>
 
 </html>

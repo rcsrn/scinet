@@ -2,52 +2,52 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>Scinet</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=League+Spartan:wght@700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="{% static 'index.css' %}">
-    </head>
+  <head>
+    <title>Scinet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+  </head>
 
-    <body class="register">
+  <body class="register">
 
-        <div class="top" id="top-id">
-            <div class="logo-container">
-                <a class="logo" href="{% url 'index' %}">SCINET</a>
-            </div>
-    
-            <div class="login-button-container">
-                <a href="{% url 'index' %}"> <button class="login-button">Home</button> </a>
-              </div>
-              
-              <div class="register-button-container">
-                <button class="register-button" onclick="history.go(-1)">Return</button>
-              </div>
-          </div>
+    <div class="top" id="top-id">
+      <div class="logo-container">
+        <a class="logo" href="{% url 'index' %}">SCINET</a>
+      </div>
+      
+      <div class="login-button-container">
+        <a href="{% url 'index' %}"> <button class="login-button">Home</button> </a>
+      </div>
+      
+      <div class="register-button-container">
+        <button class="register-button" onclick="history.go(-1)">Return</button>
+      </div>
+    </div>
 
- {% block content %}
+    {% block content %}
 
- <div class="container py-5">
-    <h1>Register</h1>
-    <form action="" method="post">
+    <div class="container py-5">
+      <h1>Register</h1>
+      <form action="" method="post">
         {% csrf_token %}
         {{ register_form.non_field_errors }}
         {% for field in register_form %}
-            <p>
-                {{ field.errors }}
-                {{ field.label }}
-                {{ field }}
-            </p>
+        <p>
+          {{ field.errors }}
+          {{ field.label }}
+          {{ field }}
+        </p>
         {% endfor %}
         <button class="btn btn-primary" type="submit">Register</button>
-    </form>
-    <p class="text-center">
+      </form>
+      <p class="text-center">
         If you already have an account, <a href="{% url 'login' %}">login</a> instead.
-    </p>
- </div>
+      </p>
+    </div>
 
- {% endblock %}
-</body>
+    {% endblock %}
+  </body>
 </html>

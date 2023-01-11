@@ -1,86 +1,85 @@
 {% load static %}
 <!DOCTYPE html>
 <style>
-    
+  
 </style>
 <html>
-    <head>
-        <title>{{ publication.title }}</title>
-        <link rel="stylesheet" href="{% static 'publication.css' %}">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">   
-    </head>
+  <head>
+    <title>{{ publication.title }}</title>
+    <link rel="stylesheet" href="{% static 'publication.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">   
+  </head>
 
-<body>
+  <body>
     <div class="top" id="top-id">
-        <div class="logo-container">
-          <a class="logo" href="{% url 'index' %}">SCINET</a>
-        </div>
-
-        <div class="login-button-container">
-            <a href="{% url 'index' %}"> <button class="login-button">Home</button> </a>
-          </div>
-          
-          <div class="register-button-container">
-            <button class="register-button" onclick="history.go(-1)">Return</button>
-          </div>
+      <div class="logo-container">
+        <a class="logo" href="{% url 'index' %}">SCINET</a>
       </div>
 
+      <div class="login-button-container">
+        <a href="{% url 'index' %}"> <button class="login-button">Home</button> </a>
+      </div>
+      
+      <div class="register-button-container">
+        <button class="register-button" onclick="history.go(-1)">Return</button>
+      </div>
+    </div>
     
     <div class="middle">
-        <div class="center">
+      <div class="center">
         <h1 class="title">{{ publication.title }}</h1>
         <p class="content">{{ publication.content }}</p>
-        </div>
+      </div>
 
-        <div class="left">
-            {%if authors%}
-                <div class="info-container">
-                    <h2 class="visit-phrase">Authors:</h2>
-                    {%for author in authors%}
-                        <a href="{% url 'user' author.general_user_id %}"> <p class="list-item">{{author.first_name}} {{author.last_name}}</p> </a>
-                    {%endfor%}
-                </div>
-            {%endif%}
-            {%if publication.topic.all%}
-                <div class="info-container">
-                    <h2 class="visit-phrase">Topics:</h2>
-                    {%for topic in publication.topic.all%}
-                        <a class="link" href="{% url 'topic' topic.topic_id %}"> <p class="list-item">{{topic.name}}</p> </a>
-                    {%endfor%}
-                </div>
-            {%endif%}
-            {%if cited_by%}
-                <div class="info-container">
-                    <div class="scroll-container">
-                        <h2 class="visit-phrase">Cited by:</h2>
-                        {%for citation in cited_by%}
-                            <a class="link" href="{% url 'publication' citation.publication_id %}"> <p class="list-long-item">{{citation.title}}</p> </a>
-                        {%endfor%}
-                    </div>
-                </div>
-            {%endif%}
+      <div class="left">
+        {%if authors%}
+        <div class="info-container">
+          <h2 class="visit-phrase">Authors:</h2>
+          {%for author in authors%}
+          <a href="{% url 'user' author.general_user_id %}"> <p class="list-item">{{author.first_name}} {{author.last_name}}</p> </a>
+          {%endfor%}
         </div>
+        {%endif%}
+        {%if publication.topic.all%}
+        <div class="info-container">
+          <h2 class="visit-phrase">Topics:</h2>
+          {%for topic in publication.topic.all%}
+          <a class="link" href="{% url 'topic' topic.topic_id %}"> <p class="list-item">{{topic.name}}</p> </a>
+          {%endfor%}
+        </div>
+        {%endif%}
+        {%if cited_by%}
+        <div class="info-container">
+          <div class="scroll-container">
+            <h2 class="visit-phrase">Cited by:</h2>
+            {%for citation in cited_by%}
+            <a class="link" href="{% url 'publication' citation.publication_id %}"> <p class="list-long-item">{{citation.title}}</p> </a>
+            {%endfor%}
+          </div>
+        </div>
+        {%endif%}
+      </div>
 
-        <div class="right">
-            <div class="info-container">
-                <div>
-                    <p class="info-phrase"> DOI: </p> <br>
-                    <p class="info"> {{publication.doi}} </p>
-                </div>
-                <div>
-                    <p class="info-phrase"> Journal: </p> <br>
-                    <a> <p class="info"> {{publication.journal_id.name}} </p> </a>
-                </div>
-                <div>
-                    <p class="info-phrase"> Date: </p> <br>
-                    <p class="info"> {{publication.publication_date}} </p>
-                </div>
-            </div>
+      <div class="right">
+        <div class="info-container">
+          <div>
+            <p class="info-phrase"> DOI: </p> <br>
+            <p class="info"> {{publication.doi}} </p>
+          </div>
+          <div>
+            <p class="info-phrase"> Journal: </p> <br>
+            <a> <p class="info"> {{publication.journal_id.name}} </p> </a>
+          </div>
+          <div>
+            <p class="info-phrase"> Date: </p> <br>
+            <p class="info"> {{publication.publication_date}} </p>
+          </div>
         </div>
+      </div>
     </div>
 
-</body>
+  </body>
 
 </html>

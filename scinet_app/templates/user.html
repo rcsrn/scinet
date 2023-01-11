@@ -2,83 +2,83 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>{{ author.last_name }}</title>
-        <link rel="stylesheet" href="{% static 'user.css' %}">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">   
-    </head>
+  <head>
+    <title>{{ author.last_name }}</title>
+    <link rel="stylesheet" href="{% static 'user.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">   
+  </head>
 
-<body>
+  <body>
     <div class="top" id="top-id">
-        <div class="logo-container">
-            <a class="logo" href="{% url 'index' %}">SCINET</a>
-        </div>
+      <div class="logo-container">
+        <a class="logo" href="{% url 'index' %}">SCINET</a>
+      </div>
 
-        <div class="login-button-container">
-            <a href="{% url 'index' %}"> <button class="login-button">Home</button> </a>
-          </div>
-          
-          <div class="register-button-container">
-            <button class="register-button" onclick="history.go(-1)">Return</button>
-          </div>
+      <div class="login-button-container">
+        <a href="{% url 'index' %}"> <button class="login-button">Home</button> </a>
+      </div>
+      
+      <div class="register-button-container">
+        <button class="register-button" onclick="history.go(-1)">Return</button>
+      </div>
 
-          {% if user.is_authenticated and user.username == author.username %}
-          
-          <div class="logo-container"></div> 
-            <a class="account" href="{% url 'edit-profile' %}">Edit profile</a>
-          </div>
-
-          {% endif %}
-
-        </div>
-
-    
-    <div class="middle">
-        <div class="center">
-        <h1 class="title">{{author.first_name}} {{author.last_name}}</h1>
-        <div class="most-cited-container">
-            <h3 class="visit-phrase" style="margin-bottom: -40px; font-size: 30px;"> Publications: </h3>
-            {%for publication in author.publications.all%}
-              <a href="{% url 'publication' publication.publication_id %}"> <p class="list-card-item">{{publication.title}}</p> </a>
-              <p class="info-link">Journal: {{publication.journal_id.name}}. {{publication.publication_date.year}}. 
-                {%if publication.topic.all.count > 0%}
-                    <a href="{% url 'topic' publication.topic.all.0.topic_id%}">{{publication.topic.all.0.name}}</a></p>
-                {%endif%}
-            <hr>
-            {%endfor%}
-        </div>
-        </div>
-
-        <div class="left">
-            <div class="info-container">
-                <h2 class="visit-phrase">Institutions:</h2>
-                {%for institution in author.institutions.all%}
-                    <a href="{% url 'institution' institution.institution_id %}"> <p class="list-item">{{institution.name}}</p> </a>
-                {%endfor%}
-            </div>
-        </div>
-
-        <div class="right">
-            <div class="info-container">
-                {% if user.is_authenticated and user.username == author.username %}
-                    <div>
-                        <p class="info-phrase"> Username: </p> <br>
-                        <p class="info"> {{author.username}} </p>
-                    </div>
-                {% endif %}
-                <div>
-                    <p class="info-phrase"> email: </p> <br>
-                    <p class="info"> {{author.email}} </p>
-                </div>
-                <div>
-                    <p class="info-phrase"> Age: </p> <br>
-                    <p class="info"> {{author.age}} </p>
-                </div>
-            </div>
-        </div>
+      {% if user.is_authenticated and user.username == author.username %}
+      
+      <div class="logo-container"></div> 
+      <a class="account" href="{% url 'edit-profile' %}">Edit profile</a>
     </div>
+
+    {% endif %}
+
+</div>
+
+
+<div class="middle">
+  <div class="center">
+    <h1 class="title">{{author.first_name}} {{author.last_name}}</h1>
+    <div class="most-cited-container">
+      <h3 class="visit-phrase" style="margin-bottom: -40px; font-size: 30px;"> Publications: </h3>
+      {%for publication in author.publications.all%}
+      <a href="{% url 'publication' publication.publication_id %}"> <p class="list-card-item">{{publication.title}}</p> </a>
+      <p class="info-link">Journal: {{publication.journal_id.name}}. {{publication.publication_date.year}}. 
+        {%if publication.topic.all.count > 0%}
+        <a href="{% url 'topic' publication.topic.all.0.topic_id%}">{{publication.topic.all.0.name}}</a></p>
+      {%endif%}
+      <hr>
+      {%endfor%}
+    </div>
+  </div>
+
+  <div class="left">
+    <div class="info-container">
+      <h2 class="visit-phrase">Institutions:</h2>
+      {%for institution in author.institutions.all%}
+      <a href="{% url 'institution' institution.institution_id %}"> <p class="list-item">{{institution.name}}</p> </a>
+      {%endfor%}
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="info-container">
+      {% if user.is_authenticated and user.username == author.username %}
+      <div>
+        <p class="info-phrase"> Username: </p> <br>
+        <p class="info"> {{author.username}} </p>
+      </div>
+      {% endif %}
+      <div>
+        <p class="info-phrase"> email: </p> <br>
+        <p class="info"> {{author.email}} </p>
+      </div>
+      <div>
+        <p class="info-phrase"> Age: </p> <br>
+        <p class="info"> {{author.age}} </p>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 
